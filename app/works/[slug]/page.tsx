@@ -47,7 +47,16 @@ export function generateMetadata({ params }: CategoryPageProps): Metadata {
     openGraph: {
       title: category.title,
       description: category.description,
-      url: `/works/${category.slug}`
+      url: `/works/${category.slug}`,
+      locale: "tr_TR",
+      type: "article",
+      images: [{ url: category.coverImage, alt: category.alt }]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: category.title,
+      description: category.description,
+      images: [category.coverImage]
     }
   };
 }
@@ -99,6 +108,21 @@ export default function PortfolioCategoryPage({ params }: CategoryPageProps) {
               ))}
             </div>
           </div>
+
+          <section className="mt-12 grid gap-px bg-ink/10 sm:grid-cols-3" aria-label="Proje ve üretim özeti">
+            <div className="bg-porcelain p-6">
+              <p className="text-xs font-semibold uppercase tracking-brand text-bronze">Proje Türü</p>
+              <p className="mt-4 font-display text-2xl leading-tight text-ink">{category.title}</p>
+            </div>
+            <div className="bg-porcelain p-6">
+              <p className="text-xs font-semibold uppercase tracking-brand text-bronze">Üretim Bağlamı</p>
+              <p className="mt-4 leading-7 text-ink/65">{category.introHeading}</p>
+            </div>
+            <div className="bg-porcelain p-6">
+              <p className="text-xs font-semibold uppercase tracking-brand text-bronze">Görsel Dokümantasyon</p>
+              <p className="mt-4 leading-7 text-ink/65">Bu kategoride {category.imageCount} gerçek proje veya üretim görseli yer alır.</p>
+            </div>
+          </section>
 
           <section className="mt-16">
             <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">

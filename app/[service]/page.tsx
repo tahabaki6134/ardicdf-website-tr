@@ -17,7 +17,14 @@ export function generateMetadata({ params }: PageProps): Metadata {
     title: { absolute: service.metaTitle },
     description: service.description,
     alternates: { canonical: path },
-    openGraph: { title: service.metaTitle, description: service.description, url: path, locale: "tr_TR", type: "website" },
+    openGraph: {
+      title: service.metaTitle,
+      description: service.description,
+      url: path,
+      locale: "tr_TR",
+      type: "website",
+      images: [{ url: "/og-image.png", width: 1200, height: 630, alt: `${service.title} | Ardıç Design & Fabrication` }]
+    },
     twitter: { card: "summary_large_image", title: service.metaTitle, description: service.description, images: ["/og-image.png"] }
   };
 }
