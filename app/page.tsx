@@ -2,21 +2,22 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { brand, capabilities, heroSlides, services, works } from "@/lib/content";
+import { servicePages } from "@/lib/service-pages";
 import { HomeHeroSlider } from "@/components/home-hero-slider";
 import { SectionHeading } from "@/components/section-heading";
 import { WorkCard } from "@/components/work-card";
 
 export const metadata: Metadata = {
-  title: "Design & Fabrication Studio for Themed Environments",
+  title: "İstanbul Tematik Dekor ve Heykel Üretim Atölyesi",
   description:
-    "Ardıç Design & Fabrication creates themed environments, sculptural installations, architectural decor, brand experiences, and CNC/EPS/XPS fabrication for international projects.",
+    "İstanbul merkezli Ardıç; tematik dekorasyon, strafor ve polyester heykel, CNC EPS/XPS işleme, mimari dekor, yapay kaya ve özel üretim hizmetleri sunar.",
   alternates: {
     canonical: "/"
   },
   openGraph: {
-    title: "Design & Fabrication Studio for Themed Environments",
+    title: "İstanbul Tematik Dekor ve Heykel Üretim Atölyesi",
     description:
-      "An EPSLAM company delivering design, fabrication, finishing, painting, assembly, and installation for memorable built experiences.",
+      "Tematik mekan, heykel, mimari dekor ve özel üretim projelerinde tasarımdan montaja entegre çözümler.",
     url: "/"
   }
 };
@@ -29,9 +30,9 @@ export default function Home() {
       <section className="px-5 py-20 md:px-8 md:py-28">
         <div className="mx-auto max-w-7xl">
           <SectionHeading
-            eyebrow="What We Do"
-            title="Objects, environments, and installations with architectural weight."
-            copy="An EPSLAM company, Ardıç brings together design direction, family production experience, and integrated fabrication infrastructure for ambitious commercial and cultural spaces."
+            eyebrow="Ne Yapıyoruz?"
+            title="İstanbul'da tasarlıyor, atölyemizde üretiyoruz."
+            copy="Ardıç Design & Fabrication, İstanbul merkezli tasarım ve üretim atölyesidir. EPS/XPS CNC işleme, strafor ve polyester heykel, tematik dekor, mimari dekor, yapay kaya, kalıp ve büyük format 3D baskı hizmetlerini ticari, kültürel ve eğlence projeleri için tek çatı altında sunar."
           />
           <div className="mt-14 grid gap-px bg-ink/10 md:grid-cols-4">
             {services.map((service, index) => (
@@ -46,7 +47,7 @@ export default function Home() {
             <div className="relative min-h-[360px] overflow-hidden bg-ink md:min-h-[460px]">
               <Image
                 src="/home/brand-story-lobby.jpeg"
-                alt="Dark premium lobby with natural rock forms and Ardic wall branding"
+                alt="Doğal kaya formları ve Ardıç marka duvarıyla premium lobi tasarımı"
                 fill
                 sizes="(min-width: 1024px) 55vw, 100vw"
                 className="object-cover"
@@ -57,11 +58,11 @@ export default function Home() {
                 {brand.tagline}
               </p>
               <h3 className="mt-5 font-display text-4xl leading-tight md:text-5xl">
-                A studio language backed by production discipline.
+                Tasarım dili, üretim disipliniyle güçlenir.
               </h3>
               <p className="mt-6 leading-8 text-porcelain/65">
-                Built on long-term family experience in production and construction, Ardıç develops
-                environments with the presence of a place and the precision of a workshop.
+                Uzun yıllara dayanan aile üretim ve yapı deneyimi üzerine kurulan Ardıç,
+                mekan etkisini atölye hassasiyetiyle bir araya getirir.
               </p>
             </div>
           </div>
@@ -72,12 +73,12 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <SectionHeading
-              eyebrow="Featured Works"
-              title="Selected project studies."
-              copy="A curated view of built objects, brand experiences, sculptural works, and thematic environments shaped through design and fabrication."
+              eyebrow="Öne Çıkan Projeler"
+              title="Seçili üretim ve uygulamalar."
+              copy="Tasarım ve üretim süreçleriyle şekillenen heykeller, marka deneyimleri, mimari elemanlar ve tematik mekanlardan seçkiler."
             />
             <Link href="/works" className="text-sm font-semibold uppercase tracking-brand text-bronze">
-              See all works
+              Tüm projeleri görün
             </Link>
           </div>
           <div className="mt-14 grid gap-8 lg:grid-cols-2">
@@ -91,26 +92,26 @@ export default function Home() {
       <section className="bg-ink px-5 py-20 text-porcelain md:px-8 md:py-28">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <SectionHeading
-            eyebrow="Design + Fabrication Under One Roof"
-            title="A direct line from idea to install."
-            copy="Concept development, design, CNC fabrication, EPS/XPS processing, sculpture, mold production, polyester casting, finishing, coating, painting, assembly, and installation are coordinated as one continuous process."
+            eyebrow="Tasarım ve Üretim Tek Çatı Altında"
+            title="Fikirden montaja kesintisiz süreç."
+            copy="Konsept geliştirme, CNC üretim, EPS/XPS işleme, heykel, kalıp, polyester döküm, kaplama, boyama, montaj ve saha uygulaması tek bir üretim akışı içinde koordine edilir."
             light
           />
           <div className="grid gap-5 sm:grid-cols-2">
             <div className="relative min-h-[360px] overflow-hidden border border-porcelain/15 bg-ink sm:col-span-2">
               <Image
                 src="/home/production-columns.png"
-                alt="White Corinthian column production and sculptural fabrication details"
+                alt="Beyaz Korint kolon üretimi ve heykel detayları"
                 fill
                 sizes="(min-width: 1024px) 54vw, 100vw"
                 className="object-cover"
               />
             </div>
-            {["Concept", "Engineering", "Fabrication", "Installation"].map((item) => (
+            {["Konsept", "Mühendislik", "Üretim", "Montaj"].map((item) => (
               <div key={item} className="border border-porcelain/15 p-7">
                 <p className="font-display text-4xl text-bronze">{item}</p>
                 <p className="mt-4 leading-7 text-porcelain/65">
-                  Refined decisions, controlled tolerances, and a finish-led approach at every stage.
+                  Her aşamada doğru kararlar, kontrollü toleranslar ve nitelikli yüzey yaklaşımı.
                 </p>
               </div>
             ))}
@@ -121,9 +122,9 @@ export default function Home() {
       <section className="px-5 py-20 md:px-8 md:py-28">
         <div className="mx-auto max-w-7xl">
           <SectionHeading
-            eyebrow="Manufacturing Capabilities"
-            title="Built for demanding custom production."
-            copy="Supported by EPSLAM fabrication infrastructure, the studio works across CNC-cut forms, composite systems, sculptural surfaces, lighting-ready objects, coatings, finishes, and installation planning."
+            eyebrow="Üretim Kabiliyetleri"
+            title="Zorlu ve özel projeler için üretim altyapısı."
+            copy="EPSLAM üretim altyapısıyla CNC kesimli formlar, kompozit sistemler, heykelsi yüzeyler, aydınlatma entegre objeler, kaplamalar ve montaj planlaması birlikte yürütülür."
           />
           <div className="mt-12 grid gap-px bg-ink/10 sm:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((capability) => (
@@ -139,16 +140,16 @@ export default function Home() {
         <div className="mx-auto max-w-7xl bg-bronze px-6 py-14 text-porcelain md:px-12 md:py-20">
           <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-brand text-porcelain/70">Contact</p>
+              <p className="text-xs font-semibold uppercase tracking-brand text-porcelain/70">İletişim</p>
               <h2 className="mt-4 max-w-3xl font-display text-5xl leading-tight md:text-7xl">
-                Let&apos;s build a place people remember.
+                İnsanların hatırlayacağı bir mekan üretelim.
               </h2>
             </div>
             <Link
               href="/contact"
               className="w-fit bg-ink px-6 py-4 text-xs font-semibold uppercase tracking-brand text-porcelain transition hover:bg-porcelain hover:text-ink"
             >
-              Start a Conversation
+              Projenizi Konuşalım
             </Link>
           </div>
         </div>

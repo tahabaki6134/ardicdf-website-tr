@@ -4,16 +4,16 @@ import { SectionHeading } from "@/components/section-heading";
 import { portfolioCategories } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Works",
+  title: "Projeler",
   description:
-    "Explore Ardıç Design & Fabrication portfolio categories across themed spaces, sculptures, architectural decor, brand installations, facade ornaments, molds, and polyester casting.",
+    "Ardıç'ın tematik mekan, heykel, mimari dekor, marka uygulaması, yapay kaya, kalıp ve kompozit üretim projelerini inceleyin.",
   alternates: {
     canonical: "/works"
   },
   openGraph: {
-    title: "Works",
+    title: "Projeler",
     description:
-      "Selected portfolio categories across sculpture, decor, thematic fabrication, brand installations, and custom production systems.",
+      "Heykel, tematik dekor, marka uygulaması ve özel üretim sistemlerinden seçili proje kategorileri.",
     url: "/works"
   }
 };
@@ -27,14 +27,14 @@ export default function WorksPage() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 border-b border-ink/10 pb-14 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
             <SectionHeading
-              eyebrow="Works"
+              eyebrow="Projeler"
               headingTag="h1"
-              title="Selected works across sculpture, decor, and thematic fabrication."
-              copy="Ardıç Design & Fabrication delivers custom physical works from concept development to production, finishing, and on-site execution."
+              title="Heykel, dekor ve tematik üretimden seçili işler."
+              copy="Ardıç Design & Fabrication, konsept geliştirmeden üretim, yüzey bitişi ve saha uygulamasına kadar özel fiziksel projeler gerçekleştirir."
             />
             <p className="max-w-xl text-base leading-8 text-ink/60 md:text-lg">
-              The portfolio brings together project categories shaped through sculptural craftsmanship,
-              architectural detailing, brand-focused fabrication, and workshop-led production systems.
+              Portföy; heykel işçiliği, mimari detaylandırma, marka odaklı üretim ve atölye
+              süreçleriyle şekillenen gerçek proje kategorilerini bir araya getirir.
             </p>
           </div>
 
@@ -49,13 +49,13 @@ export default function WorksPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink/35 via-transparent to-transparent opacity-70" />
                     <div className="absolute left-5 top-5 border border-white/25 bg-ink/55 px-3 py-2 text-[0.65rem] font-semibold uppercase tracking-brand text-white backdrop-blur-sm">
-                      {category.imageCount} Project Visuals
+                      {category.imageCount} Proje Görseli
                     </div>
                   </div>
                   <div className="flex min-h-72 flex-col border border-ink/10 p-7 md:p-8">
                     <div className="flex items-center justify-between gap-4 text-sm font-semibold uppercase tracking-brand text-bronze">
                       <p>{category.number}</p>
-                      <p>{category.imageCount} Images</p>
+                      <p>{category.imageCount} Görsel</p>
                     </div>
                     <h2 className="mt-7 max-w-lg font-display text-3xl leading-tight text-ink md:text-4xl">
                       {category.title}
@@ -65,7 +65,7 @@ export default function WorksPage() {
                       {category.shortDescription ?? category.description}
                     </p>
                     <span className="mt-auto pt-10 text-sm font-semibold uppercase tracking-brand text-bronze transition group-hover:text-ink">
-                      View Gallery →
+                      Galeriyi İnceleyin →
                     </span>
                   </div>
                 </a>

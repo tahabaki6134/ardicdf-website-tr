@@ -1,5 +1,7 @@
 .next
 node_modules
+.pnpm-store
+*.tsbuildinfo
 out
 dist
 .env*.local

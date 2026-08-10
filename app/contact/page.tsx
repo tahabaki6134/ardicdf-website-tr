@@ -4,16 +4,16 @@ import { ContactForm } from "@/components/contact-form";
 import { SectionHeading } from "@/components/section-heading";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "İletişim",
   description:
-    "Contact Ardıç Design & Fabrication for themed environments, sculptural objects, architectural decor, brand installations, CNC/EPS/XPS fabrication, and international project enquiries.",
+    "Tematik dekorasyon, heykel, mimari dekor, CNC/EPS/XPS işleme ve özel üretim projeleriniz için Ardıç ile iletişime geçin.",
   alternates: {
     canonical: "/contact"
   },
   openGraph: {
-    title: "Contact",
+    title: "İletişim",
     description:
-      "Start a project enquiry with Ardıç for custom environments, sculptural fabrication, architectural features, brand experiences, and production under one roof.",
+      "Özel mekan, heykel, mimari eleman ve marka deneyimi projeleriniz için Ardıç'tan teklif alın.",
     url: "/contact"
   }
 };
@@ -21,28 +21,28 @@ export const metadata: Metadata = {
 const contactRows = [
   [
     {
-      title: "Project Director",
+      title: "Proje Direktörü",
       value: "+90 543 626 89 69",
       href: "tel:+905436268969",
       whatsapp: "https://wa.me/905436268969"
     },
     {
       title: "WhatsApp",
-      value: "Project Director",
+      value: "Proje Direktörü",
       href: "https://wa.me/905436268969",
       external: true
     }
   ],
   [
     {
-      title: "Fabrication Director",
+      title: "Üretim Direktörü",
       value: "+90 532 743 84 41",
       href: "tel:+905327438441",
       whatsapp: "https://wa.me/905327438441"
     },
     {
       title: "WhatsApp",
-      value: "Fabrication Director",
+      value: "Üretim Direktörü",
       href: "https://wa.me/905327438441",
       external: true
     }
@@ -58,15 +58,15 @@ export default function ContactPage() {
       <section className="px-5 py-20 md:px-8 md:py-28">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <SectionHeading
-            eyebrow="Contact"
+            eyebrow="İletişim"
             headingTag="h1"
-            title="Start a Project with a Design & Fabrication Partner."
-            copy="For international and Turkey-based clients planning themed environments, sculptural objects, architectural decor, brand installations, or large-scale fabrication, share the brief and our team will define the next production step."
+            title="Tasarım ve üretim projenizi birlikte planlayalım."
+            copy="Tematik mekan, heykel, mimari dekor, marka uygulaması veya büyük ölçekli özel üretim ihtiyacınızı paylaşın; ekibimiz kapsamı inceleyerek doğru üretim adımını belirlesin."
           />
 
           <div className="bg-white p-8 shadow-soft md:p-12">
             <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
-              Contact Information
+              İletişim Bilgileri
             </p>
             <div className="mt-8 space-y-px bg-ink/10">
               {contactRows.map((row, rowIndex) => (
@@ -102,7 +102,7 @@ export default function ContactPage() {
 
             <div className="mt-10 border-t border-ink/10 pt-10">
               <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
-                Location
+                Adres
               </p>
               <address className="mt-4 not-italic text-xl leading-8 text-ink/70">
                 Karadeniz Caddesi No:131
@@ -111,9 +111,9 @@ export default function ContactPage() {
                 <br />
                 Ataşehir
                 <br />
-                Istanbul
+                İstanbul
                 <br />
-                Turkey
+                Türkiye
               </address>
               <Link
                 href={mapsUrl}
@@ -121,17 +121,17 @@ export default function ContactPage() {
                 rel="noreferrer"
                 className="mt-6 inline-flex text-xs font-semibold uppercase tracking-brand text-bronze transition hover:text-ink"
               >
-                View on Google Maps
+                Google Haritalar&apos;da Görün
               </Link>
             </div>
 
             <div className="mt-10 border-t border-ink/10 pt-10">
               <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
-                Design & Fabrication Studio
+                Tasarım ve Üretim Atölyesi
               </p>
               <p className="mt-4 text-xl leading-8 text-ink/70">
-                Integrated design, CNC production, sculptural fabrication, finishing, and
-                installation coordination for Turkey-based and international project teams.
+                Türkiye&apos;deki ve uluslararası proje ekipleri için entegre tasarım, CNC üretim,
+                heykel, yüzey bitirme ve montaj koordinasyonu.
               </p>
               <Link
                 href="mailto:taaha.baaki@gmail.com"
@@ -146,7 +146,7 @@ export default function ContactPage() {
         <div className="mx-auto mt-12 max-w-7xl">
           <div className="overflow-hidden rounded-sm border border-ink/10 bg-white p-2 shadow-soft">
             <iframe
-              title="Ardıç Design & Fabrication location on Google Maps"
+              title="Ardıç Design & Fabrication Google Haritalar konumu"
               src={`${mapsUrl}&output=embed`}
               className="h-[360px] w-full rounded-sm border-0 md:h-[460px]"
               loading="lazy"
@@ -161,19 +161,19 @@ export default function ContactPage() {
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.78fr_1.22fr]">
           <div>
             <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
-              Start Your Project
+              Projenizi Başlatın
             </p>
             <h2 className="mt-7 max-w-xl font-display text-4xl leading-tight text-ink md:text-5xl">
-              Tell us what needs to be built.
+              Ne üretmek istediğinizi anlatın.
             </h2>
             <p className="mt-7 max-w-xl leading-8 text-ink/60">
-              From concept development to fabrication, finishing, and installation, Ardıç
-              delivers complete design and production solutions under one roof.
+              Ardıç; konsept geliştirmeden üretim, yüzey bitişi ve montaja kadar bütüncül
+              tasarım ve uygulama çözümleri sunar.
             </p>
             <p className="mt-6 max-w-xl leading-8 text-ink/60">
-              Share the project location, approximate scope, required objects or environments,
-              and any timing or installation constraints. Our team will review your enquiry and
-              respond with the right next step.
+              Proje konumunu, yaklaşık kapsamı, ihtiyaç duyulan obje veya mekanları ve varsa
+              takvim ya da montaj kısıtlarını paylaşın. Ekibimiz talebinizi inceleyerek sonraki
+              adım için size dönüş yapacaktır.
             </p>
           </div>
 

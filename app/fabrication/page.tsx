@@ -3,16 +3,16 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Fabrication",
+  title: "Üretim",
   description:
-    "Ardıç fabrication capabilities include CNC routing, EPS/XPS foam processing, sculpture production, decorative architectural elements, mold manufacturing, polyester casting, finishing, and installation.",
+    "Ardıç'ın üretim kabiliyetleri CNC, EPS/XPS işleme, heykel, mimari dekor, kalıp, polyester döküm, yüzey bitirme ve montajı kapsar.",
   alternates: {
     canonical: "/fabrication"
   },
   openGraph: {
-    title: "Fabrication",
+    title: "Üretim",
     description:
-      "Integrated workshop infrastructure for CNC production, EPS/XPS shaping, sculptural fabrication, molds, casting, finishing, painting, assembly, and installation.",
+      "CNC, EPS/XPS şekillendirme, heykel, kalıp, döküm, boya, birleştirme ve montaj için entegre atölye altyapısı.",
     url: "/fabrication"
   }
 };
@@ -20,108 +20,108 @@ export const metadata: Metadata = {
 const capabilities = [
   {
     number: "01",
-    title: "CNC Fabrication",
-    copy: "Precision-cut parts, reliefs, and structural bases prepared for custom architectural and sculptural production."
+    title: "CNC Üretim",
+    copy: "Özel mimari ve heykelsi üretimler için hassas kesilmiş parçalar, rölyefler ve altyapılar."
   },
   {
     number: "02",
-    title: "EPS / XPS Processing",
-    copy: "Lightweight foam shaping for large scenic forms, organic structures, and production-ready installation bases."
+    title: "EPS / XPS İşleme",
+    copy: "Büyük dekor formları, organik yapılar ve montaja hazır altyapılar için hafif köpük şekillendirme."
   },
   {
     number: "03",
-    title: "Sculpture Production",
-    copy: "Character figures, organic forms, and statement objects built through sculpting, coating, painting, and finishing."
+    title: "Heykel Üretimi",
+    copy: "Heykel, kaplama, boya ve yüzey bitirme süreçleriyle üretilen karakterler, organik formlar ve özel objeler."
   },
   {
     number: "04",
-    title: "Decorative Architectural Elements",
-    copy: "Columns, capitals, reliefs, ornaments, and facade details produced to specification."
+    title: "Dekoratif Mimari Elemanlar",
+    copy: "Projeye göre üretilen kolonlar, başlıklar, rölyefler, süslemeler ve cephe detayları."
   },
   {
     number: "05",
-    title: "Mold Manufacturing",
-    copy: "Repeatable mold systems for reliable production, consistent detailing, and composite casting workflows."
+    title: "Kalıp Üretimi",
+    copy: "Güvenilir üretim, tutarlı detay ve kompozit döküm için tekrarlanabilir kalıp sistemleri."
   },
   {
     number: "06",
-    title: "Polyester Casting",
-    copy: "Durable composite casting for decorative, thematic, and architectural applications requiring repeatable quality."
+    title: "Polyester Döküm",
+    copy: "Tekrarlanabilir kalite gerektiren dekoratif, tematik ve mimari uygulamalar için dayanıklı kompozit döküm."
   },
   {
     number: "07",
-    title: "Large-Scale Fabrication",
-    copy: "Oversized objects and spatial installations planned for production, transport, assembly, and site use."
+    title: "Büyük Ölçekli Üretim",
+    copy: "Üretim, taşıma, birleştirme ve saha kullanımı planlanmış büyük objeler ve mekan uygulamaları."
   },
   {
     number: "08",
-    title: "3D Printing Technology",
-    copy: "Rapid prototyping and precision detail support for custom objects and production studies."
+    title: "3D Baskı Teknolojisi",
+    copy: "Özel objeler ve üretim çalışmaları için hızlı prototipleme ve hassas detay desteği."
   }
 ];
 
 const workflow = [
-  "Concept Development",
-  "Digital Modeling",
-  "Fabrication",
-  "Finishing & Coating",
-  "Installation"
+  "Konsept Geliştirme",
+  "Dijital Modelleme",
+  "Üretim",
+  "Yüzey Bitirme ve Kaplama",
+  "Montaj"
 ];
 
 const infrastructure = [
-  "CNC Routing Systems",
-  "EPS / XPS Processing Facility",
-  "Sculpture Workshop",
-  "Mold Manufacturing Department",
-  "Polyester Casting Area",
-  "3D Printing Lab",
-  "Finishing & Surface Treatment Area",
-  "Installation & Assembly Team"
+  "CNC İşleme Sistemleri",
+  "EPS / XPS İşleme Alanı",
+  "Heykel Atölyesi",
+  "Kalıp Üretim Bölümü",
+  "Polyester Döküm Alanı",
+  "3D Baskı Laboratuvarı",
+  "Yüzey Bitirme ve Boya Alanı",
+  "Montaj ve Birleştirme Ekibi"
 ];
 
 const projectTypes = [
   {
-    title: "Theme Parks",
-    copy: "Immersive scenic elements built for durable guest experiences."
+    title: "Tema Parklar",
+    copy: "Kalıcı ziyaretçi deneyimleri için üretilen etkileyici dekor elemanları."
   },
   {
-    title: "Hotels & Resorts",
-    copy: "Custom objects and atmosphere-defining features for hospitality spaces."
+    title: "Otel ve Tatil Köyleri",
+    copy: "Konaklama mekanları için özel objeler ve atmosfer oluşturan detaylar."
   },
   {
-    title: "Retail Environments",
-    copy: "Brand-led displays, fixtures, and fabricated commercial moments."
+    title: "Perakende Mekanları",
+    copy: "Marka odaklı sergilemeler, donatılar ve ticari uygulamalar."
   },
   {
-    title: "Museums & Cultural Spaces",
-    copy: "Interpretive objects and cultural environments produced with precision."
+    title: "Müze ve Kültür Mekanları",
+    copy: "Hassasiyetle üretilen anlatı objeleri ve kültürel mekanlar."
   },
   {
-    title: "Public Installations",
-    copy: "Large-format works planned for visibility, longevity, and site use."
+    title: "Kamusal Uygulamalar",
+    copy: "Görünürlük, dayanım ve saha kullanımı için planlanan büyük ölçekli işler."
   },
   {
-    title: "Branded Experiences",
-    copy: "Promotional objects and spatial installations with strong identity."
+    title: "Marka Deneyimleri",
+    copy: "Güçlü kimliğe sahip tanıtım objeleri ve mekansal uygulamalar."
   },
   {
-    title: "Character Sculptures",
-    copy: "Expressive figures, mascots, and sculptural forms for themed settings."
+    title: "Karakter Heykelleri",
+    copy: "Tematik mekanlar için etkileyici figürler, maskotlar ve heykelsi formlar."
   },
   {
-    title: "Architectural Decor",
-    copy: "Columns, reliefs, ornaments, and decorative surfaces made to order."
+    title: "Mimari Dekor",
+    copy: "Projeye özel kolonlar, rölyefler, süslemeler ve dekoratif yüzeyler."
   }
 ];
 
 const scaleStats = [
-  "12+ Years of Manufacturing Experience",
-  "600 m² Indoor Facility",
-  "400 m² Outdoor Production Area",
-  "6 Industrial 3D Printers",
-  "Multiple CNC Production Systems",
-  "In-House Sculpture Team",
-  "End-to-End Project Delivery"
+  "12+ Yıllık Üretim Deneyimi",
+  "600 m² Kapalı Alan",
+  "400 m² Açık Üretim Alanı",
+  "6 Endüstriyel 3D Yazıcı",
+  "Çoklu CNC Üretim Sistemleri",
+  "Kendi Heykel Ekibimiz",
+  "Uçtan Uca Proje Teslimi"
 ];
 
 export default function FabricationPage() {
@@ -131,15 +131,14 @@ export default function FabricationPage() {
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
           <div>
             <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
-              Fabrication
+              Üretim
             </p>
             <h1 className="mt-8 max-w-2xl font-display text-5xl leading-[1.02] text-ink md:text-7xl">
-              Where Ideas Become Built Objects.
+              Fikirlerin Fiziksel Objeye Dönüştüğü Yer.
             </h1>
             <p className="mt-8 max-w-xl text-base leading-8 text-ink/65 md:text-lg md:leading-9">
-              As an EPSLAM company, Ardıç connects digital modeling, CNC fabrication, EPS/XPS
-              processing, sculpture, mold production, polyester casting, finishing, painting,
-              assembly, and installation under one roof.
+              Bir EPSLAM şirketi olan Ardıç; dijital modelleme, CNC, EPS/XPS işleme, heykel,
+              kalıp, polyester döküm, yüzey bitirme, boya, birleştirme ve montajı tek çatı altında buluşturur.
             </p>
             <div className="mt-9 h-px w-16 bg-bronze" />
           </div>
@@ -147,7 +146,7 @@ export default function FabricationPage() {
           <div className="relative min-h-[360px] overflow-hidden border border-ink/10 bg-ink shadow-soft md:min-h-[560px]">
             <Image
               src="/home/production-columns.png"
-              alt="Fabrication workshop with decorative architectural column production"
+              alt="Dekoratif mimari kolonların üretildiği Ardıç atölyesi"
               fill
               priority
               sizes="(min-width: 1024px) 58vw, 100vw"
@@ -162,15 +161,14 @@ export default function FabricationPage() {
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
-              Production Capabilities
+              Üretim Kabiliyetleri
             </p>
             <h2 className="mt-7 font-display text-4xl leading-tight text-ink md:text-5xl">
-              Integrated tools for custom physical work.
+              Özel fiziksel üretimler için entegre altyapı.
             </h2>
             <p className="mt-6 max-w-2xl leading-8 text-ink/60">
-              Backed by EPSLAM&apos;s fabrication infrastructure and long-term family production
-              experience, the workshop supports international clients who need buildable detail,
-              controlled finishes, and coordinated delivery.
+              EPSLAM üretim altyapısı ve uzun yıllara dayanan aile deneyimiyle atölyemiz;
+              üretilebilir detay, kontrollü yüzey ve koordineli teslimat bekleyen projelere hizmet verir.
             </p>
           </div>
 
@@ -198,14 +196,14 @@ export default function FabricationPage() {
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
           <div>
             <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
-              Production Workflow
+              Üretim Akışı
             </p>
             <h2 className="mt-7 max-w-lg font-display text-4xl leading-tight text-ink md:text-5xl">
-              A controlled path from idea to installation.
+              Fikirden montaja kontrollü bir yol.
             </h2>
             <p className="mt-7 max-w-md leading-8 text-ink/60">
-              Each phase is developed with the final scale, finish, coating system, transport,
-              assembly sequence, and site conditions in mind.
+              Her aşama nihai ölçek, yüzey, kaplama sistemi, taşıma, birleştirme sırası ve saha
+              koşulları dikkate alınarak geliştirilir.
             </p>
           </div>
 
@@ -231,29 +229,28 @@ export default function FabricationPage() {
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
           <div>
             <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
-              Additive Manufacturing
+              Katmanlı Üretim
             </p>
             <h2 className="mt-7 max-w-2xl font-display text-4xl leading-tight text-ink md:text-5xl">
-              Large-Format Industrial 3D Printing
+              Büyük Format Endüstriyel 3D Baskı
             </h2>
             <p className="mt-7 max-w-2xl leading-8 text-ink/65">
-              Our in-house 3D printing capacity includes two 80×80×80 cm machines,
-              three 40×40×40 cm machines, and one 100×100×100 cm machine. This setup
-              enables us to produce custom prototypes, sculptural forms, architectural
-              details, molds, display objects, and large-scale design components with
-              precision and flexibility.
+              Atölyemizde iki adet 80×80×80 cm, üç adet 40×40×40 cm ve bir adet
+              100×100×100 cm üretim hacmine sahip 3D yazıcı bulunur. Bu altyapı; prototip,
+              heykelsi form, mimari detay, kalıp, sergileme objesi ve büyük tasarım parçalarının
+              hassas ve esnek biçimde üretilmesini sağlar.
             </p>
             <p className="mt-6 max-w-xl leading-8 text-ink/60">
-              From concept models to large-format fabrication components, our 3D printing
-              workflow supports both design development and final production needs.
+              Konsept modellerinden büyük format parçalara kadar 3D baskı sürecimiz hem tasarım
+              geliştirmeyi hem de nihai üretim ihtiyaçlarını destekler.
             </p>
           </div>
 
           <div className="grid gap-px bg-ink/10 sm:grid-cols-3">
             {[
-              { value: "2", label: "80×80×80 cm Machines" },
-              { value: "3", label: "40×40×40 cm Machines" },
-              { value: "1", label: "100×100×100 cm Machine" }
+              { value: "2", label: "80×80×80 cm Makine" },
+              { value: "3", label: "40×40×40 cm Makine" },
+              { value: "1", label: "100×100×100 cm Makine" }
             ].map((item) => (
               <article key={item.label} className="flex min-h-52 flex-col bg-porcelain p-7 md:p-8">
                 <p className="font-display text-5xl leading-none text-bronze">{item.value}</p>
@@ -272,7 +269,7 @@ export default function FabricationPage() {
           <div className="relative min-h-[420px] overflow-hidden border border-bronze/20 bg-porcelain/5 shadow-soft">
             <Image
               src="/projects/portfolio/cnc-manufacturing-processes/cnc-manufacturing-processes-01.jpeg"
-              alt="CNC fabrication process in Ardıç workshop"
+              alt="Ardıç atölyesinde CNC üretim süreci"
               fill
               sizes="(min-width: 1024px) 54vw, 100vw"
               className="object-cover brightness-90 contrast-110 saturate-110"
@@ -284,15 +281,14 @@ export default function FabricationPage() {
 
           <div className="flex flex-col justify-center">
             <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
-              Integrated Facility
+              Entegre Tesis
             </p>
             <h2 className="mt-7 max-w-xl font-display text-4xl leading-tight text-porcelain md:text-5xl">
-              Workshop Infrastructure
+              Atölye Altyapısı
             </h2>
             <p className="mt-7 max-w-xl leading-8 text-porcelain/65">
-              Ardıç operates through EPSLAM&apos;s integrated fabrication infrastructure, where digital
-              production, sculptural fabrication, mold systems, polyester casting, finishing,
-              painting, assembly, and installation are coordinated under one roof.
+              Ardıç; dijital üretim, heykel, kalıp, polyester döküm, yüzey bitirme, boya,
+              birleştirme ve montajın tek çatı altında koordine edildiği EPSLAM altyapısıyla çalışır.
             </p>
             <div className="mt-10 grid gap-px bg-porcelain/12 sm:grid-cols-2">
               {infrastructure.map((item) => (
@@ -312,16 +308,15 @@ export default function FabricationPage() {
           <div className="grid gap-10 border-b border-ink/10 pb-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
             <div>
               <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
-                Project Types
+                Proje Türleri
               </p>
               <h2 className="mt-7 max-w-xl font-display text-4xl leading-tight text-ink md:text-5xl">
-                Projects We Build
+                Ürettiğimiz Projeler
               </h2>
             </div>
             <p className="max-w-xl leading-8 text-ink/60">
-              Ardıç supports projects that require custom fabrication, durable objects,
-              expressive surfaces, and installation-ready components across commercial,
-              cultural, hospitality, and entertainment contexts.
+              Ardıç; ticari, kültürel, konaklama ve eğlence alanlarında özel üretim, dayanıklı
+              objeler, etkileyici yüzeyler ve montaja hazır bileşenler gerektiren projelere hizmet verir.
             </p>
           </div>
 
@@ -342,16 +337,15 @@ export default function FabricationPage() {
           <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
             <div>
               <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
-                Fabrication at Scale
+                Ölçekli Üretim
               </p>
               <h2 className="mt-7 max-w-xl font-display text-4xl leading-tight text-ink md:text-5xl">
-                Fabrication at Scale
+                Büyük Ölçekte Üretim
               </h2>
             </div>
             <p className="max-w-xl leading-8 text-ink/60">
-              From concept models to full-scale installations, Ardıç supports production
-              across custom objects, architectural surfaces, sculptural works, and
-              site-ready environments.
+              Ardıç, konsept modellerinden tam ölçekli uygulamalara kadar özel objeler,
+              mimari yüzeyler, heykeller ve sahaya hazır mekan elemanları üretir.
             </p>
           </div>
 
@@ -376,7 +370,7 @@ export default function FabricationPage() {
           <div className="relative min-h-[320px]">
             <Image
               src="/services/sculpture-elephant-wide.jpeg"
-              alt="Large-scale sculptural fabrication for memorable environments"
+              alt="Akılda kalıcı mekanlar için büyük ölçekli heykel üretimi"
               fill
               sizes="(min-width: 1024px) 48vw, 100vw"
               className="object-cover"
@@ -386,20 +380,20 @@ export default function FabricationPage() {
           </div>
           <div className="flex flex-col justify-center p-8 md:p-12">
             <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
-              Start Production
+              Üretime Başlayın
             </p>
             <h2 className="mt-7 max-w-xl font-display text-4xl leading-tight text-porcelain md:text-5xl">
-              Let&apos;s Build Something Memorable.
+              Akılda Kalıcı Bir Şey Üretelim.
             </h2>
             <p className="mt-6 max-w-xl leading-8 text-porcelain/70">
-              Bring your concept, object, installation, or environment into production
-              with a team that understands both design intent and workshop execution.
+              Konseptinizi, objenizi veya mekanınızı; tasarım niyetini ve atölye uygulamasını
+              birlikte anlayan bir ekiple üretime taşıyın.
             </p>
             <Link
               href="/contact"
               className="mt-9 inline-flex w-fit border border-bronze px-6 py-4 text-xs font-semibold uppercase tracking-brand text-porcelain transition hover:bg-bronze hover:text-ink"
             >
-              Start a Project
+              Projenizi Başlatın
             </Link>
           </div>
         </div>

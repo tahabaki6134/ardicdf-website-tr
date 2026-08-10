@@ -155,7 +155,7 @@ export function PortfolioLightbox({ images }: PortfolioLightboxProps) {
               type="button"
               onClick={() => setActiveIndex(index)}
               className="group relative block aspect-[4/3] w-full cursor-zoom-in overflow-hidden bg-white text-left focus:outline-none focus:ring-2 focus:ring-bronze focus:ring-offset-2 focus:ring-offset-porcelain"
-              aria-label={`Open larger preview: ${image.alt}`}
+              aria-label={`Büyük önizlemeyi aç: ${image.alt}`}
             >
               <Image
                 src={image.src}
@@ -175,7 +175,7 @@ export function PortfolioLightbox({ images }: PortfolioLightboxProps) {
           className="fixed inset-0 z-[80] flex overscroll-contain items-center justify-center bg-ink/90 px-4 py-6 backdrop-blur-sm md:px-8"
           role="dialog"
           aria-modal="true"
-          aria-label="Portfolio image preview"
+          aria-label="Portföy görseli önizlemesi"
           onClick={() => {
             if (!isZoomed && !isSwiping) {
               closeLightbox();
@@ -184,7 +184,7 @@ export function PortfolioLightbox({ images }: PortfolioLightboxProps) {
         >
           <button
             type="button"
-            aria-label="Close portfolio image preview"
+            aria-label="Portföy görseli önizlemesini kapat"
             onClick={closeLightbox}
             className="absolute right-4 top-4 z-10 flex h-11 w-11 items-center justify-center border border-white/25 bg-white/10 text-3xl leading-none text-white transition hover:border-bronze hover:text-bronze focus:outline-none focus:ring-2 focus:ring-bronze md:right-8 md:top-8"
           >
@@ -195,7 +195,7 @@ export function PortfolioLightbox({ images }: PortfolioLightboxProps) {
             <>
               <button
                 type="button"
-                aria-label="Show previous portfolio image"
+                aria-label="Önceki portföy görselini göster"
                 onClick={(event) => {
                   event.stopPropagation();
                   showPrevious();
@@ -206,7 +206,7 @@ export function PortfolioLightbox({ images }: PortfolioLightboxProps) {
               </button>
               <button
                 type="button"
-                aria-label="Show next portfolio image"
+                aria-label="Sonraki portföy görselini göster"
                 onClick={(event) => {
                   event.stopPropagation();
                   showNext();
@@ -248,7 +248,7 @@ export function PortfolioLightbox({ images }: PortfolioLightboxProps) {
 
           <button
             type="button"
-            aria-label={isZoomed ? "Reset portfolio image zoom" : "Zoom portfolio image"}
+            aria-label={isZoomed ? "Görsel yakınlaştırmasını sıfırla" : "Portföy görselini yakınlaştır"}
             onClick={(event) => {
               event.stopPropagation();
               toggleZoom();

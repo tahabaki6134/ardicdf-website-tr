@@ -18,12 +18,12 @@ export function Footer() {
             {brand.tagline}
           </p>
           <p className="mt-5 max-w-md leading-7 text-porcelain/60">
-            An EPSLAM company built on long-term family production experience and integrated
-            fabrication infrastructure.
+            Uzun yıllara dayanan aile üretim deneyimini entegre tasarım ve imalat
+            altyapısıyla buluşturan bir EPSLAM şirketidir.
           </p>
         </div>
         <div>
-          <p className="text-xs uppercase tracking-brand text-porcelain/50">Explore</p>
+          <p className="text-xs uppercase tracking-brand text-porcelain/50">Keşfedin</p>
           <div className="mt-5 grid gap-3">
             {navigation.map((item) => (
               <Link key={item.href} href={item.href} className="text-porcelain/75 hover:text-bronze">
@@ -31,12 +31,12 @@ export function Footer() {
               </Link>
             ))}
             <Link href="/privacy" className="text-porcelain/55 transition hover:text-bronze">
-              Privacy Policy
+              Gizlilik Politikası
             </Link>
           </div>
         </div>
         <div>
-          <p className="text-xs uppercase tracking-brand text-porcelain/50">Contact</p>
+          <p className="text-xs uppercase tracking-brand text-porcelain/50">İletişim</p>
           <div className="mt-5 space-y-3 text-porcelain/75">
             <Link href="tel:+905436268969" className="block transition hover:text-bronze">
               {brand.phone}

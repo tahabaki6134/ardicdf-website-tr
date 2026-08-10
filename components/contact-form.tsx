@@ -23,14 +23,14 @@ declare global {
 }
 
 const projectTypes = [
-  "Theme Park / Entertainment",
-  "Hospitality / Retail Environment",
-  "Architectural Decor",
-  "Sculpture / Character Production",
-  "Brand Installation",
-  "CNC / Mold / Composite Production",
-  "Large-Scale Fabrication",
-  "Other"
+  "Tema Park / Eğlence",
+  "Otel / Restoran / Perakende",
+  "Mimari Dekorasyon",
+  "Heykel / Karakter Üretimi",
+  "Marka Uygulaması",
+  "CNC / Kalıp / Kompozit Üretimi",
+  "Büyük Ölçekli Özel Üretim",
+  "Diğer"
 ];
 
 const initialForm = {
@@ -54,21 +54,21 @@ function validateForm(form: typeof initialForm) {
   const errors: FieldErrors = {};
 
   if (!form.fullName.trim()) {
-    errors.fullName = "Please add your name.";
+    errors.fullName = "Lütfen adınızı yazın.";
   }
 
   if (!form.email.trim()) {
-    errors.email = "Please add your email address.";
+    errors.email = "Lütfen e-posta adresinizi yazın.";
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
-    errors.email = "Please enter a valid email address.";
+    errors.email = "Lütfen geçerli bir e-posta adresi yazın.";
   }
 
   if (!form.projectType) {
-    errors.projectType = "Please select a project type.";
+    errors.projectType = "Lütfen proje türünü seçin.";
   }
 
   if (!form.message.trim()) {
-    errors.message = "Please add a short project brief.";
+    errors.message = "Lütfen kısa bir proje özeti yazın.";
   }
 
   return errors;
@@ -105,11 +105,11 @@ export function ContactForm() {
       },
       "expired-callback": () => {
         setTurnstileToken("");
-        setTurnstileError("Please complete the verification again.");
+        setTurnstileError("Lütfen doğrulamayı yeniden tamamlayın.");
       },
       "error-callback": () => {
         setTurnstileToken("");
-        setTurnstileError("Verification could not be completed. Please try again.");
+        setTurnstileError("Doğrulama tamamlanamadı. Lütfen tekrar deneyin.");
       }
     });
   }, []);
@@ -158,20 +158,20 @@ export function ContactForm() {
     if (Object.keys(validationErrors).length > 0) {
       setFieldErrors(validationErrors);
       setStatus("error");
-      setError("Please complete the highlighted required fields before sending.");
+      setError("Göndermeden önce işaretli zorunlu alanları doldurun.");
       return;
     }
 
     if (!turnstileSiteKey) {
       setStatus("error");
-      setError("Verification is not configured. Please contact us by WhatsApp or phone.");
+      setError("Doğrulama yapılandırılmamış. Lütfen WhatsApp veya telefonla iletişime geçin.");
       return;
     }
 
     if (!turnstileToken) {
-      setTurnstileError("Please complete the verification before sending.");
+      setTurnstileError("Göndermeden önce doğrulamayı tamamlayın.");
       setStatus("error");
-      setError("Please complete the verification before sending.");
+      setError("Göndermeden önce doğrulamayı tamamlayın.");
       return;
     }
 
@@ -190,7 +190,7 @@ export function ContactForm() {
       const data = await response.json().catch(() => ({}));
 
       if (!response.ok || data.ok !== true) {
-        throw new Error(data.error || "Unable to send your project enquiry right now.");
+        throw new Error(data.error || "Proje talebiniz şu anda gönderilemedi.");
       }
 
       setForm(initialForm);
@@ -204,7 +204,7 @@ export function ContactForm() {
       setError(
         submitError instanceof Error
           ? submitError.message
-          : "Unable to send your project enquiry right now."
+          : "Proje talebiniz şu anda gönderilemedi."
       );
       resetTurnstile();
     }
@@ -219,7 +219,7 @@ export function ContactForm() {
       />
 
       <label className="hidden" aria-hidden="true">
-        Company website
+        Şirket web sitesi
         <input
           name="companyWebsite"
           type="text"
@@ -233,11 +233,11 @@ export function ContactForm() {
       {status === "success" ? (
         <div className="border border-bronze/30 bg-porcelain p-6">
           <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
-            Project Enquiry Received
+            Proje Talebiniz Alındı
           </p>
           <p className="mt-4 leading-7 text-ink/70">
-            Thank you. Our team has received your project enquiry and will review the
-            brief shortly.
+            Teşekkür ederiz. Ekibimiz proje talebinizi aldı ve paylaştığınız bilgileri
+            en kısa sürede inceleyecek.
           </p>
           <a
             href="https://wa.me/905436268969"
@@ -245,7 +245,7 @@ export function ContactForm() {
             rel="noreferrer"
             className="mt-6 inline-flex bg-ink px-6 py-4 text-xs font-semibold uppercase tracking-brand text-porcelain transition hover:bg-bronze hover:text-ink"
           >
-            Continue on WhatsApp
+            WhatsApp ile Devam Edin
           </a>
         </div>
       ) : null}
@@ -259,7 +259,7 @@ export function ContactForm() {
       <div className="grid gap-5 md:grid-cols-2">
         <label className="block">
           <span className="text-xs font-semibold uppercase tracking-brand text-bronze">
-            Name
+            Ad Soyad
           </span>
           <input
             name="fullName"
@@ -281,7 +281,7 @@ export function ContactForm() {
 
         <label className="block">
           <span className="text-xs font-semibold uppercase tracking-brand text-bronze">
-            Company
+            Firma
           </span>
           <input
             name="company"
@@ -319,7 +319,7 @@ export function ContactForm() {
 
         <label className="block">
           <span className="text-xs font-semibold uppercase tracking-brand text-bronze">
-            Phone / WhatsApp
+            Telefon / WhatsApp
           </span>
           <input
             name="phone"
@@ -335,7 +335,7 @@ export function ContactForm() {
       <div className="grid gap-5 md:grid-cols-2">
         <label className="block">
           <span className="text-xs font-semibold uppercase tracking-brand text-bronze">
-            Project Type
+            Proje Türü
           </span>
           <select
             name="projectType"
@@ -347,7 +347,7 @@ export function ContactForm() {
             className={controlClass("projectType")}
           >
             <option value="" disabled>
-              Select a project type
+              Proje türünü seçin
             </option>
             {projectTypes.map((type) => (
               <option key={type} value={type}>
@@ -364,7 +364,7 @@ export function ContactForm() {
 
         <label className="block">
           <span className="text-xs font-semibold uppercase tracking-brand text-bronze">
-            Project Location
+            Proje Konumu
           </span>
           <input
             name="projectLocation"
@@ -379,7 +379,7 @@ export function ContactForm() {
 
       <label className="block">
         <span className="text-xs font-semibold uppercase tracking-brand text-bronze">
-          Project Size / Scope
+          Proje Ölçeği / Kapsamı
         </span>
         <input
           name="projectScope"
@@ -392,7 +392,7 @@ export function ContactForm() {
 
       <label className="block">
         <span className="text-xs font-semibold uppercase tracking-brand text-bronze">
-          Project Brief / Message
+          Proje Özeti / Mesajınız
         </span>
         <textarea
           name="message"
@@ -424,7 +424,7 @@ export function ContactForm() {
         disabled={status === "submitting"}
         className="mt-2 inline-flex w-fit bg-ink px-6 py-4 text-xs font-semibold uppercase tracking-brand text-porcelain transition hover:bg-bronze hover:text-ink disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {status === "submitting" ? "Sending..." : "Start a Project"}
+        {status === "submitting" ? "Gönderiliyor..." : "Proje Talebi Gönder"}
       </button>
     </form>
   );

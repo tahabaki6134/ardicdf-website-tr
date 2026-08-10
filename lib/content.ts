@@ -1,20 +1,20 @@
 export const brand = {
   name: "ARDIÇ DESIGN & FABRICATION",
   shortName: "ARDIÇ",
-  tagline: "Built to Be Remembered.",
+  tagline: "Hatırlanmak İçin Tasarlandı.",
   phone: "+90 543 626 89 69",
-  location: "Karadeniz Caddesi No:131, Ferhatpaşa, Ataşehir, Istanbul, Turkey"
+  location: "Karadeniz Caddesi No:131, Ferhatpaşa, Ataşehir, İstanbul, Türkiye"
 };
 
 export const navigation = [
-  { href: "/", label: "Home" },
-  { href: "/works", label: "Works" },
-  { href: "/concepts", label: "Concepts" },
-  { href: "/services", label: "Services" },
-  { href: "/about", label: "About" },
-  { href: "/fabrication", label: "Fabrication" },
-  { href: "/live", label: "Live", mobileLabel: "Live Atelier", footerLabel: "Live Atelier" },
-  { href: "/contact", label: "Contact" }
+  { href: "/", label: "Ana Sayfa" },
+  { href: "/works", label: "Projeler" },
+  { href: "/concepts", label: "Konseptler" },
+  { href: "/services", label: "Hizmetler" },
+  { href: "/about", label: "Hakkımızda" },
+  { href: "/fabrication", label: "Üretim" },
+  { href: "/live", label: "Canlı", mobileLabel: "Canlı Atölye", footerLabel: "Canlı Atölye" },
+  { href: "/contact", label: "İletişim" }
 ];
 
 type ConceptCollection = {
@@ -36,118 +36,118 @@ type ConceptCollection = {
 export const conceptCollections: ConceptCollection[] = [
   {
     number: "SC-001",
-    title: "Olive Lounge Concept",
+    title: "Zeytin Lounge Konsepti",
     description:
-      "A warm and refined lounge concept built around olive green seating, walnut wood tones, bronze accents, textured stone surfaces, smoked glass, and ambient lighting. This concept can be adapted for private lounges, boutique commercial interiors, hotel waiting areas, reception zones, and thematic hospitality spaces.",
+      "Zeytin yeşili oturma elemanları, ceviz tonları, bronz detaylar, dokulu taş yüzeyler, füme cam ve ambiyans aydınlatmasıyla şekillenen sıcak ve rafine bir lounge konsepti. Özel salonlara, butik ticari iç mekanlara, otel bekleme alanlarına, resepsiyonlara ve tematik konaklama mekanlarına uyarlanabilir.",
     image: "/projects/concepts/olive-lounge-concept-interior-01.png",
     imageAlt:
-      "Olive Lounge Concept interior with olive green seating and warm wood atmosphere",
+      "Zeytin yeşili oturma elemanları ve sıcak ahşap atmosferiyle Zeytin Lounge Konsepti",
     imageCaption:
-      "Olive green seating, walnut surfaces, bronze accents, smoked glass, and warm indirect lighting.",
+      "Zeytin yeşili oturma grubu, ceviz yüzeyler, bronz detaylar, füme cam ve sıcak dolaylı aydınlatma.",
     galleryImages: [
       {
         src: "/projects/concepts/olive-lounge-concept-detail-chair-01.png",
         alt: "Olive Lounge Concept close-up of olive green sculptural lounge seating with walnut background",
-        caption: "Olive green seating detail",
+        caption: "Zeytin yeşili oturma elemanı detayı",
         position: "50% 48%"
       },
       {
         src: "/projects/concepts/olive-lounge-concept-detail-table-01.png",
         alt: "Olive Lounge Concept smoked glass table with bronze frame, walnut flooring, and warm accessories",
-        caption: "Smoked glass and bronze lounge table",
+        caption: "Füme cam ve bronz lounge masası",
         position: "50% 52%"
       },
       {
         src: "/projects/concepts/olive-lounge-concept-sculptural-mirror-01.png",
         alt: "Olive Lounge Concept sculptural wall mirror with warm backlighting, walnut panels, and stone console",
-        caption: "Sculptural mirror and textured wall feature",
+        caption: "Heykelsi ayna ve dokulu duvar detayı",
         position: "50% 50%"
       },
       {
         src: "/projects/concepts/olive-lounge-concept-material-palette-01.png",
         alt: "Olive Lounge Concept material palette with olive fabric, walnut wood, bronze metal, stone and smoked glass",
-        caption: "Material palette with olive fabric, walnut, bronze, stone, and glass",
+        caption: "Zeytin kumaş, ceviz, bronz, taş ve cam malzeme paleti",
         position: "50% 50%"
       }
     ],
     adaptableElements: [
-      "Olive green seating group",
-      "Sculptural wall mirror",
-      "Walnut wood surfaces",
-      "Bronze metal details",
-      "Smoked / clear glass",
-      "Warm indirect lighting",
-      "Textured stone or plaster wall features"
+      "Zeytin yeşili oturma grubu",
+      "Heykelsi duvar aynası",
+      "Ceviz ahşap yüzeyler",
+      "Bronz metal detaylar",
+      "Füme / şeffaf cam",
+      "Sıcak dolaylı aydınlatma",
+      "Dokulu taş veya sıva duvar elemanları"
     ]
   },
   {
     number: "SC-002",
-    title: "Futuristic Pod Concept",
+    title: "Fütüristik Pod Konsepti",
     description:
-      "A futuristic commercial and thematic interior concept centered around a sculptural pod form, glossy metallic shell finishes, warm walnut interior surfaces, dark stone flooring, smoked glass, and atmospheric lighting. This concept can be adapted for reception areas, experience rooms, luxury retail spaces, themed lounges, exhibition areas, and brand environments.",
+      "Heykelsi pod formu, parlak metalik kabuk, sıcak ceviz iç yüzeyler, koyu taş zemin, füme cam ve atmosferik aydınlatma etrafında gelişen fütüristik bir ticari iç mekan konsepti. Resepsiyonlara, deneyim odalarına, lüks mağazalara, tematik salonlara, sergi alanlarına ve marka mekanlarına uyarlanabilir.",
     image: "/projects/concepts/futuristic-pod-concept-interior-01.png",
     imageAlt:
-      "Futuristic Pod Concept interior with sculptural metallic pod and warm ambient lighting",
+      "Heykelsi metalik pod ve sıcak ambiyans aydınlatmalı Fütüristik Pod Konsepti",
     imageCaption:
-      "A sculptural metallic pod language for reception, retail, exhibition, and brand environments.",
+      "Resepsiyon, perakende, sergi ve marka mekanları için heykelsi metalik pod tasarım dili.",
     galleryImages: [
       {
         src: "/projects/concepts/futuristic-pod-concept-material-palette-01.png",
         alt: "Futuristic Pod Concept material palette with metallic shell, walnut wood, stone and glass finishes",
-        caption: "Material palette with metallic shell, walnut, stone, bronze, and glass",
+        caption: "Metalik kabuk, ceviz, taş, bronz ve cam malzeme paleti",
         position: "50% 50%"
       },
       {
         src: "/projects/concepts/futuristic-pod-concept-detail-shell-01.png",
         alt: "Futuristic Pod Concept close-up of glossy metallic pod shell and warm walnut interior lighting",
-        caption: "Glossy shell and walnut interior detail",
+        caption: "Parlak kabuk ve ceviz iç yüzey detayı",
         position: "50% 50%"
       },
       {
         src: "/projects/concepts/futuristic-pod-concept-detail-counter-01.png",
         alt: "Futuristic Pod Concept reception counter with curved metallic shell and warm hidden lighting",
-        caption: "Curved reception counter and hidden lighting",
+        caption: "Kavisli resepsiyon bankosu ve gizli aydınlatma",
         position: "50% 50%"
       },
       {
         src: "/projects/concepts/futuristic-pod-concept-interior-02.png",
         alt: "Futuristic Pod Concept interior with sculptural metallic pod and ambient lighting in a premium lobby",
-        caption: "Full pod concept in a premium lobby setting",
+        caption: "Premium lobi ortamında bütüncül pod konsepti",
         position: "50% 50%"
       },
       {
         src: "/projects/concepts/futuristic-pod-concept-presentation-01.png",
         alt: "Futuristic Pod Concept presentation visual with metallic pod, dark stone flooring and brand atmosphere",
-        caption: "Presentation view for commercial and thematic interiors",
+        caption: "Ticari ve tematik iç mekanlar için sunum görünümü",
         position: "50% 50%"
       }
     ],
     adaptableElements: [
-      "Sculptural pod structure",
-      "Glossy metallic gray shell",
-      "Walnut wood interior surfaces",
-      "Dark stone floor finish",
-      "Bronze metal accents",
-      "Smoked / clear glass",
-      "Ambient hidden lighting",
-      "Custom reception or display counter"
+      "Heykelsi pod strüktürü",
+      "Parlak metalik gri kabuk",
+      "Ceviz ahşap iç yüzeyler",
+      "Koyu taş zemin",
+      "Bronz metal detaylar",
+      "Füme / şeffaf cam",
+      "Gizli ambiyans aydınlatması",
+      "Özel resepsiyon veya sergileme bankosu"
     ]
   },
   {
     number: "SC-003",
-    title: "Custom Thematic Interior Elements",
+    title: "Özel Tematik İç Mekan Elemanları",
     description:
-      "A flexible concept category for custom-made thematic objects and interior pieces such as sculptural chairs, statement mirrors, decorative wall objects, display units, art pieces, and architectural details. Each element can be redesigned according to the client's room, brand, scale, and atmosphere.",
+      "Heykelsi koltuklar, karakteristik aynalar, dekoratif duvar objeleri, sergileme üniteleri, sanat eserleri ve mimari detaylar gibi özel üretim tematik parçalar için esnek bir konsept ailesi. Her eleman mekanın ölçüsüne, markaya ve hedeflenen atmosfere göre yeniden tasarlanabilir.",
     imageCaption:
-      "A flexible concept family for sculptural furniture, mirrors, display objects, reliefs, and brand-specific interior pieces.",
+      "Heykelsi mobilyalar, aynalar, sergileme objeleri, rölyefler ve markaya özel iç mekan parçaları için esnek konsept ailesi.",
     adaptableElements: [
-      "Custom chairs and seating forms",
-      "Sculptural mirrors",
-      "Wall art and relief surfaces",
-      "Thematic display objects",
-      "Decorative furniture pieces",
-      "Brand-specific interior elements",
-      "Lighting-integrated sculptural details"
+      "Özel koltuk ve oturma formları",
+      "Heykelsi aynalar",
+      "Duvar sanatı ve rölyef yüzeyler",
+      "Tematik sergileme objeleri",
+      "Dekoratif mobilya parçaları",
+      "Markaya özel iç mekan elemanları",
+      "Aydınlatma entegre heykelsi detaylar"
     ]
   }
 ];
@@ -155,109 +155,109 @@ export const conceptCollections: ConceptCollection[] = [
 export const conceptProcess = [
   {
     number: "01",
-    title: "Select a Concept Direction",
-    copy: "Choose a signature concept or visual direction that fits your desired atmosphere."
+    title: "Konsept Yönünü Belirleyin",
+    copy: "Hedeflediğiniz atmosfere uygun özgün bir konsept veya görsel yön seçin."
   },
   {
     number: "02",
-    title: "Adapt It to Your Space",
-    copy: "We refine dimensions, materials, lighting, furniture, and sculptural details according to your room or commercial area."
+    title: "Mekanınıza Uyarlayalım",
+    copy: "Ölçüleri, malzemeleri, aydınlatmayı, mobilyaları ve heykelsi detayları mekanınıza göre geliştiriyoruz."
   },
   {
     number: "03",
-    title: "Design Development",
-    copy: "We prepare the adapted design language, material direction, and production logic."
+    title: "Tasarım Geliştirme",
+    copy: "Uyarlanmış tasarım dilini, malzeme kararlarını ve üretim kurgusunu hazırlıyoruz."
   },
   {
     number: "04",
-    title: "In-House Manufacturing",
-    copy: "Approved elements are produced through our fabrication workflow, including CNC, EPS/XPS shaping, sculptural finishing, 3D printing, molds, coatings, and assembly where needed."
+    title: "Kendi Atölyemizde Üretim",
+    copy: "Onaylanan elemanları CNC, EPS/XPS şekillendirme, heykel uygulaması, 3D baskı, kalıp, kaplama ve montaj süreçleriyle üretiyoruz."
   },
   {
     number: "05",
-    title: "Delivery and Installation Support",
-    copy: "The final concept elements are prepared for site integration, installation, or project delivery depending on the scope."
+    title: "Teslimat ve Montaj Desteği",
+    copy: "Tamamlanan konsept elemanlarını proje kapsamına göre sahada uygulama, montaj veya teslimat için hazırlıyoruz."
   }
 ];
 
 export const services = [
   {
-    title: "Brand Installations",
+    title: "Marka Uygulamaları",
     description:
-      "Retail, hospitality, and event installations developed from concept and design through fabrication, finishing, assembly, and site delivery."
+      "Perakende, konaklama ve etkinlik projeleri için konseptten üretime, yüzey bitişinden montaj ve saha teslimine kadar geliştirilen marka uygulamaları."
   },
   {
-    title: "Architectural Decor",
+    title: "Mimari Dekorasyon",
     description:
-      "Custom interior and exterior elements, CNC-carved details, columns, reliefs, surfaces, and architectural features produced to project requirements."
+      "Projeye özel iç ve dış mekan elemanları, CNC işlenmiş detaylar, kolonlar, rölyefler, yüzeyler ve mimari dekor uygulamaları."
   },
   {
-    title: "Sculptures & Artworks",
+    title: "Heykel ve Sanat Uygulamaları",
     description:
-      "Statement works, character forms, artistic objects, and public-facing pieces shaped through sculpture, coating, painting, and finishing."
+      "Heykel, kaplama, boyama ve yüzey bitirme süreçleriyle üretilen karakterler, sanatsal objeler ve büyük ölçekli dikkat çekici eserler."
   },
   {
-    title: "Thematic Spaces",
+    title: "Tematik Mekanlar",
     description:
-      "Narrative-driven environments for commercial, cultural, and leisure destinations, built with scenic fabrication and installation coordination."
+      "Ticari, kültürel ve eğlence alanları için dekor üretimi ve montaj koordinasyonuyla hayata geçirilen, hikaye odaklı tematik mekanlar."
   },
   {
-    title: "Industrial 3D Printing",
+    title: "Endüstriyel 3D Baskı",
     description:
-      "Large-format 3D printing for prototypes, molds, sculptural forms, architectural components, and custom display objects using 80×80×80 cm, 40×40×40 cm, and 100×100×100 cm production capacity."
+      "Prototip, kalıp, heykelsi form, mimari bileşen ve özel sergileme objeleri için 80×80×80 cm, 40×40×40 cm ve 100×100×100 cm üretim kapasiteli büyük format 3D baskı."
   }
 ];
 
 export const heroSlides = [
   {
     image: "/home/hero-roman-heritage.jpeg",
-    alt: "Roman columns, ancient stone tablets, and warm historical lighting",
-    label: "Historical Environments"
+    alt: "Roma kolonları, antik taş tabletler ve sıcak tarihi aydınlatma",
+    label: "Tarihi Mekanlar"
   },
   {
     image: "/home/brand-story-lobby.jpeg",
-    alt: "Dark premium lobby with natural rock forms and Ardic wall branding",
-    label: "Built to Be Remembered"
+    alt: "Doğal kaya formları ve Ardıç marka duvarıyla koyu premium lobi",
+    label: "Hatırlanmak İçin Tasarlandı"
   },
   {
     image: "/home/production-columns.png",
-    alt: "White Corinthian column production and sculptural fabrication details",
-    label: "Fabrication Workshop"
+    alt: "Beyaz Korint kolon üretimi ve heykel detayları",
+    label: "Üretim Atölyesi"
   },
   {
     image: "/home/featured-entrance-gate.png",
-    alt: "Monumental entrance gate architectural fabrication project",
-    label: "Architectural Environments"
+    alt: "Anıtsal giriş kapısı mimari üretim projesi",
+    label: "Mimari Mekanlar"
   },
   {
     image: "/home/featured-vintage-vehicle.png",
-    alt: "Vintage black rental vehicle custom experience object",
-    label: "Fantasy & Experience Spaces"
+    alt: "Siyah klasik araç özel deneyim objesi",
+    label: "Fantastik ve Deneyim Mekanları"
   },
   {
     image: "/home/featured-burger-sculpture.png",
-    alt: "Giant burger sculpture for commercial brand experience",
-    label: "Commercial Sculptures"
+    alt: "Ticari marka deneyimi için dev burger heykeli",
+    label: "Ticari Heykeller"
   }
 ];
 
 export const works = [
   {
-    title: "Monumental Architectural Fabrication",
-    type: "Architectural Environments",
-    number: "Project 01",
+    title: "Anıtsal Mimari Üretim",
+    type: "Mimari Mekanlar",
+    number: "Proje 01",
     image: "/home/featured-entrance-gate.png"
   },
   {
-    title: "Custom Experience Objects",
-    type: "Fantasy & Experience Spaces",
-    number: "Project 02",
+    title: "Özel Deneyim Objeleri",
+    type: "Fantastik ve Deneyim Mekanları",
+    number: "Proje 02",
     image: "/home/featured-vintage-vehicle.png"
   },
   {
-    title: "Commercial Sculptures & Brand Experiences",
-    type: "Commercial & Thematic Interiors",
-    number: "Project 03",
+    title: "Ticari Heykeller ve Marka Deneyimleri",
+    type: "Ticari ve Tematik İç Mekanlar",
+    number: "Proje 03",
     image: "/home/featured-burger-sculpture.png"
   }
 ];
@@ -307,17 +307,17 @@ type PortfolioCategoryInput = {
 
 const portfolioCategoryData: PortfolioCategoryInput[] = [
   {
-    title: "Safari Experiences",
+    title: "Safari Deneyimleri",
     slug: "safari-experiences",
     description:
-      "Animal-inspired scenic elements and immersive visitor experiences built for destination environments.",
+      "Destinasyon mekanları için hayvan figürleri, dekor elemanları ve etkileyici ziyaretçi deneyimleri.",
     shortDescription:
-      "Animal-inspired scenic elements and immersive visitor experiences built for destination environments.",
+      "Destinasyon mekanları için hayvan figürleri, dekor elemanları ve etkileyici ziyaretçi deneyimleri.",
     href: "/works/safari-experiences",
-    introHeading: "Immersive wildlife-inspired environments shaped for visitor engagement.",
+    introHeading: "Ziyaretçi etkileşimi için tasarlanan, doğadan ilham alan sürükleyici mekanlar.",
     intro: [
-      "Safari Experiences brings together animal figures, scenic elements, and visitor-facing installations designed to create atmosphere, movement, and memory.",
-      "The gallery includes fabricated animals, landscape accents, and themed destination pieces produced through sculptural and production workflows."
+      "Safari Deneyimleri; atmosfer, hareket ve kalıcı iz yaratmak üzere tasarlanan hayvan figürlerini, dekor elemanlarını ve ziyaretçi odaklı uygulamaları bir araya getirir.",
+      "Galeride heykel ve üretim süreçleriyle hazırlanan hayvan figürleri, peyzaj detayları ve tematik destinasyon elemanları yer alır."
     ],
     images: portfolioImageSet("safari-experiences", 9),
     coverImages: [
@@ -332,20 +332,20 @@ const portfolioCategoryData: PortfolioCategoryInput[] = [
     published: true
   },
   {
-    title: "Sculptures & Characters",
+    title: "Heykeller ve Karakterler",
     slug: "sculptures-characters",
     description:
-      "Custom character figures, sculptural objects, props, and themed forms produced for memorable spaces.",
+      "Akılda kalıcı mekanlar için üretilen özel karakter figürleri, heykelsi objeler, aksesuarlar ve tematik formlar.",
     shortDescription:
-      "Custom character figures, sculptural objects, props, and themed forms produced for memorable spaces.",
+      "Akılda kalıcı mekanlar için üretilen özel karakter figürleri, heykelsi objeler, aksesuarlar ve tematik formlar.",
     coverImage: "/services/sculpture-elephant-front.jpeg",
     coverPosition: "50% 35%",
     alt: "Large-scale sculptural character and artwork cover image",
     href: "/works/sculptures-characters",
-    introHeading: "Character work and sculptural objects with strong visual identity.",
+    introHeading: "Güçlü görsel kimliğe sahip karakterler ve heykelsi objeler.",
     intro: [
-      "Sculptures & Characters covers standalone figures, mascots, decorative objects, and special props built for themed environments, retail moments, and entertainment spaces.",
-      "Each piece is treated as a physical storytelling object, moving from shaping and fabrication through surface detail and finishing."
+      "Heykeller ve Karakterler; tematik mekanlar, perakende alanları ve eğlence projeleri için üretilen bağımsız figürleri, maskotları, dekoratif objeleri ve özel aksesuarları kapsar.",
+      "Her parça; şekillendirme ve üretimden yüzey detaylarına ve son kat uygulamalarına uzanan fiziksel bir hikaye anlatım öğesi olarak ele alınır."
     ],
     images: [
       ...portfolioImageSequence("sculptures-characters", [1, 2, 3, 4, 9, 10, 11, 12, 13]),
@@ -368,17 +368,17 @@ const portfolioCategoryData: PortfolioCategoryInput[] = [
     published: true
   },
   {
-    title: "Artificial Rock & Organic Forms",
+    title: "Yapay Kaya ve Organik Formlar",
     slug: "artificial-rock-organic-forms",
     description:
-      "Artificial rockwork, organic scenic forms, fantasy structures, and nature-inspired fabricated elements.",
+      "Yapay kaya uygulamaları, organik dekor formları, fantastik yapılar ve doğadan ilham alan özel üretim elemanlar.",
     shortDescription:
-      "Artificial rockwork, organic scenic forms, fantasy structures, and nature-inspired fabricated elements.",
+      "Yapay kaya uygulamaları, organik dekor formları, fantastik yapılar ve doğadan ilham alan özel üretim elemanlar.",
     href: "/works/artificial-rock-organic-forms",
-    introHeading: "Organic scenic forms produced with texture, scale, and atmosphere.",
+    introHeading: "Doku, ölçek ve atmosfer odağında üretilen organik dekor formları.",
     intro: [
-      "Artificial Rock & Organic Forms includes scenic rock surfaces, fantasy mushroom houses, carved reliefs, and organic structures shaped for themed environments.",
-      "The work combines sculptural modeling, coatings, textures, and fabrication logic to create durable natural and fantasy forms."
+      "Yapay Kaya ve Organik Formlar; tematik mekanlar için şekillendirilen kaya yüzeylerini, fantastik mantar evleri, oyma rölyefleri ve organik yapıları kapsar.",
+      "Dayanıklı doğal ve fantastik formlar oluşturmak için heykel modelleme, kaplama, doku ve üretim teknikleri birlikte kullanılır."
     ],
     images: [
       ...portfolioImageSequence("artificial-rock-organic-forms", [1, 2, 3, 4, 5, 6, 7, 9, 10]),
@@ -406,20 +406,20 @@ const portfolioCategoryData: PortfolioCategoryInput[] = [
     published: true
   },
   {
-    title: "Historical & Thematic Environments",
+    title: "Tarihi ve Tematik Mekanlar",
     slug: "historical-thematic-environments",
     description:
-      "Heritage-inspired columns, inscriptions, arches, facade elements, and themed architectural environments.",
+      "Kültürel mirastan ilham alan kolonlar, yazıtlar, kemerler, cephe elemanları ve tematik mimari mekanlar.",
     shortDescription:
-      "Heritage-inspired columns, inscriptions, arches, facade elements, and themed architectural environments.",
+      "Kültürel mirastan ilham alan kolonlar, yazıtlar, kemerler, cephe elemanları ve tematik mimari mekanlar.",
     coverImage: "/services/architectural-decor-relief.jpeg",
     coverPosition: "50% 45%",
     alt: "Decorative architectural and thematic environment cover image",
     href: "/works/historical-thematic-environments",
-    introHeading: "Cultural and thematic environments translated into built detail.",
+    introHeading: "Kültürel ve tematik anlatıların mimari detaylara dönüştüğü mekanlar.",
     intro: [
-      "Historical & Thematic Environments gathers Roman columns, carved inscriptions, tiled arches, facade pieces, and heritage-inspired spatial elements.",
-      "These works combine reference-driven design, CNC production, hand finishing, and scenic installation for cultural and destination settings."
+      "Tarihi ve Tematik Mekanlar; Roma kolonlarını, oyma yazıtları, çinili kemerleri, cephe parçalarını ve kültürel mirastan ilham alan mekansal elemanları bir araya getirir.",
+      "Bu çalışmalar kültür ve destinasyon projeleri için referans odaklı tasarım, CNC üretim, el işçiliği ve dekor uygulamasını buluşturur."
     ],
     images: [
       ...portfolioImageSequence("historical-thematic-environments", [
@@ -536,17 +536,17 @@ const portfolioCategoryData: PortfolioCategoryInput[] = [
     published: true
   },
   {
-    title: "CNC Manufacturing Processes",
+    title: "CNC Üretim Süreçleri",
     slug: "cnc-manufacturing-processes",
     description:
-      "Production-stage images showing CNC-cut forms, foam models, relief components, and fabrication workflows.",
+      "CNC kesimli formlar, köpük modeller, rölyef parçaları ve atölye üretim süreçleri.",
     shortDescription:
-      "Production-stage images showing CNC-cut forms, foam models, relief components, and fabrication workflows.",
+      "CNC kesimli formlar, köpük modeller, rölyef parçaları ve atölye üretim süreçleri.",
     href: "/works/cnc-manufacturing-processes",
-    introHeading: "Digital production workflows for complex physical forms.",
+    introHeading: "Karmaşık fiziksel formlar için dijital üretim süreçleri.",
     intro: [
-      "CNC Manufacturing Processes documents the workshop stages behind large scenic forms, decorative pieces, and shaped components.",
-      "The gallery highlights machining, foam work, component preparation, and production logic before finishing and installation."
+      "CNC Üretim Süreçleri, büyük dekor formlarının ve özel parçaların atölyedeki imalat aşamalarını belgeler.",
+      "Galeri; son yüzey ve montaj öncesindeki CNC işleme, köpük şekillendirme, parça hazırlığı ve üretim kurgusunu gösterir."
     ],
     images: portfolioImageSet("cnc-manufacturing-processes", 12),
     coverImages: [
@@ -562,17 +562,17 @@ const portfolioCategoryData: PortfolioCategoryInput[] = [
     published: true
   },
   {
-    title: "Molds & Composite Production",
+    title: "Kalıp ve Kompozit Üretimi",
     slug: "molds-composite-production",
     description:
-      "Mold-making, coating, composite shaping, and repeatable production systems for sculptural fabrication.",
+      "Heykel üretimi için kalıp, kaplama, kompozit şekillendirme ve tekrarlanabilir üretim sistemleri.",
     shortDescription:
-      "Mold systems, composite production, polyester casting, and repeatable fabrication workflows for custom forms.",
+      "Özel formlar için kalıp sistemleri, kompozit üretim, polyester döküm ve tekrarlanabilir imalat süreçleri.",
     href: "/works/molds-composite-production",
-    introHeading: "Repeatable production systems for custom sculptural and scenic output.",
+    introHeading: "Özel heykel ve dekor elemanları için tekrarlanabilir üretim sistemleri.",
     intro: [
-      "Molds & Composite Production shows the practical fabrication stages used to turn shaped references into repeatable, durable parts.",
-      "These images document composite-ready forms, coated surfaces, molded pieces, and production details that support larger installations."
+      "Kalıp ve Kompozit Üretimi, ana modellerin tekrarlanabilir ve dayanıklı parçalara dönüştürülmesindeki uygulama aşamalarını gösterir.",
+      "Görseller kompozite hazır formları, kaplanmış yüzeyleri, kalıp parçalarını ve büyük uygulamaları destekleyen üretim detaylarını belgeler."
     ],
     images: portfolioImageSequence("molds-composite-production", [1, 2, 3, 4, 5, 6, 7, 8, 9]),
     coverImages: [
@@ -588,104 +588,104 @@ const portfolioCategoryData: PortfolioCategoryInput[] = [
     published: true
   },
   {
-    title: "Commercial & Brand Installations",
+    title: "Ticari ve Marka Uygulamaları",
     slug: "commercial-brand-installations",
     description:
-      "Retail displays, branded environments, product replicas, storefront moments, and commercial installations.",
+      "Perakende sergilemeleri, marka mekanları, ürün replikaları, vitrinler ve ticari uygulamalar.",
     shortDescription:
-      "Retail displays, promotional objects, commercial fixtures, and branded fabrication built for visual impact.",
+      "Görsel etki için üretilen perakende sergilemeleri, promosyon objeleri ve markalı ticari uygulamalar.",
     coverImage: "/services/brand-nyx-bottle.jpeg",
     coverPosition: "50% 45%",
     alt: "Commercial brand installation portfolio category cover image",
     href: "/works/commercial-brand-installations",
-    introHeading: "Brand environments and commercial objects built for visibility and impact.",
+    introHeading: "Görünürlük ve etki için üretilen marka mekanları ve ticari objeler.",
     intro: [
-      "Commercial & Brand Installations includes retail displays, cosmetics-focused objects, storefront pieces, and commercial interiors produced for public-facing experiences.",
-      "The work balances brand visibility, fabrication quality, and durable execution across display, decor, and installation formats."
+      "Ticari ve Marka Uygulamaları; ziyaretçi deneyimi için üretilen perakende sergilemelerini, kozmetik objelerini, vitrin parçalarını ve ticari iç mekan elemanlarını kapsar.",
+      "Bu işler sergileme, dekor ve montaj uygulamalarında marka görünürlüğünü, üretim kalitesini ve dayanıklı uygulamayı dengeler."
     ],
     images: [
       ...portfolioImageSet("commercial-brand-installations", 12),
       {
         src: "/projects/portfolio/commercial-brand-installations/ardic-branded-spherical-reception-display-01.png",
         alt: "Large spherical reception display object in an Ardic branded premium lobby",
-        title: "Branded Spherical Reception Display",
+        title: "Markalı Küresel Resepsiyon Objesi",
         description:
-          "A polished sculptural display object developed as a striking branded lobby centerpiece."
+          "Markalı bir lobide odak noktası olarak geliştirilen parlak yüzeyli heykelsi sergileme objesi."
       },
       {
         src: "/projects/portfolio/commercial-brand-installations/oversized-green-tennis-ball-display-01.png",
         alt: "Oversized green tennis ball display objects arranged in an outdoor production area",
-        title: "Oversized Tennis Ball Display Objects",
+        title: "Büyük Ölçekli Tenis Topu Objeleri",
         description:
-          "Large-scale sports-themed display objects produced for a commercial presentation environment."
+          "Ticari bir sunum alanı için üretilen büyük ölçekli spor temalı sergileme objeleri."
       },
       {
         src: "/projects/portfolio/commercial-brand-installations/illuminated-sculptural-wings-brand-installation-01.png",
         alt: "Illuminated sculptural red wings installed as a commercial interior feature wall",
-        title: "Illuminated Sculptural Wings",
+        title: "Aydınlatmalı Heykelsi Kanatlar",
         description:
-          "A dramatic wall-mounted sculptural installation designed for a high-impact commercial interior."
+          "Yüksek etkili ticari bir iç mekan için tasarlanan, duvara monte heykelsi uygulama."
       },
       {
         src: "/projects/portfolio/commercial-brand-installations/giant-burger-display-object-01.png",
         alt: "Giant burger sculpture produced as a commercial brand display object",
-        title: "Giant Burger Display Object",
+        title: "Dev Burger Sergileme Objesi",
         description:
-          "A realistic oversized burger object fabricated for promotional and retail presentation."
+          "Tanıtım ve perakende sunumu için üretilen gerçekçi, büyük ölçekli burger objesi."
       },
       {
         src: "/projects/portfolio/commercial-brand-installations/sculptures-characters-05.jpeg",
         alt: "Assorted oversized fruit display props produced for commercial presentation",
-        title: "Oversized Fruit Display Props",
+        title: "Büyük Ölçekli Meyve Dekorları",
         description:
           "A group of fruit display objects fabricated as promotional commercial props."
       },
       {
         src: "/projects/portfolio/commercial-brand-installations/sculptures-characters-06.jpeg",
         alt: "Oversized meat display props produced for a commercial food presentation",
-        title: "Oversized Meat Display Props",
+        title: "Büyük Ölçekli Et Dekorları",
         description:
           "Large food-themed display props created for commercial visual merchandising."
       },
       {
         src: "/projects/portfolio/commercial-brand-installations/sculptures-characters-07.jpeg",
         alt: "Oversized bread display props produced for commercial food presentation",
-        title: "Oversized Bread Display Props",
+        title: "Büyük Ölçekli Ekmek Dekorları",
         description:
           "Food-themed display objects fabricated for promotional or retail presentation."
       },
       {
         src: "/projects/portfolio/commercial-brand-installations/sculptures-characters-08.jpeg",
         alt: "Oversized carrot display object produced as a commercial food prop",
-        title: "Oversized Carrot Display Object",
+        title: "Büyük Ölçekli Havuç Objesi",
         description:
           "A large food prop shaped and finished for commercial display use."
       },
       {
         src: "/projects/portfolio/commercial-brand-installations/sculptures-characters-14.jpeg",
         alt: "Oversized burger prop in workshop production for a commercial food display",
-        title: "Burger Display Prop Production",
+        title: "Burger Sergileme Objesi Üretimi",
         description:
           "A commercial food display prop shown during workshop production."
       },
       {
         src: "/projects/portfolio/commercial-brand-installations/historical-thematic-environments-25.jpeg",
         alt: "EPSLAM branded decorative storefront arch produced for a commercial installation",
-        title: "EPSLAM Branded Storefront Arch",
+        title: "EPSLAM Markalı Mağaza Kemeri",
         description:
           "A branded decorative arch element produced as part of a commercial installation."
       },
       {
         src: "/projects/portfolio/commercial-brand-installations/historical-thematic-environments-26.jpeg",
         alt: "EPSLAM branded decorative display object produced for a commercial environment",
-        title: "EPSLAM Branded Display Object",
+        title: "EPSLAM Markalı Sergileme Objesi",
         description:
           "A freestanding branded decorative object fabricated for a commercial setting."
       },
       {
         src: "/projects/portfolio/commercial-brand-installations/molds-composite-production-10.jpeg",
         alt: "Finished oversized cosmetic bottle display props for a commercial brand presentation",
-        title: "Cosmetic Bottle Display Props",
+        title: "Kozmetik Şişesi Sergileme Objeleri",
         description:
           "Finished oversized cosmetic bottle objects produced for brand-focused commercial display."
       }
@@ -721,18 +721,18 @@ export const portfolioCategories = portfolioCategoryData.map((category, index) =
   coverImage: category.coverImage ?? getPortfolioImageSrc(category.images[0]),
   coverImages: (category.coverImages ?? [category.coverImage ?? category.images[0]]).map((image, imageIndex) => ({
     src: getPortfolioImageSrc(image),
-    alt: getPortfolioImageAlt(image, category.alt ?? `${category.title} cover image ${imageIndex + 1}`)
+    alt: getPortfolioImageAlt(image, category.alt ?? `${category.title} kapak görseli ${imageIndex + 1}`)
   })),
   coverPosition: category.coverPosition ?? "50% 50%",
-  alt: category.alt ?? `${category.title} portfolio category cover image`,
+  alt: category.alt ?? `${category.title} portföy kategorisi kapak görseli`,
   imageCount: category.images.length
 }));
 
 export const capabilities = [
-  "CNC fabrication",
-  "EPS / XPS processing",
-  "Sculpture production",
-  "Mold systems",
-  "Polyester casting",
-  "Finishing and installation"
+  "CNC üretim",
+  "EPS / XPS işleme",
+  "Heykel üretimi",
+  "Kalıp sistemleri",
+  "Polyester döküm",
+  "Yüzey bitirme ve montaj"
 ];

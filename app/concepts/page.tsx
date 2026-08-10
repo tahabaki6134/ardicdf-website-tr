@@ -5,16 +5,16 @@ import { SectionHeading } from "@/components/section-heading";
 import { conceptCollections, conceptProcess } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Signature Concepts",
+  title: "Özgün Konseptler",
   description:
-    "Original Ardic Design & Fabrication concept interiors, sculptural objects, seating groups, mirrors, pods, thematic elements, and custom-made design pieces adapted to client spaces.",
+    "Müşteri mekanlarına uyarlanan özgün Ardıç iç mekan konseptleri, heykelsi objeler, oturma grupları, aynalar ve tematik tasarım parçaları.",
   alternates: {
     canonical: "/concepts"
   },
   openGraph: {
-    title: "Signature Concepts",
+    title: "Özgün Konseptler",
     description:
-      "Explore original concept lines by Ardic Design & Fabrication, adapted to your space and manufactured in-house.",
+      "Ardıç Design & Fabrication'ın mekanınıza uyarlanan ve kendi atölyesinde üretilen özgün konseptlerini keşfedin.",
     url: "/concepts"
   }
 };
@@ -32,27 +32,26 @@ export default function ConceptsPage() {
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.86fr_1.14fr] lg:items-center">
           <div>
             <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
-              Signature Concepts
+              Özgün Konseptler
             </p>
             <h1 className="mt-8 max-w-2xl font-display text-5xl leading-[1.02] text-ink md:text-7xl">
-              Signature Concepts
+              Özgün Konseptler
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-8 text-ink/65">
-              Original design concepts adapted to your space and manufactured in-house.
+              Mekanınıza uyarlanan ve kendi atölyemizde üretilen özgün tasarım konseptleri.
             </p>
             <p className="mt-8 max-w-xl text-base leading-8 text-ink/65 md:text-lg md:leading-9">
-              Ardic Design & Fabrication develops original concept interiors,
-              sculptural objects, seating groups, mirrors, thematic elements, and
-              custom-made design pieces. Each concept can be adapted to the dimensions,
-              atmosphere, and functional needs of your own space, then produced through
-              our in-house fabrication workflow.
+              Ardıç Design & Fabrication özgün iç mekan konseptleri, heykelsi objeler,
+              oturma grupları, aynalar ve tematik tasarım parçaları geliştirir. Her konsept
+              mekanınızın ölçülerine, atmosferine ve işlevsel ihtiyaçlarına uyarlanır;
+              ardından kendi atölyemizde üretilir.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-5">
               <Link
                 href="/contact"
                 className="inline-flex border border-ink bg-ink px-6 py-4 text-xs font-semibold uppercase tracking-brand text-porcelain transition hover:border-bronze hover:bg-bronze hover:text-ink"
               >
-                Start a Project
+                Projenizi Başlatın
               </Link>
               <div className="h-px w-16 bg-bronze" />
             </div>
@@ -74,7 +73,7 @@ export default function ConceptsPage() {
                 SC-001
               </p>
               <p className="mt-3 font-display text-2xl leading-tight text-porcelain">
-                Adaptable lounge atmosphere with sculptural detail and warm material depth.
+                Heykelsi detaylar ve sıcak malzeme derinliğiyle uyarlanabilir lounge atmosferi.
               </p>
             </div>
           </div>
@@ -85,31 +84,30 @@ export default function ConceptsPage() {
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2">
           <article className="border border-ink/10 bg-porcelain p-8 md:p-10">
             <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
-              From Concept to Your Space
+              Konseptten Mekanınıza
             </p>
             <h2 className="mt-7 font-display text-4xl leading-tight text-ink md:text-5xl">
-              From Concept to Your Space
+              Konseptten Mekanınıza
             </h2>
             <p className="mt-7 leading-8 text-ink/65">
-              Our signature concepts are not fixed catalog products. They are adaptable
-              design systems. We refine the scale, materials, colors, lighting, furniture
-              pieces, sculptural elements, and architectural details according to the
-              client&apos;s space, then manufacture the approved design with our own production
-              capabilities.
+              Özgün konseptlerimiz sabit katalog ürünleri değil, uyarlanabilir tasarım
+              sistemleridir. Ölçek, malzeme, renk, aydınlatma, mobilya, heykel ve mimari
+              detayları müşterinin mekanına göre geliştirir; onaylanan tasarımı kendi
+              üretim kabiliyetlerimizle hayata geçiririz.
             </p>
           </article>
 
           <article className="border border-ink/10 bg-ink p-8 text-porcelain md:p-10">
             <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
-              Designed, Adapted, Manufactured
+              Tasarlandı, Uyarlandı, Üretildi
             </p>
             <h2 className="mt-7 font-display text-4xl leading-tight md:text-5xl">
-              Designed, Adapted, Manufactured
+              Tasarlandı, Uyarlandı, Üretildi
             </h2>
             <p className="mt-7 leading-8 text-porcelain/70">
-              Whether it is a lounge corner, a reception area, a themed room, a commercial
-              interior, a sculptural mirror, a custom chair, or a futuristic pod element,
-              we transform our concept ideas into physical, site-specific pieces.
+              Lounge köşesinden resepsiyona, tematik odadan ticari iç mekana, heykelsi aynadan
+              özel koltuğa veya fütüristik pod elemanına kadar konseptleri mekana özel fiziksel
+              parçalara dönüştürürüz.
             </p>
           </article>
         </div>
@@ -119,19 +117,18 @@ export default function ConceptsPage() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 border-b border-ink/10 pb-12 lg:grid-cols-[0.86fr_1.14fr] lg:items-end">
             <SectionHeading
-              eyebrow="Concept Collection"
-              title="Original concept lines prepared for adaptation."
+              eyebrow="Konsept Koleksiyonu"
+              title="Uyarlanmaya hazır özgün konsept çizgileri."
             />
             <p className="max-w-xl leading-8 text-ink/60">
-              Each Signature Concept begins as an Ardic design language, then becomes a
-              tailored proposal for the dimensions, function, atmosphere, materials, and
-              production needs of a real space.
+              Her özgün konsept bir Ardıç tasarım diliyle başlar; gerçek mekanın ölçüleri,
+              işlevi, atmosferi, malzemeleri ve üretim ihtiyaçları için özel bir öneriye dönüşür.
             </p>
           </div>
 
-          <nav className="mt-10 border border-ink/10 bg-white/45 p-4 lg:hidden" aria-label="Concept index">
+          <nav className="mt-10 border border-ink/10 bg-white/45 p-4 lg:hidden" aria-label="Konsept dizini">
             <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
-              Concept Index
+              Konsept Dizini
             </p>
             <div className="mt-4 grid gap-2 sm:grid-cols-3">
               {conceptIndex.map((item) => (
@@ -163,7 +160,7 @@ export default function ConceptsPage() {
                         <div className="relative min-h-[340px] bg-ink md:min-h-[520px]">
                           <Image
                             src={concept.image}
-                            alt={concept.imageAlt ?? `${concept.title} concept visual`}
+                            alt={concept.imageAlt ?? `${concept.title} konsept görseli`}
                             fill
                             sizes="(min-width: 1024px) 48vw, 100vw"
                             className="object-cover"
@@ -177,13 +174,13 @@ export default function ConceptsPage() {
                     ) : (
                       <div className="flex min-h-[340px] flex-col justify-between bg-ink p-8 text-porcelain md:min-h-[520px] md:p-10">
                         <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
-                          Adaptable Element Family
+                          Uyarlanabilir Eleman Ailesi
                         </p>
                         <div>
                           <div className="h-px w-16 bg-bronze" />
                           <p className="mt-8 max-w-md font-display text-4xl leading-tight">
-                            Sculptural objects, furniture, relief surfaces, mirrors, and
-                            brand-specific features.
+                            Heykelsi objeler, mobilyalar, rölyef yüzeyler, aynalar ve
+                            markaya özel detaylar.
                           </p>
                         </div>
                       </div>
@@ -215,14 +212,14 @@ export default function ConceptsPage() {
                       <div className="mb-7 flex flex-wrap items-end justify-between gap-4">
                         <div>
                           <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
-                            Material & Detail Views
+                            Malzeme ve Detay Görünümleri
                           </p>
                           <h3 className="mt-3 font-display text-3xl leading-tight text-ink">
-                            Concept Detail Visuals
+                            Konsept Detay Görselleri
                           </h3>
                         </div>
                         <p className="text-xs font-semibold uppercase tracking-brand text-ink/45">
-                          {concept.galleryImages.length} Images
+                          {concept.galleryImages.length} Görsel
                         </p>
                       </div>
                       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -254,9 +251,9 @@ export default function ConceptsPage() {
             </div>
 
             <aside className="sticky top-36 hidden lg:block">
-              <nav className="border border-ink/10 bg-white/55 p-6 shadow-soft" aria-label="Concept index">
+              <nav className="border border-ink/10 bg-white/55 p-6 shadow-soft" aria-label="Konsept dizini">
                 <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
-                  Concept Index
+                  Konsept Dizini
                 </p>
                 <div className="mt-5 space-y-2">
                   {conceptIndex.map((item) => (
@@ -285,15 +282,15 @@ export default function ConceptsPage() {
           <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
             <div>
               <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
-                How It Works
+                Nasıl İlerliyor?
               </p>
               <h2 className="mt-7 max-w-md font-display text-4xl leading-tight text-ink md:text-5xl">
-                How It Works
+                Nasıl İlerliyor?
               </h2>
               <p className="mt-7 max-w-md leading-8 text-ink/60">
-                A concept can remain intimate and residential or expand into a full
-                commercial environment. The process keeps design intent, site logic, and
-                fabrication in one controlled path.
+                Bir konsept özel ve küçük ölçekte kalabilir ya da bütüncül bir ticari mekana
+                dönüşebilir. Süreç; tasarım niyetini, saha gereksinimlerini ve üretimi kontrollü
+                tek bir akışta tutar.
               </p>
             </div>
 
@@ -320,7 +317,7 @@ export default function ConceptsPage() {
           <div className="relative min-h-[320px]">
             <Image
               src="/projects/concepts/futuristic-pod-concept-interior-01.png"
-              alt="Futuristic Pod Concept interior with sculptural metallic pod and warm ambient lighting"
+              alt="Heykelsi metalik pod ve sıcak ambiyans aydınlatmalı Fütüristik Pod Konsepti"
               fill
               sizes="(min-width: 1024px) 48vw, 100vw"
               className="object-cover"
@@ -330,20 +327,20 @@ export default function ConceptsPage() {
           </div>
           <div className="flex flex-col justify-center p-8 md:p-12">
             <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
-              Bring a Signature Concept Into Your Space
+              Özgün Bir Konsepti Mekanınıza Taşıyın
             </p>
             <h2 className="mt-7 max-w-xl font-display text-4xl leading-tight text-porcelain md:text-5xl">
-              Bring a Signature Concept Into Your Space
+              Özgün Bir Konsepti Mekanınıza Taşıyın
             </h2>
             <p className="mt-6 max-w-xl leading-8 text-porcelain/70">
-              Share your space, dimensions, and desired atmosphere. We can adapt one of
-              our signature concepts into a custom-made design and fabrication proposal.
+              Mekanınızı, ölçülerinizi ve hedeflediğiniz atmosferi paylaşın. Özgün
+              konseptlerimizden birini size özel tasarım ve üretim önerisine uyarlayalım.
             </p>
             <Link
               href="/contact"
               className="mt-9 inline-flex w-fit border border-bronze px-6 py-4 text-xs font-semibold uppercase tracking-brand text-porcelain transition hover:bg-bronze hover:text-ink"
             >
-              Start a Project
+              Projenizi Başlatın
             </Link>
           </div>
         </div>

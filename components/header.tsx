@@ -15,7 +15,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 overflow-x-hidden border-b border-ink/10 bg-porcelain/95 backdrop-blur-xl">
       <div className="mx-auto flex max-w-[1760px] items-center justify-between gap-5 px-5 py-4 md:px-8 md:py-5 2xl:px-10">
-        <Link href="/" className="group flex min-w-0 items-center gap-4 md:gap-5" aria-label="ARDIÇ home">
+        <Link href="/" className="group flex min-w-0 items-center gap-4 md:gap-5" aria-label="ARDIÇ ana sayfa">
           <Image
             src="/logo-symbol.svg"
             alt=""
@@ -32,12 +32,12 @@ export function Header() {
               Design & Fabrication
             </span>
             <span className="mt-1 block text-[0.48rem] font-semibold uppercase tracking-[0.28em] text-ink/45 sm:text-[0.56rem] md:text-[0.65rem]">
-              An EPSLAM Company
+              Bir EPSLAM Şirketi
             </span>
             <span className="mt-2 hidden h-px w-20 bg-bronze sm:block" />
           </span>
         </Link>
-        <nav className="hidden items-center gap-4 xl:gap-5 2xl:gap-8 lg:flex" aria-label="Primary navigation">
+        <nav className="hidden items-center gap-4 xl:gap-5 2xl:gap-8 lg:flex" aria-label="Ana menü">
           {navigation.map((item) => {
             const active = pathname === item.href;
             return (
@@ -57,11 +57,11 @@ export function Header() {
           href="/contact"
           className="hidden border border-bronze px-4 py-2 text-xs font-semibold uppercase tracking-brand text-bronze transition hover:bg-bronze hover:text-porcelain lg:inline-block"
         >
-          Start a Project
+          Projenizi Başlatalım
         </Link>
         <button
           type="button"
-          aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-label={mobileMenuOpen ? "Menüyü kapat" : "Menüyü aç"}
           aria-expanded={mobileMenuOpen}
           aria-controls="mobile-navigation"
           onClick={() => setMobileMenuOpen((open) => !open)}
@@ -87,7 +87,7 @@ export function Header() {
         className={`border-t border-ink/10 bg-porcelain px-5 py-5 shadow-soft transition lg:hidden ${
           mobileMenuOpen ? "block" : "hidden"
         }`}
-        aria-label="Mobile navigation"
+        aria-label="Mobil menü"
       >
         <div className="mx-auto grid max-w-7xl gap-1">
           {navigation.map((item) => (
@@ -107,7 +107,7 @@ export function Header() {
             onClick={closeMobileMenu}
             className="mt-5 inline-flex w-fit border border-bronze px-5 py-3 text-xs font-semibold uppercase tracking-brand text-bronze transition hover:bg-bronze hover:text-porcelain"
           >
-            Start a Project
+            Projenizi Başlatalım
           </Link>
         </div>
       </nav>

@@ -2,28 +2,28 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "References | Ardıç Design Factory"
+    absolute: "Referanslar | Ardıç Design & Fabrication"
   },
   description:
-    "Explore the completed projects, clients, and business references of Ardıç Design Factory.",
+    "Ardıç Design & Fabrication'ın tamamlanan projelerini, müşterilerini ve iş referanslarını keşfedin.",
   alternates: {
     canonical: "/references"
   },
   openGraph: {
-    title: "References | Ardıç Design Factory",
+    title: "Referanslar | Ardıç Design & Fabrication",
     description:
-      "Explore the completed projects, clients, and business references of Ardıç Design Factory.",
+      "Ardıç Design & Fabrication'ın tamamlanan projelerini, müşterilerini ve iş referanslarını keşfedin.",
     url: "/references"
   }
 };
 
 const futureSections = [
-  { id: "completed-projects", label: "Completed projects" },
-  { id: "clients", label: "Clients" },
-  { id: "brands", label: "Brands" },
-  { id: "industries", label: "Industries" },
-  { id: "international-projects", label: "International projects" },
-  { id: "certifications", label: "Certifications" }
+  { id: "completed-projects", label: "Tamamlanan projeler" },
+  { id: "clients", label: "Müşteriler" },
+  { id: "brands", label: "Markalar" },
+  { id: "industries", label: "Sektörler" },
+  { id: "international-projects", label: "Uluslararası projeler" },
+  { id: "certifications", label: "Sertifikalar" }
 ];
 
 export default function ReferencesPage() {
@@ -34,15 +34,15 @@ export default function ReferencesPage() {
           <div className="grid gap-12 border-b border-ink/10 pb-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
             <div>
               <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
-                References
+                Referanslar
               </p>
               <h1 className="mt-8 max-w-3xl font-display text-5xl leading-[1.02] text-ink md:text-7xl">
-                References
+                Referanslar
               </h1>
             </div>
             <p className="max-w-2xl text-base leading-8 text-ink/65 md:text-lg md:leading-9">
-              Discover the projects we have completed and the companies and organizations we have
-              had the privilege to work with.
+              Tamamladığımız projeleri ve birlikte çalışma fırsatı bulduğumuz şirket ve
+              kuruluşları keşfedin.
             </p>
           </div>
         </div>
@@ -53,16 +53,16 @@ export default function ReferencesPage() {
           <div className="grid gap-px bg-ink/10 lg:grid-cols-[0.78fr_1.22fr]">
             <div className="bg-porcelain p-7 md:p-10">
               <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
-                Coming Soon
+                Yakında
               </p>
               <h2 className="mt-7 max-w-xl font-display text-4xl leading-tight text-ink md:text-5xl">
-                Coming Soon
+                Yakında
               </h2>
             </div>
             <div className="flex min-h-72 items-center bg-porcelain p-7 md:p-10">
               <p className="max-w-3xl text-base leading-8 text-ink/65 md:text-lg md:leading-9">
-                This page will soon feature our completed projects, client portfolio, business
-                partners, industries served, and additional reference materials.
+                Bu sayfada yakında tamamlanan projelerimiz, müşteri portföyümüz, iş ortaklarımız,
+                hizmet verdiğimiz sektörler ve ek referans materyalleri yer alacaktır.
               </p>
             </div>
           </div>

@@ -15,7 +15,7 @@ export function WorkCard({ work }: WorkCardProps) {
       <div className="relative aspect-[4/3] overflow-hidden border border-ink/10 bg-white">
         <Image
           src={work.image}
-          alt={`${work.title} project cover`}
+          alt={`${work.title} proje kapak görseli`}
           fill
           sizes="(min-width: 1024px) 50vw, 100vw"
           className="object-contain transition duration-700 group-hover:scale-[1.02]"

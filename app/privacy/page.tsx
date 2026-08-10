@@ -2,29 +2,29 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
+  title: "Gizlilik Politikası",
   description:
-    "Privacy information for Ardıç Design & Fabrication project enquiries, contact details, WhatsApp communication, and submitted project information.",
+    "Ardıç Design & Fabrication proje talepleri, iletişim bilgileri, WhatsApp görüşmeleri ve gönderilen bilgiler için gizlilik açıklaması.",
   alternates: {
     canonical: "/privacy"
   },
   openGraph: {
-    title: "Privacy Policy",
+    title: "Gizlilik Politikası",
     description:
-      "How Ardıç Design & Fabrication uses project enquiry information to respond to client requests.",
+      "Ardıç Design & Fabrication'ın proje talebi bilgilerini nasıl kullandığına ilişkin açıklama.",
     url: "/privacy"
   }
 };
 
 const collectedData = [
-  "name",
-  "email address",
-  "phone or WhatsApp number",
-  "company name",
-  "project type",
-  "project location",
-  "project size or scope",
-  "project message or brief"
+  "ad soyad",
+  "e-posta adresi",
+  "telefon veya WhatsApp numarası",
+  "firma adı",
+  "proje türü",
+  "proje konumu",
+  "proje ölçeği veya kapsamı",
+  "proje mesajı veya özeti"
 ];
 
 export default function PrivacyPage() {
@@ -33,25 +33,24 @@ export default function PrivacyPage() {
       <section className="px-5 py-20 md:px-8 md:py-28">
         <div className="mx-auto max-w-4xl">
           <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
-            Privacy Policy
+            Gizlilik Politikası
           </p>
           <h1 className="mt-8 max-w-3xl font-display text-5xl leading-[1.02] text-ink md:text-7xl">
-            Project enquiry information is used only to respond to your request.
+            Proje talebi bilgileriniz yalnızca isteğinize yanıt vermek için kullanılır.
           </h1>
           <p className="mt-8 text-lg leading-9 text-ink/65">
-            Ardıç Design & Fabrication collects only the information needed to understand and
-            respond to project enquiries. We do not sell submitted enquiry information or use it
-            for unrelated marketing systems.
+            Ardıç Design & Fabrication, proje taleplerini anlamak ve yanıtlamak için gerekli
+            bilgileri toplar. Gönderilen bilgileri satmaz veya ilgisiz pazarlama sistemlerinde kullanmaz.
           </p>
 
           <div className="mt-14 grid gap-px bg-ink/10">
             <section className="bg-porcelain p-7 md:p-9">
               <h2 className="font-display text-3xl leading-tight text-ink">
-                Information We Receive
+                Aldığımız Bilgiler
               </h2>
               <p className="mt-5 leading-8 text-ink/65">
-                When you submit the project enquiry form, contact us by email, call us, or continue
-                through WhatsApp, we may receive:
+                Proje talep formunu gönderdiğinizde, e-posta, telefon veya WhatsApp üzerinden
+                iletişime geçtiğinizde şu bilgileri alabiliriz:
               </p>
               <ul className="mt-6 grid gap-3 text-ink/70 sm:grid-cols-2">
                 {collectedData.map((item) => (
@@ -64,44 +63,42 @@ export default function PrivacyPage() {
 
             <section className="bg-porcelain p-7 md:p-9">
               <h2 className="font-display text-3xl leading-tight text-ink">
-                How We Use It
+                Bilgileri Nasıl Kullanıyoruz?
               </h2>
               <p className="mt-5 leading-8 text-ink/65">
-                We use enquiry information to review your project request, understand the required
-                design and fabrication scope, contact you about the next steps, and coordinate
-                project discussions when appropriate.
+                Bilgileri proje talebinizi değerlendirmek, tasarım ve üretim kapsamını anlamak,
+                sonraki adımlar için sizinle iletişime geçmek ve proje görüşmelerini yürütmek için kullanırız.
               </p>
             </section>
 
             <section className="bg-porcelain p-7 md:p-9">
               <h2 className="font-display text-3xl leading-tight text-ink">
-                Website Analytics
+                Web Sitesi Analitiği
               </h2>
               <p className="mt-5 leading-8 text-ink/65">
-                We may use lightweight website interaction analytics to understand which pages and
-                contact paths are useful to visitors. These analytics are used to improve the
-                website experience and do not include project form messages, names, email
-                addresses, phone numbers, or WhatsApp numbers.
+                Ziyaretçiler için yararlı sayfaları ve iletişim yollarını anlamak amacıyla temel
+                etkileşim analitiği kullanabiliriz. Bu veriler form mesajlarını, adları, e-posta
+                adreslerini, telefon veya WhatsApp numaralarını içermez.
               </p>
             </section>
 
             <section className="bg-porcelain p-7 md:p-9">
               <h2 className="font-display text-3xl leading-tight text-ink">
-                Communication Channels
+                İletişim Kanalları
               </h2>
               <p className="mt-5 leading-8 text-ink/65">
-                If you contact us by phone, email, or WhatsApp, communication may continue through
-                the channel you choose. WhatsApp conversations are also subject to WhatsApp&apos;s own
-                privacy practices.
+                Telefon, e-posta veya WhatsApp ile iletişime geçerseniz görüşme seçtiğiniz kanal
+                üzerinden devam edebilir. WhatsApp görüşmeleri ayrıca WhatsApp&apos;ın kendi gizlilik
+                uygulamalarına tabidir.
               </p>
             </section>
 
             <section className="bg-porcelain p-7 md:p-9">
               <h2 className="font-display text-3xl leading-tight text-ink">
-                Contact
+                İletişim
               </h2>
               <p className="mt-5 leading-8 text-ink/65">
-                For privacy questions or to request removal of enquiry information, contact us at{" "}
+                Gizlilik soruları veya talep bilgilerinizin silinmesi için bize şu adresten ulaşın:{" "}
                 <Link
                   href="mailto:taaha.baaki@gmail.com"
                   className="font-semibold text-bronze transition hover:text-ink"

@@ -120,14 +120,14 @@ async function verifyTurnstile(token: string, remoteIp: string) {
   if (!process.env.TURNSTILE_SECRET_KEY) {
     return {
       ok: false,
-      error: "Verification service is not configured."
+      error: "Doğrulama hizmeti yapılandırılmamış."
     };
   }
 
   if (!token) {
     return {
       ok: false,
-      error: "Please complete the verification before sending."
+      error: "Göndermeden önce doğrulamayı tamamlayın."
     };
   }
 
@@ -151,7 +151,7 @@ async function verifyTurnstile(token: string, remoteIp: string) {
     if (!response.ok || result?.success !== true) {
       return {
         ok: false,
-        error: "Verification failed. Please try again."
+        error: "Doğrulama başarısız oldu. Lütfen tekrar deneyin."
       };
     }
 
@@ -160,7 +160,7 @@ async function verifyTurnstile(token: string, remoteIp: string) {
     console.error("Turnstile verification error:", error);
     return {
       ok: false,
-      error: "Verification could not be completed. Please try again."
+      error: "Doğrulama tamamlanamadı. Lütfen tekrar deneyin."
     };
   }
 }
@@ -171,7 +171,7 @@ export async function POST(request: Request) {
   try {
     payload = await request.json();
   } catch {
-    return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
+    return NextResponse.json({ error: "Geçersiz istek içeriği." }, { status: 400 });
   }
 
   const inquiry = {
@@ -199,14 +199,14 @@ export async function POST(request: Request) {
     !inquiry.message
   ) {
     return NextResponse.json(
-      { error: "Please add your name, email, project type, and message before sending." },
+      { error: "Göndermeden önce ad, e-posta, proje türü ve mesaj alanlarını doldurun." },
       { status: 400 }
     );
   }
 
   if (inquiry.message.length > MAX_MESSAGE_LENGTH) {
     return NextResponse.json(
-      { error: "Please keep your message under 3000 characters." },
+      { error: "Mesajınızı 3000 karakterin altında tutun." },
       { status: 400 }
     );
   }
@@ -227,26 +227,26 @@ export async function POST(request: Request) {
 
   if (!process.env.RESEND_API_KEY) {
     return NextResponse.json(
-      { error: "Email service is not configured." },
+      { error: "E-posta hizmeti yapılandırılmamış." },
       { status: 500 }
     );
   }
 
   const rows = [
-    ["Name", inquiry.fullName],
-    ["Company", inquiry.company || "-"],
-    ["Email", inquiry.email],
-    ["Phone / WhatsApp", inquiry.phone || "-"],
-    ["Project Type", inquiry.projectType],
-    ["Project Location", inquiry.projectLocation || "-"],
-    ["Project Size / Scope", inquiry.projectScope || "-"],
-    ["Message", inquiry.message]
+    ["Ad Soyad", inquiry.fullName],
+    ["Firma", inquiry.company || "-"],
+    ["E-posta", inquiry.email],
+    ["Telefon / WhatsApp", inquiry.phone || "-"],
+    ["Proje Türü", inquiry.projectType],
+    ["Proje Konumu", inquiry.projectLocation || "-"],
+    ["Proje Ölçeği / Kapsamı", inquiry.projectScope || "-"],
+    ["Mesaj", inquiry.message]
   ];
 
   const notificationText = rows.map(([label, value]) => `${label}: ${value}`).join("\n");
   const notificationHtml = `
     <div style="font-family: Arial, sans-serif; color: #111111; line-height: 1.6;">
-      <h1 style="font-family: Georgia, serif; font-size: 28px;">New Ardıç Project Enquiry</h1>
+      <h1 style="font-family: Georgia, serif; font-size: 28px;">Yeni Ardıç Proje Talebi</h1>
       <table style="border-collapse: collapse; width: 100%;">
         ${rows
           .map(
@@ -263,19 +263,19 @@ export async function POST(request: Request) {
   `;
 
   const confirmationText =
-    "Thank you for contacting Ardıç Design & Fabrication.\nOur team has received your project enquiry and will review the brief shortly.";
+    "Ardıç Design & Fabrication ile iletişime geçtiğiniz için teşekkür ederiz.\nEkibimiz proje talebinizi aldı ve kısa süre içinde inceleyecek.";
   const confirmationHtml = `
     <div style="font-family: Arial, sans-serif; color: #111111; line-height: 1.7;">
-      <h1 style="font-family: Georgia, serif; font-size: 28px;">Project Enquiry Received</h1>
-      <p>Thank you for contacting Ardıç Design & Fabrication.</p>
-      <p>Our team has received your project enquiry and will review the brief shortly.</p>
+      <h1 style="font-family: Georgia, serif; font-size: 28px;">Proje Talebiniz Alındı</h1>
+      <p>Ardıç Design & Fabrication ile iletişime geçtiğiniz için teşekkür ederiz.</p>
+      <p>Ekibimiz proje talebinizi aldı ve kısa süre içinde inceleyecek.</p>
     </div>
   `;
 
   try {
     await sendEmail({
       to: NOTIFICATION_EMAIL,
-      subject: `New Project Enquiry - ${inquiry.projectType}`,
+      subject: `Yeni Proje Talebi - ${inquiry.projectType}`,
       html: notificationHtml,
       text: notificationText,
       replyTo: inquiry.email
@@ -283,7 +283,7 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("Contact form notification email error:", error);
     return NextResponse.json(
-      { error: "Unable to send your project enquiry right now. Please try again later." },
+      { error: "Proje talebiniz şu anda gönderilemedi. Lütfen daha sonra tekrar deneyin." },
       { status: 502 }
     );
   }
@@ -291,7 +291,7 @@ export async function POST(request: Request) {
   try {
     await sendEmail({
       to: inquiry.email,
-      subject: "Ardıç Design & Fabrication - Inquiry Received",
+      subject: "Ardıç Design & Fabrication - Proje Talebiniz Alındı",
       html: confirmationHtml,
       text: confirmationText
     });

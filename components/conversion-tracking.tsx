@@ -70,7 +70,10 @@ export function ConversionTracking() {
           text.includes("discuss") ||
           text.includes("conversation") ||
           text.includes("project") ||
-          text.includes("brief"))
+          text.includes("brief") ||
+          text.includes("proje") ||
+          text.includes("teklif") ||
+          text.includes("konuş"))
       ) {
         trackConversion("start_project_click", { location });
       }

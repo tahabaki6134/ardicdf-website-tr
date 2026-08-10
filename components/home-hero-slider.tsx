@@ -55,19 +55,18 @@ export function HomeHeroSlider({ slides }: HomeHeroSliderProps) {
             maxWidth: "900px"
           }}
         >
-          <span className="block md:whitespace-nowrap">Designing Extraordinary Spaces.</span>
-          <span className="block md:whitespace-nowrap">Fabricating Memorable Experiences.</span>
+          <span className="block md:whitespace-nowrap">Olağanüstü Mekanlar Tasarlıyoruz.</span>
+          <span className="block md:whitespace-nowrap">Akılda Kalıcı Deneyimler Üretiyoruz.</span>
         </h1>
         <div className="mt-8 flex max-w-4xl flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <p className="max-w-2xl text-base leading-7 text-porcelain/82 md:text-lg md:leading-8">
-            Design, fabrication and installation of themed environments, sculptures and
-            architectural experiences.
+            Tematik mekan, heykel ve mimari deneyimler için tasarım, üretim ve montaj.
           </p>
           <Link
             href="/works"
             className="w-fit bg-porcelain px-6 py-4 text-xs font-semibold uppercase tracking-brand text-ink transition hover:bg-bronze hover:text-porcelain"
           >
-            VIEW PROJECTS
+            PROJELERİ İNCELEYİN
           </Link>
         </div>
 
@@ -76,7 +75,7 @@ export function HomeHeroSlider({ slides }: HomeHeroSliderProps) {
             <button
               key={slide.image}
               type="button"
-              aria-label={`Show ${slide.label}`}
+              aria-label={`${slide.label} görselini göster`}
               aria-current={index === activeSlide}
               onClick={() => setActiveSlide(index)}
               className={`group flex items-center gap-3 text-left transition ${

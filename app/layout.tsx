@@ -7,7 +7,7 @@ import { Footer } from "@/components/footer";
 import { FloatingWhatsAppButton } from "@/components/floating-whatsapp-button";
 import { brand } from "@/lib/content";
 
-const siteUrl = "https://www.ardicdf.com";
+const siteUrl = "https://ardicdf.com.tr";
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -16,11 +16,11 @@ const structuredData = {
       "@type": "Organization",
       "@id": `${siteUrl}/#organization`,
       name: "Ardıç Design & Fabrication",
-      alternateName: "Ardıç Mimarlık",
+      alternateName: "ARDIÇ Design & Fabrication",
       url: siteUrl,
       logo: `${siteUrl}/logo.svg`,
       description:
-        "Ardıç Design & Fabrication is an EPSLAM company creating themed environments, sculptural fabrication, architectural decor, CNC and EPS/XPS foam production for international projects.",
+        "Ardıç Design & Fabrication; tematik mekan tasarımı, heykel üretimi, mimari dekorasyon, CNC ve EPS/XPS köpük işleme alanlarında Türkiye merkezli tasarım ve üretim hizmetleri sunar.",
       parentOrganization: {
         "@type": "Organization",
         name: "EPSLAM"
@@ -28,9 +28,9 @@ const structuredData = {
       contactPoint: {
         "@type": "ContactPoint",
         telephone: "+905436268969",
-        contactType: "project enquiries",
-        areaServed: "Worldwide",
-        availableLanguage: ["English", "Turkish"]
+        contactType: "proje talepleri",
+        areaServed: "TR",
+        availableLanguage: ["Turkish"]
       }
     },
     {
@@ -44,7 +44,7 @@ const structuredData = {
         "@type": "PostalAddress",
         streetAddress: "Karadeniz Caddesi No:131",
         addressLocality: "Ataşehir",
-        addressRegion: "Istanbul",
+        addressRegion: "İstanbul",
         addressCountry: "TR"
       },
       parentOrganization: {
@@ -54,24 +54,24 @@ const structuredData = {
     {
       "@type": "Service",
       "@id": `${siteUrl}/#services`,
-      name: "Design and Fabrication Services",
+      name: "Tasarım ve Üretim Hizmetleri",
       provider: {
         "@id": `${siteUrl}/#organization`
       },
-      areaServed: "Worldwide",
+      areaServed: "Türkiye",
       serviceType: [
-        "Themed environments",
-        "Sculptural fabrication",
-        "Architectural decor",
-        "Brand installations",
-        "CNC fabrication",
-        "EPS and XPS foam fabrication",
-        "Mold manufacturing",
-        "Polyester casting",
-        "Finishing and installation"
+        "Tematik mekan tasarımı ve üretimi",
+        "Heykel üretimi",
+        "Mimari dekorasyon",
+        "Marka uygulamaları",
+        "CNC strafor kesim ve köpük işleme",
+        "EPS ve XPS şekillendirme",
+        "Kalıp üretimi",
+        "Polyester üretim",
+        "Boyama, sonlandırma ve montaj"
       ],
       description:
-        "Integrated design, CNC production, EPS/XPS processing, sculpture, mold production, polyester casting, finishing, painting, assembly, and installation under one roof."
+        "Konsept geliştirme, CNC üretim, EPS/XPS işleme, heykel ve kalıp üretimi, polyester döküm, boyama, montaj ve uygulamayı tek çatı altında buluşturan entegre hizmetler."
     }
   ]
 };
@@ -83,16 +83,17 @@ export const metadata: Metadata = {
     template: `%s | ${brand.name}`
   },
   description:
-    "Ardıç Design & Fabrication is an EPSLAM company creating themed environments, sculptural fabrication, architectural decor, CNC and EPS/XPS foam production for international projects.",
+    "Türkiye genelinde tematik dekorasyon, heykel üretimi, mimari dekorasyon, özel dekor üretimi, CNC strafor kesim ve anahtar teslim uygulama hizmetleri.",
   keywords: [
-    "design and fabrication studio",
-    "themed environments",
-    "sculptural fabrication",
-    "architectural decor",
-    "CNC fabrication",
-    "EPS foam fabrication",
-    "XPS foam fabrication",
-    "brand installations",
+    "tematik dekorasyon",
+    "tematik mekan tasarımı",
+    "heykel üretimi",
+    "polyester heykel",
+    "EPS heykel",
+    "mimari dekorasyon",
+    "özel dekor üretimi",
+    "CNC strafor kesim",
+    "yapay kaya uygulaması",
     "Ardıç Design & Fabrication",
     "EPSLAM"
   ],
@@ -114,17 +115,17 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${brand.name} | ${brand.tagline}`,
     description:
-      "Design and fabrication studio for themed environments, sculptural works, architectural decor, CNC/EPS/XPS production, and international project delivery.",
+      "Tematik mekanlar, büyük ölçekli heykeller, mimari dekorasyon ve CNC/EPS/XPS üretimi için tasarımdan uygulamaya profesyonel çözümler.",
     type: "website",
     url: "/",
     siteName: brand.name,
-    locale: "en_US",
+    locale: "tr_TR",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: `${brand.name} logo`
+        alt: `${brand.name} logosu`
       }
     ]
   },
@@ -132,14 +133,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${brand.name} | ${brand.tagline}`,
     description:
-      "Themed environments, sculptural fabrication, architectural decor, and CNC/EPS/XPS production for memorable built experiences.",
+      "Tematik dekorasyon, heykel üretimi, mimari dekorasyon ve CNC/EPS/XPS işleme alanlarında tasarım ve üretim çözümleri.",
     images: ["/og-image.png"]
   }
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="tr">
       <body className="font-sans antialiased">
         <script
           type="application/ld+json"

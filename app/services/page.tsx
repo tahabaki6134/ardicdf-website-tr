@@ -2,37 +2,38 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { services } from "@/lib/content";
+import { servicePages } from "@/lib/service-pages";
 import { SectionHeading } from "@/components/section-heading";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Hizmetler",
   description:
-    "Design and fabrication services for brand installations, architectural decor, sculptures, artworks, thematic spaces, CNC production, finishing, and installation.",
+    "Tematik dekorasyon, heykel üretimi, CNC strafor işleme, mimari dekor, yapay kaya, 3D baskı ve özel üretim hizmetleri.",
   alternates: {
     canonical: "/services"
   },
   openGraph: {
-    title: "Services",
+    title: "Hizmetler",
     description:
-      "Premium project services spanning design direction, CNC fabrication, sculptural production, architectural decor, and site-ready installation.",
+      "Tasarım, CNC üretim, heykel, mimari dekor ve sahaya hazır uygulama için entegre hizmetler.",
     url: "/services"
   }
 };
 
 const serviceImages: Record<string, string> = {
-  "Brand Installations": "/services/brand-nyx-bottle.jpeg",
-  "Architectural Decor": "/services/architectural-decor-columns.jpeg",
-  "Sculptures & Artworks": "/services/sculpture-elephant-front.jpeg",
-  "Thematic Spaces": "/services/thematic-spongebob-patrick.jpeg",
-  "Industrial 3D Printing": "/projects/portfolio/cnc-manufacturing-processes/cnc-manufacturing-processes-01.jpeg"
+  "Marka Uygulamaları": "/services/brand-nyx-bottle.jpeg",
+  "Mimari Dekorasyon": "/services/architectural-decor-columns.jpeg",
+  "Heykel ve Sanat Uygulamaları": "/services/sculpture-elephant-front.jpeg",
+  "Tematik Mekanlar": "/services/thematic-spongebob-patrick.jpeg",
+  "Endüstriyel 3D Baskı": "/projects/portfolio/cnc-manufacturing-processes/cnc-manufacturing-processes-01.jpeg"
 };
 
 const serviceImagePositions: Record<string, string> = {
-  "Brand Installations": "50% 45%",
-  "Architectural Decor": "50% 42%",
-  "Sculptures & Artworks": "50% 35%",
-  "Thematic Spaces": "48% 45%",
-  "Industrial 3D Printing": "50% 42%"
+  "Marka Uygulamaları": "50% 45%",
+  "Mimari Dekorasyon": "50% 42%",
+  "Heykel ve Sanat Uygulamaları": "50% 35%",
+  "Tematik Mekanlar": "48% 45%",
+  "Endüstriyel 3D Baskı": "50% 42%"
 };
 
 export default function ServicesPage() {
@@ -42,16 +43,16 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-end">
             <SectionHeading
-              eyebrow="Services"
+              eyebrow="Hizmetler"
               headingTag="h1"
-              title="Design services shaped around lasting presence."
-              copy="As an EPSLAM company, Ardıç supports clients from early spatial ideas to finished physical work, balancing aesthetic ambition with buildable detail, fabrication logic, and installation planning."
+              title="Tasarım fikrini üretilebilir çözüme dönüştürüyoruz."
+              copy="Ardıç, ilk mekansal fikirden tamamlanmış fiziksel uygulamaya kadar estetik hedefleri; üretilebilir detay, atölye disiplini ve montaj planıyla buluşturur."
             />
 
             <div className="relative min-h-[340px] overflow-hidden border border-ink/10 bg-ink shadow-soft md:min-h-[460px]">
               <Image
                 src="/services/architectural-decor-relief.jpeg"
-                alt="CNC carved decorative architectural relief"
+                alt="CNC ile işlenmiş dekoratif mimari rölyef"
                 fill
                 priority
                 sizes="(min-width: 1024px) 54vw, 100vw"
@@ -69,7 +70,7 @@ export default function ServicesPage() {
                   <div className="relative min-h-64 overflow-hidden bg-ink md:min-h-full">
                     <Image
                       src={serviceImages[service.title]}
-                      alt={`${service.title} service visual`}
+                      alt={`${service.title} hizmet görseli`}
                       fill
                       sizes="(min-width: 1024px) 28vw, (min-width: 768px) 45vw, 100vw"
                       className="object-cover transition duration-700 hover:scale-[1.015]"
@@ -95,12 +96,26 @@ export default function ServicesPage() {
             ))}
           </div>
 
+          <section className="mt-20">
+            <SectionHeading eyebrow="Uzmanlık Alanları" title="İhtiyacınıza doğrudan cevap veren hizmetler." copy="Her sayfa üretim yöntemi, kullanım alanı, süreç ve sık sorulan sorular hakkında doğrulanabilir bilgiler sunar." />
+            <div className="mt-10 grid gap-px bg-ink/10 md:grid-cols-2 lg:grid-cols-3">
+              {servicePages.map((service) => (
+                <Link key={service.slug} href={`/${service.slug}`} className="group bg-porcelain p-7 transition hover:bg-white">
+                  <p className="text-xs font-semibold uppercase tracking-brand text-bronze">{service.eyebrow}</p>
+                  <h2 className="mt-5 font-display text-3xl leading-tight text-ink">{service.title}</h2>
+                  <p className="mt-5 leading-7 text-ink/60">{service.description}</p>
+                  <span className="mt-8 inline-block text-sm font-semibold uppercase tracking-brand text-bronze group-hover:text-ink">Detayları inceleyin →</span>
+                </Link>
+              ))}
+            </div>
+          </section>
+
           <div className="mt-14 flex justify-center md:justify-start">
             <Link
               href="/contact"
               className="inline-block bg-ink px-6 py-4 text-xs font-semibold uppercase tracking-brand text-porcelain transition hover:bg-bronze"
             >
-              Discuss a Brief
+              Projenizi Konuşalım
             </Link>
           </div>
         </div>

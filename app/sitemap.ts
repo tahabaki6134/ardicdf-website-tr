@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
 import { portfolioCategories } from "@/lib/content";
+import { servicePages } from "@/lib/service-pages";
 
-const siteUrl = "https://www.ardicdf.com";
+const siteUrl = "https://ardicdf.com.tr";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
@@ -13,7 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/fabrication",
     "/live",
     "/contact",
-    "/privacy"
+    "/privacy",
+    "/references"
   ];
 
   return [
@@ -26,6 +28,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${siteUrl}/works/${category.slug}`,
       changeFrequency: "monthly" as const,
       priority: 0.7
+    })),
+    ...servicePages.map((service) => ({
+      url: `${siteUrl}/${service.slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.85
     }))
   ];
 }

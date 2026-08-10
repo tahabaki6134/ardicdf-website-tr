@@ -3,75 +3,75 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "Hakkımızda",
   description:
-    "Learn about Ardıç Design & Fabrication, an EPSLAM company combining architectural thinking, family production experience, sculpture, CNC/EPS/XPS processing, molds, casting, and installation.",
+    "Mimari düşünceyi aile üretim deneyimi, heykel, CNC/EPS/XPS işleme, kalıp, döküm ve montajla birleştiren Ardıç'ı tanıyın.",
   alternates: {
     canonical: "/about"
   },
   openGraph: {
-    title: "About",
+    title: "Hakkımızda",
     description:
-      "A design and fabrication studio built on long-term production experience, workshop infrastructure, and integrated project delivery.",
+      "Uzun yıllara dayanan üretim deneyimi, atölye altyapısı ve entegre proje yönetimi üzerine kurulu tasarım ve üretim stüdyosu.",
     url: "/about"
   }
 };
 
 const approach = [
   {
-    title: "Concept Development",
-    copy: "The creative and technical starting point that turns a brief into a buildable direction.",
+    title: "Konsept Geliştirme",
+    copy: "Proje briefini üretilebilir bir yöne dönüştüren yaratıcı ve teknik başlangıç.",
     icon: "concept"
   },
   {
-    title: "Fabrication",
-    copy: "CNC production, sculptural fabrication, mold systems, casting, and material application coordinated through workshop capability.",
+    title: "Üretim",
+    copy: "CNC, heykel, kalıp, döküm ve malzeme uygulamalarının atölye kabiliyetiyle koordinasyonu.",
     icon: "production"
   },
   {
-    title: "Installation",
-    copy: "Coordinated assembly, installation, and delivery management planned around site conditions.",
+    title: "Montaj",
+    copy: "Saha koşullarına göre planlanan birleştirme, montaj ve teslimat yönetimi.",
     icon: "installation"
   },
   {
-    title: "Experience",
-    copy: "Lasting, memorable results that give spaces a distinct identity.",
+    title: "Deneyim",
+    copy: "Mekanlara güçlü bir kimlik kazandıran kalıcı ve akılda kalan sonuçlar.",
     icon: "experience"
   }
 ];
 
 const capabilities = [
   {
-    title: "CNC Fabrication",
-    copy: "Precision-cut components for architectural surfaces, sculptural bases, and production-ready forms."
+    title: "CNC Üretim",
+    copy: "Mimari yüzeyler, heykel altyapıları ve üretime hazır formlar için hassas işlenmiş parçalar."
   },
   {
-    title: "EPS / XPS Processing",
-    copy: "Lightweight foam shaping for scenic structures, organic forms, and large-format decorative work."
+    title: "EPS / XPS İşleme",
+    copy: "Dekor yapıları, organik formlar ve büyük ölçekli işler için hafif köpük şekillendirme."
   },
   {
-    title: "Sculpture Production",
-    copy: "Custom figures, organic forms, and detailed artistic production developed for durable built environments."
+    title: "Heykel Üretimi",
+    copy: "Dayanıklı mekanlar için geliştirilen özel figürler, organik formlar ve detaylı sanatsal üretim."
   },
   {
-    title: "Decorative Architectural Elements",
-    copy: "Columns, capitals, ornaments, and bespoke architectural details."
+    title: "Dekoratif Mimari Elemanlar",
+    copy: "Kolonlar, başlıklar, süslemeler ve projeye özel mimari detaylar."
   },
   {
-    title: "Mold Manufacturing",
-    copy: "Durable mold systems for repeatable, controlled production and consistent surface detail."
+    title: "Kalıp Üretimi",
+    copy: "Tekrarlanabilir ve kontrollü üretim için dayanıklı kalıp sistemleri."
   },
   {
-    title: "Polyester Casting",
-    copy: "Composite casting solutions for resilient decorative, thematic, and architectural pieces."
+    title: "Polyester Döküm",
+    copy: "Dayanıklı dekoratif, tematik ve mimari parçalar için kompozit döküm çözümleri."
   },
   {
-    title: "Large-Scale Fabrication",
-    copy: "Oversized objects and environments produced with workshop precision."
+    title: "Büyük Ölçekli Üretim",
+    copy: "Atölye hassasiyetiyle üretilen büyük objeler ve mekan elemanları."
   },
   {
-    title: "3D Printing Technology",
-    copy: "Rapid prototyping and fine-detail support for custom production."
+    title: "3D Baskı Teknolojisi",
+    copy: "Özel üretim için hızlı prototipleme ve hassas detay desteği."
   }
 ];
 
@@ -85,49 +85,49 @@ const team: Array<{
   {
     name: "Yusuf Baki",
     initials: "YB",
-    role: "Owner & Fabrication Director",
-    copy: "Responsible for production strategy, workshop management, and large-scale project implementation."
+    role: "Kurucu ve Üretim Direktörü",
+    copy: "Üretim stratejisi, atölye yönetimi ve büyük ölçekli proje uygulamalarından sorumludur."
   },
   {
     name: "Taha Baki",
     initials: "TB",
-    role: "Architecture, Strategy & Project Development",
-    copy: "Responsible for architectural direction, project strategy, business development, and client relations."
+    role: "Mimarlık, Strateji ve Proje Geliştirme",
+    copy: "Mimari yön, proje stratejisi, iş geliştirme ve müşteri ilişkilerinden sorumludur."
   },
   {
     name: "Şiba Baki",
     initials: "SB",
-    role: "Interior Design & Presentation",
-    copy: "Responsible for interior design, presentation development, and creative project storytelling."
+    role: "İç Mimarlık ve Sunum",
+    copy: "İç mekan tasarımı, sunum geliştirme ve yaratıcı proje anlatımından sorumludur."
   },
   {
     name: "Rasim Gül",
     initials: "RG",
-    role: "Visual Arts Specialist",
-    copy: "Expert in artistic detailing, visual development, and surface / finishing techniques."
+    role: "Görsel Sanatlar Uzmanı",
+    copy: "Sanatsal detay, görsel geliştirme ve yüzey bitirme tekniklerinde uzmandır."
   },
   {
     name: "Gençağa Dilli",
     initials: "GD",
-    role: "Sculptor",
-    copy: "Expert in sculpture design, character production, and organic form development."
+    role: "Heykeltıraş",
+    copy: "Heykel tasarımı, karakter üretimi ve organik form geliştirmede uzmandır."
   },
   {
     name: "Fatih Dilli",
     initials: "FD",
-    role: "Painter",
-    copy: "Specializes in artistic painting, advanced coloring techniques, and special effects.",
+    role: "Sanat Boyacısı",
+    copy: "Sanatsal boyama, ileri renklendirme teknikleri ve özel efektlerde uzmandır.",
     photo: "/team/fatih-dilli.png"
   }
 ];
 
 const reasons = [
-  "An EPSLAM company with integrated fabrication infrastructure",
-  "Design and production handled under one roof",
-  "Original and custom production solutions",
-  "Long-term family experience in production and construction",
-  "Rapid prototyping and flexible production",
-  "Installation and on-site application capability"
+  "Entegre üretim altyapısına sahip bir EPSLAM şirketi",
+  "Tek çatı altında tasarım ve üretim",
+  "Özgün ve projeye özel çözümler",
+  "Üretim ve inşaatta uzun yıllara dayanan aile deneyimi",
+  "Hızlı prototipleme ve esnek üretim",
+  "Montaj ve saha uygulama kabiliyeti"
 ];
 
 function ApproachIcon({ type }: { type: string }) {
@@ -175,14 +175,14 @@ export default function AboutPage() {
       <section className="px-5 py-20 md:px-8 md:py-28">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-brand text-bronze">About Us</p>
+            <p className="text-xs font-semibold uppercase tracking-brand text-bronze">Hakkımızda</p>
             <h1 className="mt-8 max-w-2xl font-display text-5xl leading-[1.02] text-ink md:text-7xl">
-              From Idea to Fabrication, Into Experience.
+              Fikirden Üretime, Üretimden Deneyime.
             </h1>
             <p className="mt-8 max-w-xl text-base leading-8 text-ink/65 md:text-lg md:leading-9">
-              Ardıç is an EPSLAM company and a design and fabrication studio that brings
-              architectural thinking, interior design, sculpture, digital production technologies,
-              and thematic decor manufacturing together under one roof.
+              Ardıç, mimari düşünceyi, iç mekan tasarımını, heykeli, dijital üretim
+              teknolojilerini ve tematik dekor imalatını tek çatı altında buluşturan bir
+              EPSLAM şirketi ve tasarım-üretim atölyesidir.
             </p>
             <div className="mt-9 h-px w-16 bg-bronze" />
           </div>
@@ -190,7 +190,7 @@ export default function AboutPage() {
           <div className="relative min-h-[360px] overflow-hidden border border-ink/10 bg-ink shadow-soft md:min-h-[560px]">
             <Image
               src="/home/production-columns.png"
-              alt="Decorative architectural element fabrication inside the Ardıç production workshop"
+              alt="Ardıç üretim atölyesinde dekoratif mimari eleman imalatı"
               fill
               priority
               sizes="(min-width: 1024px) 58vw, 100vw"
@@ -205,15 +205,15 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.75fr_1.25fr]">
           <div className="border-b border-ink/10 pb-10 lg:border-b-0 lg:border-r lg:pb-0 lg:pr-12">
             <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
-              Our Approach
+              Yaklaşımımız
             </p>
             <h2 className="mt-7 max-w-md font-display text-4xl leading-tight text-ink md:text-5xl">
-              Design, Fabrication, and Installation.
+              Tasarım, Üretim ve Montaj.
             </h2>
             <p className="mt-7 max-w-md leading-8 text-ink/60">
-              Built on long-term family experience in production and construction, we manage the
-              entire process with our own team and infrastructure - from concept development to
-              fabrication, finishing, assembly, and on-site installation.
+              Üretim ve inşaat alanındaki uzun yıllara dayanan aile deneyimimizle konsept
+              geliştirmeden imalata, yüzey bitişinden birleştirme ve saha montajına kadar tüm
+              süreci kendi ekibimiz ve altyapımızla yönetiyoruz.
             </p>
           </div>
 
@@ -232,7 +232,7 @@ export default function AboutPage() {
       <section className="px-5 pb-16 pt-24 md:px-8 md:pb-24 md:pt-32">
         <div className="mx-auto max-w-7xl">
           <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
-            Our Production Capabilities
+            Üretim Kabiliyetlerimiz
           </p>
           <div className="mt-10 grid gap-px bg-ink/10 sm:grid-cols-2 lg:grid-cols-4">
             {capabilities.map((capability, index) => (
@@ -256,7 +256,7 @@ export default function AboutPage() {
 
       <section className="border-y border-ink/10 bg-white/45 px-5 py-16 md:px-8 md:py-20">
         <div className="mx-auto max-w-7xl">
-          <p className="text-xs font-semibold uppercase tracking-brand text-bronze">Our Team</p>
+          <p className="text-xs font-semibold uppercase tracking-brand text-bronze">Ekibimiz</p>
           <div className="mt-10 grid gap-px bg-ink/10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
             {team.map((member) => (
               <article key={member.name} className="flex min-h-full flex-col bg-porcelain p-6">
@@ -293,7 +293,7 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-7xl overflow-hidden border border-ink/10 bg-porcelain lg:grid-cols-[0.82fr_1.18fr]">
           <div className="p-8 md:p-12">
             <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
-              Why Ardıç?
+              Neden Ardıç?
             </p>
             <ul className="mt-8 space-y-5">
               {reasons.map((reason) => (
@@ -318,16 +318,16 @@ export default function AboutPage() {
             <div className="absolute inset-0 bg-ink/62" />
             <div className="relative flex h-full flex-col justify-center">
               <h2 className="max-w-xl font-display text-4xl leading-tight text-porcelain md:text-5xl">
-                Let&apos;s Create Unforgettable Spaces Together.
+                Birlikte Unutulmaz Mekanlar Üretelim.
               </h2>
               <p className="mt-6 max-w-xl leading-8 text-porcelain/75">
-                Contact us to transform your ideas into reality.
+                Fikirlerinizi gerçeğe dönüştürmek için bizimle iletişime geçin.
               </p>
               <Link
                 href="/contact"
                 className="mt-9 inline-flex w-fit border border-bronze px-6 py-4 text-xs font-semibold uppercase tracking-brand text-porcelain transition hover:bg-bronze hover:text-ink"
               >
-                Start a Project
+                Projenizi Başlatın
               </Link>
             </div>
           </div>
