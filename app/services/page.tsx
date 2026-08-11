@@ -1,24 +1,16 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { services } from "@/lib/content";
 import { servicePages } from "@/lib/service-pages";
 import { SectionHeading } from "@/components/section-heading";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Hizmetler",
   description:
     "Tematik dekorasyon, heykel üretimi, CNC strafor işleme, mimari dekor, yapay kaya, 3D baskı ve özel üretim hizmetleri.",
-  alternates: {
-    canonical: "/services"
-  },
-  openGraph: {
-    title: "Hizmetler",
-    description:
-      "Tasarım, CNC üretim, heykel, mimari dekor ve sahaya hazır uygulama için entegre hizmetler.",
-    url: "/services"
-  }
-};
+  path: "/services"
+});
 
 const serviceImages: Record<string, string> = {
   "Marka Uygulamaları": "/services/brand-nyx-bottle.jpeg",

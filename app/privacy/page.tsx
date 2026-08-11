@@ -1,20 +1,12 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Gizlilik Politikası",
   description:
     "Ardıç Design & Fabrication proje talepleri, iletişim bilgileri, WhatsApp görüşmeleri ve gönderilen bilgiler için gizlilik açıklaması.",
-  alternates: {
-    canonical: "/privacy"
-  },
-  openGraph: {
-    title: "Gizlilik Politikası",
-    description:
-      "Ardıç Design & Fabrication'ın proje talebi bilgilerini nasıl kullandığına ilişkin açıklama.",
-    url: "/privacy"
-  }
-};
+  path: "/privacy"
+});
 
 const collectedData = [
   "ad soyad",

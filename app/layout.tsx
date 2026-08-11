@@ -6,8 +6,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { FloatingWhatsAppButton } from "@/components/floating-whatsapp-button";
 import { brand } from "@/lib/content";
-
-const siteUrl = "https://ardicdf.com.tr";
+import { siteUrl } from "@/lib/seo";
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -15,7 +14,7 @@ const structuredData = {
     {
       "@type": "Organization",
       "@id": `${siteUrl}/#organization`,
-      name: "Ardıç Design & Fabrication",
+      name: brand.name,
       alternateName: "ARDIÇ Design & Fabrication",
       url: siteUrl,
       logo: `${siteUrl}/logo.svg`,
@@ -27,7 +26,7 @@ const structuredData = {
       },
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: "+905436268969",
+        telephone: brand.phoneE164,
         contactType: "proje talepleri",
         areaServed: "TR",
         availableLanguage: ["Turkish"]
@@ -36,20 +35,23 @@ const structuredData = {
     {
       "@type": "LocalBusiness",
       "@id": `${siteUrl}/#localbusiness`,
-      name: "Ardıç Design & Fabrication",
+      name: brand.name,
       url: siteUrl,
       image: `${siteUrl}/og-image.png`,
-      telephone: "+905436268969",
+      description:
+        "İstanbul Ataşehir merkezli tematik dekor, heykel, CNC köpük işleme ve özel üretim atölyesi.",
+      telephone: brand.phoneE164,
       address: {
         "@type": "PostalAddress",
-        streetAddress: "Karadeniz Caddesi No:131",
-        addressLocality: "Ataşehir",
-        addressRegion: "İstanbul",
-        addressCountry: "TR"
+        streetAddress: `${brand.address.streetAddress}, ${brand.address.district}`,
+        addressLocality: brand.address.addressLocality,
+        addressRegion: brand.address.addressRegion,
+        addressCountry: brand.address.addressCountry
       },
-      parentOrganization: {
+      branchOf: {
         "@id": `${siteUrl}/#organization`
-      }
+      },
+      areaServed: { "@type": "Country", name: "Türkiye" }
     },
     {
       "@type": "Service",

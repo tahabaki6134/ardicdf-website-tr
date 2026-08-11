@@ -1,22 +1,14 @@
-import type { Metadata } from "next";
 import { RotatingCoverImage } from "@/components/rotating-cover-image";
 import { SectionHeading } from "@/components/section-heading";
 import { portfolioCategories } from "@/lib/content";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Projeler",
   description:
     "Ardıç'ın tematik mekan, heykel, mimari dekor, marka uygulaması, yapay kaya, kalıp ve kompozit üretim projelerini inceleyin.",
-  alternates: {
-    canonical: "/works"
-  },
-  openGraph: {
-    title: "Projeler",
-    description:
-      "Heykel, tematik dekor, marka uygulaması ve özel üretim sistemlerinden seçili proje kategorileri.",
-    url: "/works"
-  }
-};
+  path: "/works"
+});
 
 const worksCategories = portfolioCategories.filter((category) => category.published !== false);
 

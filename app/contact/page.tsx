@@ -1,35 +1,28 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { ContactForm } from "@/components/contact-form";
 import { SectionHeading } from "@/components/section-heading";
+import { brand } from "@/lib/content";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "İletişim",
   description:
     "Tematik dekorasyon, heykel, mimari dekor, CNC/EPS/XPS işleme ve özel üretim projeleriniz için Ardıç ile iletişime geçin.",
-  alternates: {
-    canonical: "/contact"
-  },
-  openGraph: {
-    title: "İletişim",
-    description:
-      "Özel mekan, heykel, mimari eleman ve marka deneyimi projeleriniz için Ardıç'tan teklif alın.",
-    url: "/contact"
-  }
-};
+  path: "/contact"
+});
 
 const contactRows = [
   [
     {
       title: "Proje Direktörü",
-      value: "+90 543 626 89 69",
-      href: "tel:+905436268969",
-      whatsapp: "https://wa.me/905436268969"
+      value: brand.phone,
+      href: `tel:${brand.phoneE164}`,
+      whatsapp: `https://wa.me/${brand.phoneE164.slice(1)}`
     },
     {
       title: "WhatsApp",
       value: "Proje Direktörü",
-      href: "https://wa.me/905436268969",
+      href: `https://wa.me/${brand.phoneE164.slice(1)}`,
       external: true
     }
   ],
@@ -105,13 +98,13 @@ export default function ContactPage() {
                 Adres
               </p>
               <address className="mt-4 not-italic text-xl leading-8 text-ink/70">
-                Karadeniz Caddesi No:131
+                {brand.address.streetAddress}
                 <br />
-                Ferhatpaşa
+                {brand.address.district}
                 <br />
-                Ataşehir
+                {brand.address.addressLocality}
                 <br />
-                İstanbul
+                {brand.address.addressRegion}
                 <br />
                 Türkiye
               </address>

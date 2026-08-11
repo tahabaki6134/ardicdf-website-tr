@@ -1,21 +1,12 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: {
-    absolute: "Referanslar | Ardıç Design & Fabrication"
-  },
+export const metadata = createPageMetadata({
+  title: "Referanslar | Ardıç Design & Fabrication",
   description:
     "Ardıç Design & Fabrication'ın tamamlanan projelerini, müşterilerini ve iş referanslarını keşfedin.",
-  alternates: {
-    canonical: "/references"
-  },
-  openGraph: {
-    title: "Referanslar | Ardıç Design & Fabrication",
-    description:
-      "Ardıç Design & Fabrication'ın tamamlanan projelerini, müşterilerini ve iş referanslarını keşfedin.",
-    url: "/references"
-  }
-};
+  path: "/references",
+  absoluteTitle: true
+});
 
 const futureSections = [
   { id: "completed-projects", label: "Tamamlanan projeler" },

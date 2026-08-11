@@ -1,20 +1,12 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Canlı Atölye",
   description:
     "Canlı Atölye, Ardıç'ın CNC, heykel, kaplama, boyama ve montaj hazırlığı süreçlerine açılacak canlı bir üretim penceresidir.",
-  alternates: {
-    canonical: "/live"
-  },
-  openGraph: {
-    title: "Canlı Atölye",
-    description:
-      "Atölye kültürü, CNC üretim, heykel, kaplama, boya ve montaj hazırlığına gelecekte açılacak canlı pencere.",
-    url: "/live"
-  }
-};
+  path: "/live"
+});
 
 const liveStreamUrl = process.env.NEXT_PUBLIC_LIVE_STREAM_URL?.trim();
 

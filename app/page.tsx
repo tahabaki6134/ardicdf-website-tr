@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { brand, capabilities, heroSlides, services, works } from "@/lib/content";
@@ -6,21 +5,14 @@ import { servicePages } from "@/lib/service-pages";
 import { HomeHeroSlider } from "@/components/home-hero-slider";
 import { SectionHeading } from "@/components/section-heading";
 import { WorkCard } from "@/components/work-card";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "İstanbul Tematik Dekor ve Heykel Üretim Atölyesi",
   description:
     "İstanbul merkezli Ardıç; tematik dekorasyon, strafor ve polyester heykel, CNC EPS/XPS işleme, mimari dekor, yapay kaya ve özel üretim hizmetleri sunar.",
-  alternates: {
-    canonical: "/"
-  },
-  openGraph: {
-    title: "İstanbul Tematik Dekor ve Heykel Üretim Atölyesi",
-    description:
-      "Tematik mekan, heykel, mimari dekor ve özel üretim projelerinde tasarımdan montaja entegre çözümler.",
-    url: "/"
-  }
-};
+  path: "/"
+});
 
 export default function Home() {
   return (
@@ -34,6 +26,12 @@ export default function Home() {
             title="İstanbul'da tasarlıyor, atölyemizde üretiyoruz."
             copy="Ardıç Design & Fabrication, İstanbul merkezli tasarım ve üretim atölyesidir. EPS/XPS CNC işleme, strafor ve polyester heykel, tematik dekor, mimari dekor, yapay kaya, kalıp ve büyük format 3D baskı hizmetlerini ticari, kültürel ve eğlence projeleri için tek çatı altında sunar."
           />
+          <Link
+            href="/services"
+            className="mt-8 inline-flex text-sm font-semibold uppercase tracking-brand text-bronze transition hover:text-ink"
+          >
+            Tüm hizmetleri inceleyin →
+          </Link>
           <div className="mt-14 grid gap-px bg-ink/10 md:grid-cols-4">
             {services.map((service, index) => (
               <article key={service.title} className="bg-porcelain p-7 md:min-h-72">

@@ -1,21 +1,13 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Üretim",
   description:
     "Ardıç'ın üretim kabiliyetleri CNC, EPS/XPS işleme, heykel, mimari dekor, kalıp, polyester döküm, yüzey bitirme ve montajı kapsar.",
-  alternates: {
-    canonical: "/fabrication"
-  },
-  openGraph: {
-    title: "Üretim",
-    description:
-      "CNC, EPS/XPS şekillendirme, heykel, kalıp, döküm, boya, birleştirme ve montaj için entegre atölye altyapısı.",
-    url: "/fabrication"
-  }
-};
+  path: "/fabrication"
+});
 
 const capabilities = [
   {

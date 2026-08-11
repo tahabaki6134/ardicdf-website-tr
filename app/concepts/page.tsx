@@ -1,23 +1,15 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { SectionHeading } from "@/components/section-heading";
 import { conceptCollections, conceptProcess } from "@/lib/content";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Özgün Konseptler",
   description:
     "Müşteri mekanlarına uyarlanan özgün Ardıç iç mekan konseptleri, heykelsi objeler, oturma grupları, aynalar ve tematik tasarım parçaları.",
-  alternates: {
-    canonical: "/concepts"
-  },
-  openGraph: {
-    title: "Özgün Konseptler",
-    description:
-      "Ardıç Design & Fabrication'ın mekanınıza uyarlanan ve kendi atölyesinde üretilen özgün konseptlerini keşfedin.",
-    url: "/concepts"
-  }
-};
+  path: "/concepts"
+});
 
 export default function ConceptsPage() {
   const conceptIndex = conceptCollections.map((concept) => ({
@@ -60,7 +52,7 @@ export default function ConceptsPage() {
           <div className="relative min-h-[360px] overflow-hidden border border-ink/10 bg-ink shadow-soft md:min-h-[560px]">
             <Image
               src="/projects/concepts/olive-lounge-concept-interior-01.png"
-              alt="Olive Lounge Concept interior with olive green seating and warm wood atmosphere"
+              alt="Zeytin yeşili oturma elemanları ve sıcak ahşap atmosferli lounge iç mekanı"
               fill
               priority
               sizes="(min-width: 1024px) 58vw, 100vw"

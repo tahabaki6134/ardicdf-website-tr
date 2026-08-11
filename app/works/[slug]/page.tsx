@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PortfolioLightbox } from "@/components/portfolio-lightbox";
 import { SectionHeading } from "@/components/section-heading";
 import { getPortfolioImageAlt, getPortfolioImageSrc, portfolioCategories } from "@/lib/content";
@@ -78,16 +79,18 @@ export default function PortfolioCategoryPage({ params }: CategoryPageProps) {
     <main>
       <section className="px-5 py-20 md:px-8 md:py-28">
         <div className="mx-auto max-w-7xl">
-          <Link
-            href="/works"
-            className="text-sm font-semibold uppercase tracking-brand text-bronze transition hover:text-ink"
-          >
-            &larr; Projeler
-          </Link>
+          <Breadcrumbs
+            items={[
+              { label: "Ana Sayfa", href: "/" },
+              { label: "Projeler", href: "/works" },
+              { label: category.title, href: `/works/${category.slug}` }
+            ]}
+          />
 
           <div className="mt-10">
             <SectionHeading
               eyebrow="Proje Galerisi"
+              headingTag="h1"
               title={category.title}
               copy={category.description}
             />
@@ -150,6 +153,23 @@ export default function PortfolioCategoryPage({ params }: CategoryPageProps) {
               </div>
             </section>
           ) : null}
+
+          <section className="mt-16 bg-ink p-8 text-porcelain md:p-10">
+            <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
+              Projenizi Planlayalım
+            </p>
+            <div className="mt-5 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+              <h2 className="max-w-3xl font-display text-3xl leading-tight md:text-4xl">
+                Benzer bir üretim için ölçü, kullanım alanı ve hedefinizi paylaşın.
+              </h2>
+              <Link
+                href="/contact"
+                className="w-fit border border-bronze px-6 py-4 text-xs font-semibold uppercase tracking-brand transition hover:bg-bronze hover:text-ink"
+              >
+                Teklif İsteyin
+              </Link>
+            </div>
+          </section>
         </div>
       </section>
     </main>

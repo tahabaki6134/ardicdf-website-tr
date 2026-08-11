@@ -1,9 +1,17 @@
 export const brand = {
-  name: "ARDIÇ DESIGN & FABRICATION",
+  name: "Ardıç Design & Fabrication",
   shortName: "ARDIÇ",
   tagline: "Hatırlanmak İçin Tasarlandı.",
   phone: "+90 543 626 89 69",
-  location: "Karadeniz Caddesi No:131, Ferhatpaşa, Ataşehir, İstanbul, Türkiye"
+  phoneE164: "+905436268969",
+  location: "Karadeniz Caddesi No:131, Ferhatpaşa, Ataşehir, İstanbul, Türkiye",
+  address: {
+    streetAddress: "Karadeniz Caddesi No:131",
+    district: "Ferhatpaşa",
+    addressLocality: "Ataşehir",
+    addressRegion: "İstanbul",
+    addressCountry: "TR"
+  }
 };
 
 export const navigation = [
@@ -47,25 +55,25 @@ export const conceptCollections: ConceptCollection[] = [
     galleryImages: [
       {
         src: "/projects/concepts/olive-lounge-concept-detail-chair-01.png",
-        alt: "Olive Lounge Concept close-up of olive green sculptural lounge seating with walnut background",
+        alt: "Ceviz arka plan önünde zeytin yeşili heykelsi lounge koltuğu detayı",
         caption: "Zeytin yeşili oturma elemanı detayı",
         position: "50% 48%"
       },
       {
         src: "/projects/concepts/olive-lounge-concept-detail-table-01.png",
-        alt: "Olive Lounge Concept smoked glass table with bronze frame, walnut flooring, and warm accessories",
+        alt: "Bronz çerçeveli füme cam masa, ceviz zemin ve sıcak tonlu aksesuarlar",
         caption: "Füme cam ve bronz lounge masası",
         position: "50% 52%"
       },
       {
         src: "/projects/concepts/olive-lounge-concept-sculptural-mirror-01.png",
-        alt: "Olive Lounge Concept sculptural wall mirror with warm backlighting, walnut panels, and stone console",
+        alt: "Sıcak arka aydınlatmalı heykelsi ayna, ceviz paneller ve taş konsol",
         caption: "Heykelsi ayna ve dokulu duvar detayı",
         position: "50% 50%"
       },
       {
         src: "/projects/concepts/olive-lounge-concept-material-palette-01.png",
-        alt: "Olive Lounge Concept material palette with olive fabric, walnut wood, bronze metal, stone and smoked glass",
+        alt: "Zeytin kumaş, ceviz ahşap, bronz metal, taş ve füme cam malzeme paleti",
         caption: "Zeytin kumaş, ceviz, bronz, taş ve cam malzeme paleti",
         position: "50% 50%"
       }
@@ -93,31 +101,31 @@ export const conceptCollections: ConceptCollection[] = [
     galleryImages: [
       {
         src: "/projects/concepts/futuristic-pod-concept-material-palette-01.png",
-        alt: "Futuristic Pod Concept material palette with metallic shell, walnut wood, stone and glass finishes",
+        alt: "Metalik kabuk, ceviz ahşap, taş ve cam yüzeylerden oluşan malzeme paleti",
         caption: "Metalik kabuk, ceviz, taş, bronz ve cam malzeme paleti",
         position: "50% 50%"
       },
       {
         src: "/projects/concepts/futuristic-pod-concept-detail-shell-01.png",
-        alt: "Futuristic Pod Concept close-up of glossy metallic pod shell and warm walnut interior lighting",
+        alt: "Parlak metalik pod kabuğu ve sıcak aydınlatmalı ceviz iç yüzey detayı",
         caption: "Parlak kabuk ve ceviz iç yüzey detayı",
         position: "50% 50%"
       },
       {
         src: "/projects/concepts/futuristic-pod-concept-detail-counter-01.png",
-        alt: "Futuristic Pod Concept reception counter with curved metallic shell and warm hidden lighting",
+        alt: "Kavisli metalik kabuklu ve sıcak gizli aydınlatmalı resepsiyon bankosu",
         caption: "Kavisli resepsiyon bankosu ve gizli aydınlatma",
         position: "50% 50%"
       },
       {
         src: "/projects/concepts/futuristic-pod-concept-interior-02.png",
-        alt: "Futuristic Pod Concept interior with sculptural metallic pod and ambient lighting in a premium lobby",
+        alt: "Premium lobide heykelsi metalik pod ve ambiyans aydınlatması",
         caption: "Premium lobi ortamında bütüncül pod konsepti",
         position: "50% 50%"
       },
       {
         src: "/projects/concepts/futuristic-pod-concept-presentation-01.png",
-        alt: "Futuristic Pod Concept presentation visual with metallic pod, dark stone flooring and brand atmosphere",
+        alt: "Metalik pod, koyu taş zemin ve marka atmosferi içeren konsept sunumu",
         caption: "Ticari ve tematik iç mekanlar için sunum görünümü",
         position: "50% 50%"
       }
@@ -327,7 +335,7 @@ const portfolioCategoryData: PortfolioCategoryInput[] = [
       portfolioImage("/projects/portfolio/safari-experiences/safari-experiences-09.jpeg")
     ],
     coverPosition: "50% 45%",
-    alt: "Safari experience portfolio category cover image",
+    alt: "Safari deneyimleri için hayvan figürleri ve tematik dekor uygulamaları",
     featured: true,
     published: true
   },
@@ -340,7 +348,7 @@ const portfolioCategoryData: PortfolioCategoryInput[] = [
       "Akılda kalıcı mekanlar için üretilen özel karakter figürleri, heykelsi objeler, aksesuarlar ve tematik formlar.",
     coverImage: "/services/sculpture-elephant-front.jpeg",
     coverPosition: "50% 35%",
-    alt: "Large-scale sculptural character and artwork cover image",
+    alt: "Büyük ölçekli heykelsi karakter ve sanat uygulaması",
     href: "/works/sculptures-characters",
     introHeading: "Güçlü görsel kimliğe sahip karakterler ve heykelsi objeler.",
     intro: [
@@ -351,7 +359,7 @@ const portfolioCategoryData: PortfolioCategoryInput[] = [
       ...portfolioImageSequence("sculptures-characters", [1, 2, 3, 4, 9, 10, 11, 12, 13]),
       {
         src: "/projects/portfolio/sculptures-characters/historical-thematic-environments-28.jpeg",
-        alt: "Abstract faceted sculptural form displayed in a workshop interior",
+        alt: "Atölye içinde sergilenen soyut geometrik heykel formu",
         title: "Abstract Faceted Sculptural Form",
         description:
           "A standalone geometric sculptural form produced as a decorative physical object."
@@ -384,7 +392,7 @@ const portfolioCategoryData: PortfolioCategoryInput[] = [
       ...portfolioImageSequence("artificial-rock-organic-forms", [1, 2, 3, 4, 5, 6, 7, 9, 10]),
       {
         src: "/projects/portfolio/artificial-rock-organic-forms/organic-stone-feature-lounge-interior-01.png",
-        alt: "Organic stone wall feature with warm backlighting in a premium lounge interior",
+        alt: "Premium lounge iç mekanında sıcak arka aydınlatmalı organik taş duvar",
         title: "Organic Stone Lounge Feature",
         description:
           "A refined interior feature using an irregular stone-like form as a sculptural focal point."
@@ -393,7 +401,7 @@ const portfolioCategoryData: PortfolioCategoryInput[] = [
     coverImages: [
       {
         src: "/projects/portfolio/artificial-rock-organic-forms/organic-stone-feature-lounge-interior-01.png",
-        alt: "Organic stone wall feature with warm backlighting in a premium lounge interior"
+        alt: "Premium lounge iç mekanında sıcak arka aydınlatmalı organik taş duvar"
       },
       portfolioImage("/projects/portfolio/artificial-rock-organic-forms/artificial-rock-organic-forms-04.jpeg"),
       portfolioImage("/projects/portfolio/artificial-rock-organic-forms/artificial-rock-organic-forms-05.jpeg"),
@@ -401,7 +409,7 @@ const portfolioCategoryData: PortfolioCategoryInput[] = [
       portfolioImage("/projects/portfolio/artificial-rock-organic-forms/artificial-rock-organic-forms-02.jpeg")
     ],
     coverPosition: "50% 50%",
-    alt: "Artificial rock and organic forms portfolio category cover image",
+    alt: "Yapay kaya ve organik dekor formu uygulaması",
     featured: true,
     published: true
   },
@@ -414,7 +422,7 @@ const portfolioCategoryData: PortfolioCategoryInput[] = [
       "Kültürel mirastan ilham alan kolonlar, yazıtlar, kemerler, cephe elemanları ve tematik mimari mekanlar.",
     coverImage: "/services/architectural-decor-relief.jpeg",
     coverPosition: "50% 45%",
-    alt: "Decorative architectural and thematic environment cover image",
+    alt: "Dekoratif mimari elemanlar ve tematik mekan uygulaması",
     href: "/works/historical-thematic-environments",
     introHeading: "Kültürel ve tematik anlatıların mimari detaylara dönüştüğü mekanlar.",
     intro: [
@@ -428,84 +436,84 @@ const portfolioCategoryData: PortfolioCategoryInput[] = [
       ]),
       {
         src: "/projects/portfolio/historical-thematic-environments/artificial-rock-organic-forms-08.jpeg",
-        alt: "Green twisted decorative column form for a thematic architectural environment",
+        alt: "Tematik mimari mekan için yeşil burgu dekoratif kolon formu",
         title: "Green Decorative Column Form",
         description:
           "A twisted green column-like form suited to decorative architectural and thematic settings."
       },
       {
         src: "/projects/portfolio/historical-thematic-environments/white-ornamental-architectural-arch-production-01.png",
-        alt: "White ornamental architectural arch element produced for a thematic interior",
+        alt: "Tematik iç mekan için üretilmiş beyaz süslemeli mimari kemer",
         title: "Ornamental Architectural Arch",
         description:
           "A large-scale decorative arch form prepared as a sculptural architectural element."
       },
       {
         src: "/projects/portfolio/historical-thematic-environments/eagle-relief-wall-with-decorative-columns-01.png",
-        alt: "Eagle relief wall with decorative columns for a classical thematic interior",
+        alt: "Klasik tematik iç mekanda dekoratif kolonlu kartal rölyefi duvarı",
         title: "Eagle Relief Wall",
         description:
           "A classical relief composition with sculpted columns, mountain scenery, and an eagle motif."
       },
       {
         src: "/projects/portfolio/historical-thematic-environments/ornamental-white-column-shaft-relief-01.png",
-        alt: "Ornamental white column shaft with carved relief details for a thematic interior",
+        alt: "Tematik iç mekan için oyma rölyef detaylı beyaz süslemeli kolon gövdesi",
         title: "Ornamental Column Shaft",
         description:
           "A tall decorative column component with carved relief bands and a twisted central shaft."
       },
       {
         src: "/projects/portfolio/historical-thematic-environments/green-marble-twisted-column-form-01.png",
-        alt: "Green marble-effect twisted column form produced as a decorative architectural element",
+        alt: "Dekoratif mimari eleman olarak üretilen yeşil mermer efektli burgu kolon",
         title: "Green Twisted Column Form",
         description:
           "A sculptural twisted column form finished with a polished green stone-effect surface."
       },
       {
         src: "/projects/portfolio/historical-thematic-environments/decorative-white-column-capital-01.png",
-        alt: "Decorative white column capital with classical leaf ornamentation",
+        alt: "Klasik yaprak süslemeli beyaz dekoratif kolon başlığı",
         title: "Decorative Column Capital",
         description:
           "A classical column capital form with raised ornamental leaf detailing for architectural decor."
       },
       {
         src: "/projects/portfolio/historical-thematic-environments/classical-white-tiered-fountain-01.png",
-        alt: "Classical white tiered fountain form produced as a decorative architectural object",
+        alt: "Dekoratif mimari obje olarak üretilen klasik beyaz katlı çeşme formu",
         title: "Classical Tiered Fountain",
         description:
           "A white three-tier fountain form produced for decorative architectural and thematic settings."
       },
       {
         src: "/projects/portfolio/historical-thematic-environments/classical-white-tiered-fountain-02.png",
-        alt: "Tall white classical tiered fountain with shell-like bowl details",
+        alt: "Kabuk biçimli çanak detaylarına sahip uzun beyaz klasik katlı çeşme",
         title: "Tall Classical Fountain",
         description:
           "A taller fountain variation with stacked shell-like bowls and classical decorative proportions."
       },
       {
         src: "/projects/portfolio/historical-thematic-environments/spiral-white-decorative-vase-01.png",
-        alt: "White spiral decorative vase form produced for architectural display",
+        alt: "Mimari sergileme için üretilen beyaz spiral dekoratif vazo formu",
         title: "Spiral Decorative Vase",
         description:
           "A large white vase form with subtle spiral fluting for refined decorative environments."
       },
       {
         src: "/projects/portfolio/historical-thematic-environments/fluted-white-sculptural-vase-01.png",
-        alt: "Tall white fluted sculptural vase with vertical ribbed geometry",
+        alt: "Dikey yivli geometrili uzun beyaz heykelsi vazo",
         title: "Fluted Sculptural Vase",
         description:
           "A tall sculptural vase form with vertical fluting and a narrow waist profile."
       },
       {
         src: "/projects/portfolio/historical-thematic-environments/classical-white-decorative-urn-01.png",
-        alt: "Classical white decorative urn form with rounded body and flared neck",
+        alt: "Yuvarlak gövdeli ve geniş boyunlu klasik beyaz dekoratif urne formu",
         title: "Classical Decorative Urn",
         description:
           "A classical urn-like display form with a rounded body and flared upper neck."
       },
       {
         src: "/projects/portfolio/historical-thematic-environments/classical-white-baluster-vase-01.png",
-        alt: "White baluster vase form with classical rounded profile",
+        alt: "Klasik yuvarlak profilli beyaz baluster vazo formu",
         title: "Classical Baluster Vase",
         description:
           "A white baluster-style decorative vase form with a textured sculptural surface."
@@ -514,19 +522,19 @@ const portfolioCategoryData: PortfolioCategoryInput[] = [
     coverImages: [
       {
         src: "/projects/portfolio/historical-thematic-environments/eagle-relief-wall-with-decorative-columns-01.png",
-        alt: "Eagle relief wall with decorative columns for a classical thematic interior"
+        alt: "Klasik tematik iç mekanda dekoratif kolonlu kartal rölyefi duvarı"
       },
       {
         src: "/projects/portfolio/historical-thematic-environments/ornamental-white-column-shaft-relief-01.png",
-        alt: "Ornamental white column shaft with carved relief details for a thematic interior"
+        alt: "Tematik iç mekan için oyma rölyef detaylı beyaz süslemeli kolon gövdesi"
       },
       {
         src: "/projects/portfolio/historical-thematic-environments/decorative-white-column-capital-01.png",
-        alt: "Decorative white column capital with classical leaf ornamentation"
+        alt: "Klasik yaprak süslemeli beyaz dekoratif kolon başlığı"
       },
       {
         src: "/projects/portfolio/historical-thematic-environments/green-marble-twisted-column-form-01.png",
-        alt: "Green marble-effect twisted column form produced as a decorative architectural element"
+        alt: "Dekoratif mimari eleman olarak üretilen yeşil mermer efektli burgu kolon"
       },
       portfolioImage("/projects/portfolio/historical-thematic-environments/historical-thematic-environments-04.jpeg"),
       portfolioImage("/projects/portfolio/historical-thematic-environments/historical-thematic-environments-08.jpeg"),
@@ -557,7 +565,7 @@ const portfolioCategoryData: PortfolioCategoryInput[] = [
       portfolioImage("/projects/portfolio/cnc-manufacturing-processes/cnc-manufacturing-processes-09.jpeg")
     ],
     coverPosition: "50% 50%",
-    alt: "CNC manufacturing process portfolio category cover image",
+    alt: "Atölyede CNC üretim ve köpük işleme süreci",
     featured: true,
     published: true
   },
@@ -583,7 +591,7 @@ const portfolioCategoryData: PortfolioCategoryInput[] = [
       portfolioImage("/projects/portfolio/molds-composite-production/molds-composite-production-09.jpeg")
     ],
     coverPosition: "50% 50%",
-    alt: "Molds and composite production portfolio category cover image",
+    alt: "Kalıp ve kompozit üretim süreci",
     featured: true,
     published: true
   },
@@ -596,7 +604,7 @@ const portfolioCategoryData: PortfolioCategoryInput[] = [
       "Görsel etki için üretilen perakende sergilemeleri, promosyon objeleri ve markalı ticari uygulamalar.",
     coverImage: "/services/brand-nyx-bottle.jpeg",
     coverPosition: "50% 45%",
-    alt: "Commercial brand installation portfolio category cover image",
+    alt: "Ticari marka için özel dekor ve sergileme uygulaması",
     href: "/works/commercial-brand-installations",
     introHeading: "Görünürlük ve etki için üretilen marka mekanları ve ticari objeler.",
     intro: [
@@ -607,84 +615,84 @@ const portfolioCategoryData: PortfolioCategoryInput[] = [
       ...portfolioImageSet("commercial-brand-installations", 12),
       {
         src: "/projects/portfolio/commercial-brand-installations/ardic-branded-spherical-reception-display-01.png",
-        alt: "Large spherical reception display object in an Ardic branded premium lobby",
+        alt: "Ardıç markalı premium lobide büyük küresel resepsiyon objesi",
         title: "Markalı Küresel Resepsiyon Objesi",
         description:
           "Markalı bir lobide odak noktası olarak geliştirilen parlak yüzeyli heykelsi sergileme objesi."
       },
       {
         src: "/projects/portfolio/commercial-brand-installations/oversized-green-tennis-ball-display-01.png",
-        alt: "Oversized green tennis ball display objects arranged in an outdoor production area",
+        alt: "Açık üretim alanında büyük ölçekli yeşil tenis topu objeleri",
         title: "Büyük Ölçekli Tenis Topu Objeleri",
         description:
           "Ticari bir sunum alanı için üretilen büyük ölçekli spor temalı sergileme objeleri."
       },
       {
         src: "/projects/portfolio/commercial-brand-installations/illuminated-sculptural-wings-brand-installation-01.png",
-        alt: "Illuminated sculptural red wings installed as a commercial interior feature wall",
+        alt: "Ticari iç mekanda duvara uygulanan aydınlatmalı kırmızı heykelsi kanatlar",
         title: "Aydınlatmalı Heykelsi Kanatlar",
         description:
           "Yüksek etkili ticari bir iç mekan için tasarlanan, duvara monte heykelsi uygulama."
       },
       {
         src: "/projects/portfolio/commercial-brand-installations/giant-burger-display-object-01.png",
-        alt: "Giant burger sculpture produced as a commercial brand display object",
+        alt: "Ticari marka sergilemesi için üretilen dev burger heykeli",
         title: "Dev Burger Sergileme Objesi",
         description:
           "Tanıtım ve perakende sunumu için üretilen gerçekçi, büyük ölçekli burger objesi."
       },
       {
         src: "/projects/portfolio/commercial-brand-installations/sculptures-characters-05.jpeg",
-        alt: "Assorted oversized fruit display props produced for commercial presentation",
+        alt: "Ticari sunum için üretilen büyük ölçekli meyve dekorları",
         title: "Büyük Ölçekli Meyve Dekorları",
         description:
           "A group of fruit display objects fabricated as promotional commercial props."
       },
       {
         src: "/projects/portfolio/commercial-brand-installations/sculptures-characters-06.jpeg",
-        alt: "Oversized meat display props produced for a commercial food presentation",
+        alt: "Ticari yiyecek sunumu için üretilen büyük ölçekli et dekorları",
         title: "Büyük Ölçekli Et Dekorları",
         description:
           "Large food-themed display props created for commercial visual merchandising."
       },
       {
         src: "/projects/portfolio/commercial-brand-installations/sculptures-characters-07.jpeg",
-        alt: "Oversized bread display props produced for commercial food presentation",
+        alt: "Ticari yiyecek sunumu için üretilen büyük ölçekli ekmek dekorları",
         title: "Büyük Ölçekli Ekmek Dekorları",
         description:
           "Food-themed display objects fabricated for promotional or retail presentation."
       },
       {
         src: "/projects/portfolio/commercial-brand-installations/sculptures-characters-08.jpeg",
-        alt: "Oversized carrot display object produced as a commercial food prop",
+        alt: "Ticari sergileme için üretilen büyük ölçekli havuç objesi",
         title: "Büyük Ölçekli Havuç Objesi",
         description:
           "A large food prop shaped and finished for commercial display use."
       },
       {
         src: "/projects/portfolio/commercial-brand-installations/sculptures-characters-14.jpeg",
-        alt: "Oversized burger prop in workshop production for a commercial food display",
+        alt: "Ticari sergileme için atölyede üretilen büyük ölçekli burger objesi",
         title: "Burger Sergileme Objesi Üretimi",
         description:
           "A commercial food display prop shown during workshop production."
       },
       {
         src: "/projects/portfolio/commercial-brand-installations/historical-thematic-environments-25.jpeg",
-        alt: "EPSLAM branded decorative storefront arch produced for a commercial installation",
+        alt: "Ticari uygulama için üretilen EPSLAM markalı dekoratif mağaza kemeri",
         title: "EPSLAM Markalı Mağaza Kemeri",
         description:
           "A branded decorative arch element produced as part of a commercial installation."
       },
       {
         src: "/projects/portfolio/commercial-brand-installations/historical-thematic-environments-26.jpeg",
-        alt: "EPSLAM branded decorative display object produced for a commercial environment",
+        alt: "Ticari mekan için üretilen EPSLAM markalı dekoratif sergileme objesi",
         title: "EPSLAM Markalı Sergileme Objesi",
         description:
           "A freestanding branded decorative object fabricated for a commercial setting."
       },
       {
         src: "/projects/portfolio/commercial-brand-installations/molds-composite-production-10.jpeg",
-        alt: "Finished oversized cosmetic bottle display props for a commercial brand presentation",
+        alt: "Ticari marka sunumu için tamamlanan büyük ölçekli kozmetik şişesi objeleri",
         title: "Kozmetik Şişesi Sergileme Objeleri",
         description:
           "Finished oversized cosmetic bottle objects produced for brand-focused commercial display."
@@ -693,7 +701,7 @@ const portfolioCategoryData: PortfolioCategoryInput[] = [
     coverImages: [
       {
         src: "/projects/portfolio/commercial-brand-installations/ardic-branded-spherical-reception-display-01.png",
-        alt: "Large spherical reception display object in an Ardic branded premium lobby"
+        alt: "Ardıç markalı premium lobide büyük küresel resepsiyon objesi"
       },
       portfolioImage("/projects/portfolio/commercial-brand-installations/commercial-brand-installations-01.jpeg"),
       portfolioImage("/projects/portfolio/commercial-brand-installations/commercial-brand-installations-06.jpeg"),
@@ -703,11 +711,11 @@ const portfolioCategoryData: PortfolioCategoryInput[] = [
       },
       {
         src: "/projects/portfolio/commercial-brand-installations/oversized-green-tennis-ball-display-01.png",
-        alt: "Oversized green tennis ball display objects arranged in an outdoor production area"
+        alt: "Açık üretim alanında büyük ölçekli yeşil tenis topu objeleri"
       },
       {
         src: "/projects/portfolio/commercial-brand-installations/historical-thematic-environments-25.jpeg",
-        alt: "EPSLAM branded decorative storefront arch produced for a commercial installation"
+        alt: "Ticari uygulama için üretilen EPSLAM markalı dekoratif mağaza kemeri"
       }
     ],
     featured: true,

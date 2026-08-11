@@ -1,21 +1,13 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Hakkımızda",
   description:
     "Mimari düşünceyi aile üretim deneyimi, heykel, CNC/EPS/XPS işleme, kalıp, döküm ve montajla birleştiren Ardıç'ı tanıyın.",
-  alternates: {
-    canonical: "/about"
-  },
-  openGraph: {
-    title: "Hakkımızda",
-    description:
-      "Uzun yıllara dayanan üretim deneyimi, atölye altyapısı ve entegre proje yönetimi üzerine kurulu tasarım ve üretim stüdyosu.",
-    url: "/about"
-  }
-};
+  path: "/about"
+});
 
 const approach = [
   {

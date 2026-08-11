@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import type { ServicePage } from "@/lib/service-pages";
+import { siteUrl } from "@/lib/seo";
 
 const sectionTitles = {
   production: "Ne üretiyoruz?",
@@ -22,10 +24,12 @@ export function ServiceLandingPage({ service }: { service: ServicePage }) {
   const serviceData = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${siteUrl}/${service.slug}#service`,
     name: service.title,
+    serviceType: service.title,
     description: service.description,
-    url: `https://ardicdf.com.tr/${service.slug}`,
-    provider: { "@id": "https://ardicdf.com.tr/#organization" },
+    url: `${siteUrl}/${service.slug}`,
+    provider: { "@id": `${siteUrl}/#organization` },
     areaServed: [{ "@type": "City", name: "İstanbul" }, { "@type": "Country", name: "Türkiye" }]
   };
 
@@ -35,7 +39,15 @@ export function ServiceLandingPage({ service }: { service: ServicePage }) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }} />
 
       <section className="px-5 py-20 md:px-8 md:py-28">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+        <div className="mx-auto max-w-7xl">
+          <Breadcrumbs
+            items={[
+              { label: "Ana Sayfa", href: "/" },
+              { label: "Hizmetler", href: "/services" },
+              { label: service.title, href: `/${service.slug}` }
+            ]}
+          />
+          <div className="mt-10 grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
           <div>
             <p className="text-xs font-semibold uppercase tracking-brand text-bronze">{service.eyebrow}</p>
             <h1 className="mt-8 font-display text-5xl leading-[1.02] text-ink md:text-7xl">{service.title}</h1>
@@ -46,6 +58,7 @@ export function ServiceLandingPage({ service }: { service: ServicePage }) {
               <Link href="/contact" className="bg-ink px-6 py-4 text-xs font-semibold uppercase tracking-brand text-porcelain transition hover:bg-bronze hover:text-ink">Teklif İsteyin</Link>
               <Link href="/works" className="border border-ink/15 px-6 py-4 text-xs font-semibold uppercase tracking-brand text-ink transition hover:border-bronze hover:text-bronze">Projeleri İnceleyin</Link>
             </div>
+          </div>
           </div>
         </div>
       </section>
