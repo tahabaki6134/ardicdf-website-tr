@@ -14,10 +14,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/services",
     "/about",
     "/fabrication",
-    "/live",
+
     "/contact",
     "/privacy",
-    "/references"
+
   ];
 
   return [

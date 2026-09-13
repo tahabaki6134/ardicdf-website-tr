@@ -77,7 +77,7 @@ export default function PortfolioCategoryPage({ params }: CategoryPageProps) {
 
   return (
     <main>
-      <section className="px-5 py-20 md:px-8 md:py-28">
+      <section className="px-5 py-10 md:px-8 md:py-14">
         <div className="mx-auto max-w-7xl">
           <Breadcrumbs
             items={[
@@ -96,38 +96,7 @@ export default function PortfolioCategoryPage({ params }: CategoryPageProps) {
             />
           </div>
 
-          <div className="mt-14 grid gap-10 border-y border-ink/10 py-12 lg:grid-cols-[0.9fr_1.1fr]">
-            <div>
-              <p className="font-display text-4xl leading-tight text-ink md:text-5xl">
-                {category.introHeading}
-              </p>
-              <p className="mt-6 text-sm font-semibold uppercase tracking-brand text-bronze">
-                {category.imageCount} Görsel
-              </p>
-            </div>
-            <div className="space-y-6 text-lg leading-8 text-ink/65">
-              {category.intro.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-            </div>
-          </div>
-
-          <section className="mt-12 grid gap-px bg-ink/10 sm:grid-cols-3" aria-label="Proje ve üretim özeti">
-            <div className="bg-porcelain p-6">
-              <p className="text-xs font-semibold uppercase tracking-brand text-bronze">Proje Türü</p>
-              <p className="mt-4 font-display text-2xl leading-tight text-ink">{category.title}</p>
-            </div>
-            <div className="bg-porcelain p-6">
-              <p className="text-xs font-semibold uppercase tracking-brand text-bronze">Üretim Bağlamı</p>
-              <p className="mt-4 leading-7 text-ink/65">{category.introHeading}</p>
-            </div>
-            <div className="bg-porcelain p-6">
-              <p className="text-xs font-semibold uppercase tracking-brand text-bronze">Görsel Dokümantasyon</p>
-              <p className="mt-4 leading-7 text-ink/65">Bu kategoride {category.imageCount} gerçek proje veya üretim görseli yer alır.</p>
-            </div>
-          </section>
-
-          <section className="mt-16">
+          <section className="mt-8">
             <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
@@ -145,7 +114,7 @@ export default function PortfolioCategoryPage({ params }: CategoryPageProps) {
           {serviceLinks.length ? (
             <section className="mt-16 border-t border-ink/10 pt-12">
               <p className="text-xs font-semibold uppercase tracking-brand text-bronze">İlgili Hizmetler</p>
-              <h2 className="mt-5 font-display text-4xl leading-tight text-ink">Bu projelerde kullanılan üretim kabiliyetleri</h2>
+              <h2 className="mt-5 font-display text-4xl leading-tight text-ink">Benzer işler için imalat seçenekleri</h2>
               <div className="mt-7 flex flex-wrap gap-3">
                 {serviceLinks.map((item) => (
                   <Link key={item.href} href={item.href} className="border border-ink/10 bg-white px-5 py-4 font-semibold text-ink transition hover:border-bronze hover:text-bronze">{item.label} →</Link>
