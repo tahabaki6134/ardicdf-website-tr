@@ -16,7 +16,9 @@ const collectedData = [
   "proje türü",
   "proje konumu",
   "proje ölçeği veya kapsamı",
-  "proje mesajı veya özeti"
+  "proje mesajı veya özeti",
+  "eklediğiniz çizim ve fotoğraflar",
+  "paylaştığınız dosya bağlantıları"
 ];
 
 export default function PrivacyPage() {
@@ -59,7 +61,7 @@ export default function PrivacyPage() {
               </h2>
               <p className="mt-5 leading-8 text-ink/65">
                 Bilgileri proje talebinizi değerlendirmek, tasarım ve üretim kapsamını anlamak,
-                sonraki adımlar için sizinle iletişime geçmek ve proje görüşmelerini yürütmek için kullanırız.
+                sonraki adımlar için sizinle iletişime geçmek ve proje görüşmelerini yürütmek için kullanırız. Eklediğiniz dosyalar talebinizle birlikte e-posta hizmetimiz üzerinden ekibimize iletilir; web sitesinde yayımlanmaz.
               </p>
             </section>
 
@@ -92,10 +94,10 @@ export default function PrivacyPage() {
               <p className="mt-5 leading-8 text-ink/65">
                 Gizlilik soruları veya talep bilgilerinizin silinmesi için bize şu adresten ulaşın:{" "}
                 <Link
-                  href="mailto:taaha.baaki@gmail.com"
+                  href="mailto:info@ardicdf.com"
                   className="font-semibold text-bronze transition hover:text-ink"
                 >
-                  taaha.baaki@gmail.com
+                  info@ardicdf.com
                 </Link>
                 .
               </p>

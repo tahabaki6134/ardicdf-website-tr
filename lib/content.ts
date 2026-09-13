@@ -22,7 +22,6 @@ export const navigation = [
   { href: "/karsilastir", label: "Yöntemleri karşılaştır" },
   { href: "/about", label: "Hakkımızda" },
   { href: "/fabrication", label: "Atölye" },
-  { href: "/live", label: "Canlı", mobileLabel: "Canlı Atölye", footerLabel: "Canlı Atölye" },
   { href: "/contact", label: "İletişim" }
 ];
 

@@ -15,14 +15,14 @@ const worksCategories = portfolioCategories.filter((category) => category.publis
 export default function WorksPage() {
   return (
     <main>
-      <section className="px-5 py-20 md:px-8 md:py-28">
+      <section className="px-5 py-10 md:px-8 md:py-14">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 border-b border-ink/10 pb-14 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
             <SectionHeading
               eyebrow="Projeler"
               headingTag="h1"
-              title="Heykel, dekor ve tematik üretimden seçili işler."
-              copy="Ardıç Design & Fabrication, konsept geliştirmeden üretim, yüzey bitişi ve saha uygulamasına kadar özel fiziksel projeler gerçekleştirir."
+              title="Üretimimizden seçili işler."
+              copy="Tamamlanmış ürünler, mimari detaylar ve sahne uygulamalarından üretim örnekleri."
             />
             <p className="max-w-xl text-base leading-8 text-ink/60 md:text-lg">
               Portföy; heykel işçiliği, mimari detaylandırma, marka odaklı üretim ve atölye

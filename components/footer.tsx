@@ -1,3 +1,4 @@
+import { contactEmail } from "@/lib/contact-details";
 import Image from "next/image";
 import Link from "next/link";
 import { brand, navigation } from "@/lib/content";
@@ -27,7 +28,7 @@ export function Footer() {
           <div className="mt-5 grid gap-3">
             {navigation.map((item) => (
               <Link key={item.href} href={item.href} className="text-porcelain/75 hover:text-bronze">
-                {item.footerLabel ?? item.label}
+                {item.label}
               </Link>
             ))}
             <a href="https://www.ardicdf.com" className="text-porcelain/75 hover:text-bronze">English website</a>
@@ -39,6 +40,7 @@ export function Footer() {
         <div>
           <p className="text-xs uppercase tracking-brand text-porcelain/50">İletişim</p>
           <div className="mt-5 space-y-3 text-porcelain/75">
+            <a href={"mailto:" + contactEmail} className="block break-words hover:text-bronze">{contactEmail}</a>
             <Link href="tel:+905436268969" className="block transition hover:text-bronze">
               {brand.phone}
             </Link>

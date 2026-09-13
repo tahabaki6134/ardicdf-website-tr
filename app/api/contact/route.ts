@@ -1,90 +1,47 @@
+import { parseAttachments, type EnquiryAttachment } from "@/lib/enquiry-attachments";
 import { NextResponse } from "next/server";
+import {
+  fieldLabels,
+  initialEnquiry,
+  validateEnquiry,
+  type Enquiry,
+  type EnquiryField
+} from "@/lib/enquiry";
+import { getIndustry } from "@/lib/industries";
+import { getProject, MAX_SELECTED_PROJECTS, parseSelectedProjects } from "@/lib/projects";
 
-const RESEND_API_URL = "https://api.resend.com/emails";
-const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
-const NOTIFICATION_EMAIL = "taaha.baaki@gmail.com";
-const FROM_EMAIL =
-  process.env.RESEND_FROM_EMAIL?.trim() || "Ardıç Design & Fabrication <onboarding@resend.dev>";
-
-const MAX_MESSAGE_LENGTH = 3000;
-const MAX_LINK_COUNT = 2;
-const SPAM_PHRASES = [
-  "graphic design",
-  "branding refresh",
-  "seo",
-  "marketing services",
-  "we noticed your website",
-  "boost your brand",
-  "rank on google"
-];
-
-type InquiryPayload = {
-  fullName?: unknown;
-  company?: unknown;
-  companyWebsite?: unknown;
-  email?: unknown;
-  phone?: unknown;
-  projectType?: unknown;
-  projectLocation?: unknown;
-  projectScope?: unknown;
-  message?: unknown;
-  turnstileToken?: unknown;
-};
-
-function clean(value: unknown) {
-  return typeof value === "string" ? value.trim() : "";
-}
-
-function isValidEmail(value: string) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-}
-
-function countLinks(value: string) {
-  return (value.match(/https?:\/\/|www\.|[a-z0-9-]+\.[a-z]{2,}/gi) || []).length;
-}
-
-function looksLikeSpam(inquiry: {
-  companyWebsite: string;
-  fullName: string;
-  company: string;
-  email: string;
-  phone: string;
-  projectType: string;
-  projectLocation: string;
-  projectScope: string;
-  message: string;
-}) {
-  if (inquiry.companyWebsite) {
-    return true;
-  }
-
-  const combined = [
-    inquiry.fullName,
-    inquiry.company,
-    inquiry.email,
-    inquiry.phone,
-    inquiry.projectType,
-    inquiry.projectLocation,
-    inquiry.projectScope,
-    inquiry.message
-  ]
-    .join(" ")
-    .toLowerCase();
-
-  if (countLinks(inquiry.message) > MAX_LINK_COUNT) {
-    return true;
-  }
-
-  return SPAM_PHRASES.some((phrase) => combined.includes(phrase));
-}
-
-function escapeHtml(value: string) {
-  return value
+const clean = (value: unknown) => (typeof value === "string" ? value.trim() : "");
+const escapeHtml = (value: string) =>
+  value
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
+const safeSubject = (value: string) => value.replace(/[\r\n]+/g, " ").slice(0, 160);
+
+async function verifyTurnstile(token: string, remoteIp: string) {
+  if (!process.env.TURNSTILE_SECRET_KEY)
+    return { ok: false, error: "Doğrulama hizmeti yapılandırılmamış." };
+  if (!token || token.length > 4096)
+    return { ok: false, error: "Göndermeden önce doğrulamayı tamamlayın." };
+  const body = new FormData();
+  body.append("secret", process.env.TURNSTILE_SECRET_KEY);
+  body.append("response", token);
+  if (remoteIp) body.append("remoteip", remoteIp);
+  try {
+    const response = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+      method: "POST",
+      body,
+      signal: AbortSignal.timeout(15000)
+    });
+    const result = await response.json().catch(() => null);
+    if (!response.ok || result?.success !== true)
+      return { ok: false, error: "Doğrulama başarısız oldu. Tekrar deneyin." };
+    return { ok: true };
+  } catch {
+    return { ok: false, error: "Doğrulama tamamlanamadı. Tekrar deneyin." };
+  }
 }
 
 async function sendEmail(payload: {
@@ -93,211 +50,172 @@ async function sendEmail(payload: {
   html: string;
   text: string;
   replyTo?: string;
+  attachments?: EnquiryAttachment[];
 }) {
-  const response = await fetch(RESEND_API_URL, {
+  const response = await fetch("https://api.resend.com/emails", {
     method: "POST",
+    signal: AbortSignal.timeout(15000),
     headers: {
-      Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+      Authorization: "Bearer " + process.env.RESEND_API_KEY,
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      from: FROM_EMAIL,
+      from:
+        process.env.RESEND_FROM_EMAIL?.trim() ||
+        "Ardıç Design & Fabrication <onboarding@resend.dev>",
       to: payload.to,
       subject: payload.subject,
       html: payload.html,
       text: payload.text,
-      reply_to: payload.replyTo
+      reply_to: payload.replyTo,
+      attachments: payload.attachments
     })
   });
-
-  if (!response.ok) {
-    const errorText = await response.text().catch(() => "");
-    throw new Error(`Resend request failed (${response.status}): ${errorText}`);
-  }
-}
-
-async function verifyTurnstile(token: string, remoteIp: string) {
-  if (!process.env.TURNSTILE_SECRET_KEY) {
-    return {
-      ok: false,
-      error: "Doğrulama hizmeti yapılandırılmamış."
-    };
-  }
-
-  if (!token) {
-    return {
-      ok: false,
-      error: "Göndermeden önce doğrulamayı tamamlayın."
-    };
-  }
-
-  const body = new FormData();
-  body.append("secret", process.env.TURNSTILE_SECRET_KEY);
-  body.append("response", token);
-
-  if (remoteIp) {
-    body.append("remoteip", remoteIp);
-  }
-
-  try {
-    const response = await fetch(TURNSTILE_VERIFY_URL, {
-      method: "POST",
-      body
-    });
-    const result = (await response.json().catch(() => null)) as
-      | { success?: boolean }
-      | null;
-
-    if (!response.ok || result?.success !== true) {
-      return {
-        ok: false,
-        error: "Doğrulama başarısız oldu. Lütfen tekrar deneyin."
-      };
-    }
-
-    return { ok: true };
-  } catch (error) {
-    console.error("Turnstile verification error:", error);
-    return {
-      ok: false,
-      error: "Doğrulama tamamlanamadı. Lütfen tekrar deneyin."
-    };
-  }
+  if (!response.ok)
+    throw new Error("Email provider rejected the request (" + response.status + ").");
 }
 
 export async function POST(request: Request) {
-  let payload: InquiryPayload;
-
+  let payload: Record<string, unknown>;
   try {
-    payload = await request.json();
+    const body = await request.text();
+    if (Buffer.byteLength(body) > 3 * 1024 * 1024) return NextResponse.json({ error: "Eklenen dosyaların toplamı en fazla 2 MB olabilir." }, { status: 413 });
+    const value: unknown = JSON.parse(body);
+    if (!value || typeof value !== "object" || Array.isArray(value))
+      throw new Error("Invalid body");
+    payload = value as Record<string, unknown>;
   } catch {
     return NextResponse.json({ error: "Geçersiz istek içeriği." }, { status: 400 });
   }
 
-  const inquiry = {
-    fullName: clean(payload.fullName),
-    company: clean(payload.company),
-    companyWebsite: clean(payload.companyWebsite),
-    email: clean(payload.email),
-    phone: clean(payload.phone),
-    projectType: clean(payload.projectType),
-    projectLocation: clean(payload.projectLocation),
-    projectScope: clean(payload.projectScope),
-    message: clean(payload.message),
-    turnstileToken: clean(payload.turnstileToken)
-  };
+  let attachments: EnquiryAttachment[];
+  try { attachments = parseAttachments(payload.attachments); }
+  catch { return NextResponse.json({ error: "En fazla 3 PDF, JPG, PNG veya WebP dosyası ekleyin; toplam 2 MB. Dosyaları kontrol edin veya paylaşım bağlantısı kullanın." }, { status: 400 }); }
 
-  if (inquiry.companyWebsite) {
-    return NextResponse.json({ ok: true });
-  }
+  const inquiry = Object.fromEntries(
+    Object.keys(initialEnquiry).map((key) => [key, clean(payload[key])])
+  ) as Enquiry;
+  if (!inquiry.materialPreference && payload.projectScope) inquiry.materialPreference = clean(payload.projectScope);
+  if (inquiry.companyWebsite)
+    return NextResponse.json(
+      { error: "Talep işlenemedi. Sayfayı yenileyip tekrar deneyin." },
+      { status: 400 }
+    );
 
+  const errors = validateEnquiry(inquiry);
+  if (Object.keys(errors).length)
+    return NextResponse.json(
+      { error: "Lütfen proje bilgilerinizi kontrol edin.", fields: errors },
+      { status: 400 }
+    );
+  if (inquiry.industry && !getIndustry(inquiry.industry))
+    return NextResponse.json({ error: "Lütfen geçerli bir sektör seçin." }, { status: 400 });
+
+  const rawSelection = payload.selectedProjects;
   if (
-    !inquiry.fullName ||
-    !inquiry.email ||
-    !isValidEmail(inquiry.email) ||
-    !inquiry.projectType ||
-    !inquiry.message
+    rawSelection !== undefined &&
+    (!Array.isArray(rawSelection) ||
+      rawSelection.length > MAX_SELECTED_PROJECTS ||
+      rawSelection.some((id) => typeof id !== "string" || !getProject(id)))
   ) {
     return NextResponse.json(
-      { error: "Göndermeden önce ad, e-posta, proje türü ve mesaj alanlarını doldurun." },
+      { error: "Seçilen proje örneklerini kontrol edin." },
       { status: 400 }
     );
   }
-
-  if (inquiry.message.length > MAX_MESSAGE_LENGTH) {
-    return NextResponse.json(
-      { error: "Mesajınızı 3000 karakterin altında tutun." },
-      { status: 400 }
-    );
-  }
+  const selected = parseSelectedProjects(rawSelection);
+  if (!process.env.RESEND_API_KEY)
+    return NextResponse.json({ error: "E-posta hizmeti yapılandırılmamış." }, { status: 503 });
 
   const remoteIp =
     request.headers.get("cf-connecting-ip") ||
     request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
     "";
-  const turnstile = await verifyTurnstile(inquiry.turnstileToken, remoteIp);
+  const verification = await verifyTurnstile(clean(payload.turnstileToken), remoteIp);
+  if (!verification.ok) return NextResponse.json({ error: verification.error }, { status: 400 });
 
-  if (!turnstile.ok) {
-    return NextResponse.json({ error: turnstile.error }, { status: 400 });
-  }
-
-  if (looksLikeSpam(inquiry)) {
-    return NextResponse.json({ ok: true });
-  }
-
-  if (!process.env.RESEND_API_KEY) {
-    return NextResponse.json(
-      { error: "E-posta hizmeti yapılandırılmamış." },
-      { status: 500 }
-    );
-  }
-
-  const rows = [
-    ["Ad Soyad", inquiry.fullName],
-    ["Firma", inquiry.company || "-"],
-    ["E-posta", inquiry.email],
-    ["Telefon / WhatsApp", inquiry.phone || "-"],
-    ["Proje Türü", inquiry.projectType],
-    ["Proje Konumu", inquiry.projectLocation || "-"],
-    ["Proje Ölçeği / Kapsamı", inquiry.projectScope || "-"],
-    ["Mesaj", inquiry.message]
-  ];
-
-  const notificationText = rows.map(([label, value]) => `${label}: ${value}`).join("\n");
-  const notificationHtml = `
-    <div style="font-family: Arial, sans-serif; color: #111111; line-height: 1.6;">
-      <h1 style="font-family: Georgia, serif; font-size: 28px;">Yeni Ardıç Proje Talebi</h1>
-      <table style="border-collapse: collapse; width: 100%;">
-        ${rows
-          .map(
-            ([label, value]) => `
-              <tr>
-                <td style="border-top: 1px solid #e5e0d6; padding: 12px 16px; font-weight: 700; width: 180px;">${escapeHtml(label)}</td>
-                <td style="border-top: 1px solid #e5e0d6; padding: 12px 16px; white-space: pre-wrap;">${escapeHtml(value)}</td>
-              </tr>
-            `
-          )
-          .join("")}
-      </table>
-    </div>
-  `;
-
-  const confirmationText =
-    "Ardıç Design & Fabrication ile iletişime geçtiğiniz için teşekkür ederiz.\nEkibimiz proje talebinizi aldı ve kısa süre içinde inceleyecek.";
-  const confirmationHtml = `
-    <div style="font-family: Arial, sans-serif; color: #111111; line-height: 1.7;">
-      <h1 style="font-family: Georgia, serif; font-size: 28px;">Proje Talebiniz Alındı</h1>
-      <p>Ardıç Design & Fabrication ile iletişime geçtiğiniz için teşekkür ederiz.</p>
-      <p>Ekibimiz proje talebinizi aldı ve kısa süre içinde inceleyecek.</p>
-    </div>
-  `;
+  // Verification handles automated requests. Never silently discard a valid
+  // enquiry because its text contains a marketing term or a place such as Seoul.
+  const rows = (Object.keys(initialEnquiry) as EnquiryField[])
+    .filter((key) => key !== "companyWebsite")
+    .map((key) => [
+      fieldLabels[key],
+      key === "industry"
+        ? getIndustry(inquiry.industry)?.shortTitle || "Not specified"
+        : inquiry[key] || "Not specified"
+    ]);
+  rows.push([
+    "Selected portfolio examples",
+    selected.length
+      ? selected
+          .map((id) => getProject(id)!.title + " — https://www.ardicdf.com/works/" + id)
+          .join("\n")
+      : "None selected"
+  ]);
+  if (attachments.length) rows.push(["Eklenen dosyalar", attachments.map(file => file.filename).join("; ")]);
+  const notificationText = rows.map(([label, value]) => label + ": " + value).join("\n\n");
+  const tableRows = rows
+    .map(
+      ([label, value]) =>
+        '<tr><th scope="row" style="padding:12px;text-align:left;vertical-align:top;border-top:1px solid #ddd">' +
+        escapeHtml(label) +
+        '</th><td style="padding:12px;white-space:pre-wrap;border-top:1px solid #ddd">' +
+        escapeHtml(value) +
+        "</td></tr>"
+    )
+    .join("");
+  const notificationHtml =
+    '<div style="font-family:Arial,sans-serif;line-height:1.6;color:#111"><h1>Yeni Ardıç proje talebi</h1><table style="width:100%;border-collapse:collapse">' +
+    tableRows +
+    "</table></div>";
+  const notificationEmail =
+    process.env.CONTACT_NOTIFICATION_EMAIL?.trim() || "taaha.baaki@gmail.com";
 
   try {
     await sendEmail({
-      to: NOTIFICATION_EMAIL,
-      subject: `Yeni Proje Talebi - ${inquiry.projectType}`,
+      to: notificationEmail,
+      subject:
+        "NEW RFQ · " +
+        safeSubject(inquiry.projectType) +
+        " · " +
+        safeSubject(inquiry.company || inquiry.fullName),
       html: notificationHtml,
       text: notificationText,
-      replyTo: inquiry.email
+      replyTo: inquiry.email,
+      attachments
     });
-  } catch (error) {
-    console.error("Contact form notification email error:", error);
+  } catch {
+    console.error("Contact notification could not be sent.");
     return NextResponse.json(
-      { error: "Proje talebiniz şu anda gönderilemedi. Lütfen daha sonra tekrar deneyin." },
+      { error: "Proje talebiniz şu anda gönderilemedi. Lütfen tekrar deneyin veya e-posta ile ulaşın." },
       { status: 502 }
     );
   }
 
+  const confirmationText = [
+    "Ardıç Design & Fabrication ile iletişime geçtiğiniz için teşekkür ederiz.",
+    "Proje talebiniz incelenmek üzere ekibimize iletildi.",
+    "İmalat yöntemi: " + inquiry.projectType,
+    "Kapsamı, üretim ihtiyaçlarını ve sonraki adımları görüşmek için verdiğiniz iletişim bilgileriyle size ulaşacağız.",
+    "Gizli projelerde detaylı çizim ve modelleri paylaşmadan önce ilgili koşulların kararlaştırılmasını bekleyin."
+  ].join("\n\n");
+  let confirmationSent = false;
   try {
     await sendEmail({
       to: inquiry.email,
-      subject: "Ardıç Design & Fabrication - Proje Talebiniz Alındı",
-      html: confirmationHtml,
-      text: confirmationText
+      subject: "Ardıç Design & Fabrication — Proje talebiniz alındı",
+      html:
+        '<div style="font-family:Arial,sans-serif;line-height:1.7;white-space:pre-wrap">' +
+        escapeHtml(confirmationText) +
+        "</div>",
+      text: confirmationText,
+      replyTo: notificationEmail
     });
-  } catch (error) {
-    console.error("Contact form confirmation email error:", error);
+    confirmationSent = true;
+  } catch {
+    // The team's notification succeeded. Report receipt accurately without
+    // encouraging a duplicate enquiry when the optional confirmation fails.
+    console.error("Contact confirmation could not be sent.");
   }
-
-  return NextResponse.json({ ok: true });
+  return NextResponse.json({ ok: true, confirmationSent });
 }
