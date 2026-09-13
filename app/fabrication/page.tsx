@@ -1,3 +1,4 @@
+import { ProjectDelivery } from "@/components/project-delivery";
 import Image from "next/image";
 import Link from "next/link";
 import { createPageMetadata } from "@/lib/seo";
@@ -5,7 +6,7 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Üretim",
   description:
-    "Ardıç'ın üretim kabiliyetleri CNC, EPS/XPS işleme, heykel, mimari dekor, kalıp, polyester döküm, yüzey bitirme ve montajı kapsar.",
+    "İstanbul’da epoksi döküm, karbon fiber elle serme ve vakum uygulamaları, CNC ve kompozit imalatı. Mobilya ve dış cephe elemanlarında projeden montajlı teslime üretim.",
   path: "/fabrication"
 });
 
@@ -49,6 +50,21 @@ const capabilities = [
     number: "08",
     title: "3D Baskı Teknolojisi",
     copy: "Özel objeler ve üretim çalışmaları için hızlı prototipleme ve hassas detay desteği."
+  },
+  {
+    number: "09",
+    title: "Epoksi Reçine Dökümü",
+    copy: "Şeffaf, renkli ve dolgulu dökümler; özel objeler, masif ahşapla birleşen masa tablaları ve mobilya detayları. Kalıp, döküm kalınlığı, kürlenme ve son yüzeyi reçineye göre planlarız."
+  },
+  {
+    number: "10",
+    title: "Karbon Fiber: Elle Serme, Torbalama ve İnfüzyon",
+    copy: "Karbon parça ve kalıplarda elle serme, vakum torbalama ve vakum infüzyonu ayrı üretim seçenekleri olarak kullanırız. Hazırlık, reçine kontrolü ve maliyet farklarıyla projeye uygun yöntemi seçeriz."
+  },
+  {
+    number: "11",
+    title: "Ahşap, CNC ve Komple Mobilya",
+    copy: "Masif kapak ve CNC parçalardan; gövde, raf, çekmece ve donanımıyla komple dolaplara, sabit ve hareketli mobilyalara üretim. Çizim, yüzey bitirme, sevkiyat ve montajı birlikte üstlenebiliriz."
   }
 ];
 
@@ -391,6 +407,7 @@ export default function FabricationPage() {
           </div>
         </div>
       </section>
+    <ProjectDelivery lang="tr" />
     </main>
   );
 }
