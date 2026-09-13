@@ -1,3 +1,4 @@
+import { getMethod } from "@/lib/manufacturing";
 import Link from "next/link";
 import { ContactForm } from "@/components/contact-form";
 import { SectionHeading } from "@/components/section-heading";
@@ -25,27 +26,15 @@ const contactRows = [
       href: `https://wa.me/${brand.phoneE164.slice(1)}`,
       external: true
     }
-  ],
-  [
-    {
-      title: "Üretim Direktörü",
-      value: "+90 532 743 84 41",
-      href: "tel:+905327438441",
-      whatsapp: "https://wa.me/905327438441"
-    },
-    {
-      title: "WhatsApp",
-      value: "Üretim Direktörü",
-      href: "https://wa.me/905327438441",
-      external: true
-    }
   ]
 ];
 
 const mapsUrl =
   "https://www.google.com/maps?q=Karadeniz%20Caddesi%20No%3A131%2C%20Ferhatpa%C5%9Fa%2C%20Ata%C5%9Fehir%2C%20Istanbul%2C%20Turkey";
 
-export default function ContactPage() {
+export default function ContactPage({ searchParams }: { searchParams: { method?: string | string[]; alternative?: string | string[] } }) {
+  const initialMethod = typeof searchParams.method === "string" && getMethod(searchParams.method) ? searchParams.method : "";
+  const initialAlternative = typeof searchParams.alternative === "string" && getMethod(searchParams.alternative) && searchParams.alternative !== initialMethod ? searchParams.alternative : "";
   return (
     <main>
       <section className="px-5 py-20 md:px-8 md:py-28">
@@ -54,7 +43,7 @@ export default function ContactPage() {
             eyebrow="İletişim"
             headingTag="h1"
             title="Tasarım ve üretim projenizi birlikte planlayalım."
-            copy="Tematik mekan, heykel, mimari dekor, marka uygulaması veya büyük ölçekli özel üretim ihtiyacınızı paylaşın; ekibimiz kapsamı inceleyerek doğru üretim adımını belirlesin."
+            copy="Ölçü, adet, kullanım yeri ve son yüzeyi paylaşın. Strafor, cam elyaf, karbon fiber, 3D baskı veya diğer imalat seçeneklerini birlikte değerlendirelim."
           />
 
           <div className="bg-white p-8 shadow-soft md:p-12">
@@ -150,7 +139,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="border-y border-ink/10 bg-white/45 px-5 py-20 md:px-8 md:py-24">
+      <section id="brief" className="border-y border-ink/10 bg-white/45 px-5 py-20 md:px-8 md:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.78fr_1.22fr]">
           <div>
             <p className="text-xs font-semibold uppercase tracking-brand text-bronze">
@@ -170,7 +159,7 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <ContactForm />
+          <ContactForm key={`${initialMethod}:${initialAlternative}`} initialMethod={initialMethod} initialAlternative={initialAlternative} />
         </div>
       </section>
     </main>

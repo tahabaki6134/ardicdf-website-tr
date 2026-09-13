@@ -35,6 +35,7 @@ export function ServiceLandingPage({ service }: { service: ServicePage }) {
 
   return (
     <main>
+      <div className="mx-auto max-w-7xl px-5 pt-8 md:px-8"><Link href="/services" className="text-link">Malzeme seçimi için imalat yöntemlerini ve maliyet farklarını inceleyin</Link></div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceData) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }} />
 

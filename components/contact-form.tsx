@@ -1,5 +1,6 @@
 "use client";
 
+import { getMethod, manufacturingMethods } from "@/lib/manufacturing";
 import Script from "next/script";
 import { ChangeEvent, FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import { trackConversion } from "@/components/conversion-tracking";
@@ -23,14 +24,8 @@ declare global {
 }
 
 const projectTypes = [
-  "Tema Park / Eğlence",
-  "Otel / Restoran / Perakende",
-  "Mimari Dekorasyon",
-  "Heykel / Karakter Üretimi",
-  "Marka Uygulaması",
-  "CNC / Kalıp / Kompozit Üretimi",
-  "Büyük Ölçekli Özel Üretim",
-  "Diğer"
+  ...manufacturingMethods.map(method => method.copy.tr.title),
+  "Henüz karar vermedim — öneri istiyorum", "Diğer"
 ];
 
 const initialForm = {
@@ -64,7 +59,7 @@ function validateForm(form: typeof initialForm) {
   }
 
   if (!form.projectType) {
-    errors.projectType = "Lütfen proje türünü seçin.";
+    errors.projectType = "Lütfen imalat yöntemini seçin.";
   }
 
   if (!form.message.trim()) {
@@ -74,8 +69,11 @@ function validateForm(form: typeof initialForm) {
   return errors;
 }
 
-export function ContactForm() {
-  const [form, setForm] = useState(initialForm);
+export function ContactForm({ initialMethod = "", initialAlternative = "" }: { initialMethod?: string; initialAlternative?: string }) {
+  const chosenMethod = getMethod(initialMethod)?.copy.tr.title ?? "";
+  const chosenAlternative = getMethod(initialAlternative)?.copy.tr.title ?? "";
+  const methodPreference = [chosenMethod, chosenAlternative].filter(Boolean).join(" / ");
+  const [form, setForm] = useState({ ...initialForm, projectType: chosenMethod, projectScope: methodPreference });
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [error, setError] = useState("");
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
@@ -211,7 +209,8 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="grid gap-5 bg-white p-8 shadow-soft md:p-10">
+    <form onSubmit={handleSubmit} noValidate className="grid min-w-0 gap-5 bg-white p-5 shadow-soft md:p-10">
+      {methodPreference && <p className="border-l-4 border-bronze bg-smoke/30 p-4 text-base leading-7"><strong>Talebinizdeki yöntemler:</strong> {methodPreference}. Formdaki tercihi değiştirebilirsiniz.</p>}
       <Script
         src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
         strategy="afterInteractive"
@@ -335,7 +334,7 @@ export function ContactForm() {
       <div className="grid gap-5 md:grid-cols-2">
         <label className="block">
           <span className="text-xs font-semibold uppercase tracking-brand text-bronze">
-            Proje Türü
+            İmalat yöntemi
           </span>
           <select
             name="projectType"
@@ -347,7 +346,7 @@ export function ContactForm() {
             className={controlClass("projectType")}
           >
             <option value="" disabled>
-              Proje türünü seçin
+              İmalat yöntemini seçin
             </option>
             {projectTypes.map((type) => (
               <option key={type} value={type}>
