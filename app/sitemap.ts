@@ -1,3 +1,5 @@
+import { manufacturingMethods, methodPath, comparePath } from "@/lib/manufacturing";
+import { manufacturingLanguage as lang } from "@/lib/manufacturing-site";
 import type { MetadataRoute } from "next";
 import { portfolioCategories } from "@/lib/content";
 import { servicePages } from "@/lib/service-pages";
@@ -19,6 +21,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   return [
+    { url: `${siteUrl}${comparePath(lang)}`, lastModified: "2026-09-13", changeFrequency: "monthly" as const, priority: 0.85 },
+    ...manufacturingMethods.map(method => ({ url: `${siteUrl}${methodPath(method, lang)}`, lastModified: "2026-09-13", changeFrequency: "monthly" as const, priority: 0.9 })),
     ...staticRoutes.map((route) => ({
       url: `${siteUrl}${route}`,
       changeFrequency: route === "" ? ("weekly" as const) : ("monthly" as const),

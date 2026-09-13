@@ -18,9 +18,10 @@ export const navigation = [
   { href: "/", label: "Ana Sayfa" },
   { href: "/works", label: "Projeler" },
   { href: "/concepts", label: "Konseptler" },
-  { href: "/services", label: "Hizmetler" },
+  { href: "/services", label: "İmalat yöntemleri" },
+  { href: "/karsilastir", label: "Yöntemleri karşılaştır" },
   { href: "/about", label: "Hakkımızda" },
-  { href: "/fabrication", label: "Üretim" },
+  { href: "/fabrication", label: "Atölye" },
   { href: "/live", label: "Canlı", mobileLabel: "Canlı Atölye", footerLabel: "Canlı Atölye" },
   { href: "/contact", label: "İletişim" }
 ];

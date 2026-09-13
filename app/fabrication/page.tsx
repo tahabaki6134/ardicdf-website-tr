@@ -119,6 +119,7 @@ const scaleStats = [
 export default function FabricationPage() {
   return (
     <main>
+      <div className="mx-auto max-w-7xl px-5 pt-8 md:px-8"><Link href="/services" className="text-link">Malzeme seçimi için imalat yöntemlerini ve maliyet farklarını inceleyin</Link></div>
       <section className="px-5 py-20 md:px-8 md:py-28">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
           <div>
