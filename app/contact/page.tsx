@@ -8,7 +8,7 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "İletişim",
   description:
-    "Tematik dekorasyon, heykel, mimari dekor, CNC/EPS/XPS işleme ve özel üretim projeleriniz için Ardıç ile iletişime geçin.",
+    "Epoksi döküm, kompozit, ahşap/CNC, komple mobilya ve dış cephe elemanları için teklif isteyin. Projelendirme, üretim ve montaj kapsamını birlikte planlayalım.",
   path: "/contact"
 });
 
@@ -43,7 +43,7 @@ export default function ContactPage({ searchParams }: { searchParams: { method?:
             eyebrow="İletişim"
             headingTag="h1"
             title="Tasarım ve üretim projenizi birlikte planlayalım."
-            copy="Ölçü, adet, kullanım yeri ve son yüzeyi paylaşın. Strafor, cam elyaf, karbon fiber, 3D baskı veya diğer imalat seçeneklerini birlikte değerlendirelim."
+            copy="Ölçü, adet, kullanım yeri ve son yüzeyi paylaşın. Epoksi döküm dahil imalat seçeneklerini; tek parça, komple mobilya veya dış cephe projenizin üretim ve montaj kapsamıyla birlikte değerlendirelim."
           />
 
           <div className="bg-white p-8 shadow-soft md:p-12">

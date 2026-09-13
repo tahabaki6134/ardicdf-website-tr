@@ -382,6 +382,7 @@ export function ContactForm({ initialMethod = "", initialAlternative = "" }: { i
         </span>
         <input
           name="projectScope"
+          placeholder="Örn. tek masif kapak, komple dolap veya üretim ve montaj dahil cephe elemanları"
           type="text"
           value={form.projectScope}
           onChange={updateField}
