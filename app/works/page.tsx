@@ -2,6 +2,9 @@ import { RotatingCoverImage } from "@/components/rotating-cover-image";
 import { SectionHeading } from "@/components/section-heading";
 import { portfolioCategories } from "@/lib/content";
 import { createPageMetadata } from "@/lib/seo";
+import Image from "next/image";
+import Link from "next/link";
+import { getProject, projectHref, enquiryHref } from "@/lib/projects";
 
 export const metadata = createPageMetadata({
   title: "Projeler",
@@ -13,6 +16,7 @@ export const metadata = createPageMetadata({
 const worksCategories = portfolioCategories.filter((category) => category.published !== false);
 
 export default function WorksPage() {
+  const featured = getProject("farmasi-boss-trip")!;
   return (
     <main>
       <section className="px-5 py-10 md:px-8 md:py-14">
@@ -30,7 +34,18 @@ export default function WorksPage() {
             </p>
           </div>
 
-          <div className="mt-16 grid gap-px bg-ink/10 md:grid-cols-2 xl:grid-cols-3">
+          <article className="mt-10 grid items-center gap-7 border-b border-ink/15 pb-10 md:grid-cols-2">
+            <Link href={projectHref(featured)} aria-label={featured.title} className="relative block aspect-square overflow-hidden bg-smoke/30">
+              <Image src={featured.image} alt={featured.alt} fill priority sizes="(min-width: 768px) 45vw, 90vw" className="object-contain" />
+            </Link>
+            <div>
+              <p className="eyebrow">Öne çıkan proje</p>
+              <h2 className="mt-3 font-display text-3xl leading-tight md:text-4xl"><Link href={projectHref(featured)}>{featured.title}</Link></h2>
+              <p className="mt-5 leading-8 text-ink/70">{featured.description}</p>
+              <div className="mt-6 flex flex-wrap gap-3"><Link href={projectHref(featured)} className="button-primary">Üç görseli incele</Link><Link href={enquiryHref([featured.id]) + "#brief"} className="button-secondary">Benzer proje için teklif iste</Link></div>
+            </div>
+          </article>
+          <div className="mt-10 grid gap-px bg-ink/10 md:grid-cols-2 xl:grid-cols-3">
             {worksCategories.map((category) => (
               <article key={category.title} className="group bg-porcelain transition hover:bg-white">
                 <a href={category.href} className="flex min-h-full flex-col">

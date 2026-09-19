@@ -14,5 +14,5 @@ export function languageRoute(pathname: string, lang: Language) {
     if (pathname.startsWith("/industries") || pathname === "/planning" || pathname.startsWith("/services/")) path = "/services";
     if (pathname === "/project-selection") path = "/contact";
   } else if (!method && !["/", "/services", "/about", "/fabrication", "/works", "/contact", "/concepts", "/privacy", "/references", comparePath(lang)].includes(pathname) && !pathname.startsWith("/works/")) path = "/services";
-  return manufacturingOrigins[other] + path;
+  return manufacturingOrigins[other] + (other === "en" ? "/en" + (path === "/" ? "" : path) : path);
 }

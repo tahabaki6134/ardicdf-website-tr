@@ -4,8 +4,8 @@ import { comparisonFields, fieldNames, manufacturingMethods, methodPath, compare
 import { manufacturingOrigins } from "@/lib/manufacturing-site";
 import { SelectedWork } from "@/components/selected-work";
 import { MethodVisual } from "@/components/method-visual";
-import { showcase, showcaseHref } from "@/lib/site-showcase";
 import { ProjectDelivery } from "@/components/project-delivery";
+import { getProject, projectHref } from "@/lib/projects";
 
 export function CostContext({ lang }: { lang: Language }) {
   return <p className="mt-5 max-w-4xl text-sm leading-6 text-ink/70">{lang === "tr"
@@ -51,7 +51,7 @@ export function MethodApplications({ lang }: { lang: Language }) {
 }
 
 export function ManufacturingHome({ lang }: { lang: Language }) {
-  const tr = lang === "tr", hero = showcase[0];
+  const tr = lang === "tr", hero = getProject("farmasi-boss-trip")!;
   return <main>
     <section className="mx-auto grid max-w-[1440px] gap-6 px-5 pb-8 pt-6 md:px-8 md:py-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-12">
       <div>
@@ -60,15 +60,15 @@ export function ManufacturingHome({ lang }: { lang: Language }) {
         <p className="mt-4 max-w-lg text-base leading-7 text-ink/75 md:mt-6 md:text-lg md:leading-8">{tr ? "Mobilya, cephe elemanları ve özel tasarım ürünleri; doğru malzeme, atölye üretimi ve yerinde montajla tamamlıyoruz." : "Bespoke furniture, facade elements and custom objects, brought together through material expertise, workshop fabrication and installation."}</p>
         <div className="mt-5 flex flex-wrap gap-3 md:mt-7"><Link href="/contact#brief" className="inline-flex min-h-12 items-center justify-center bg-ink px-4 py-3 text-sm font-semibold text-porcelain transition hover:bg-bronze">{tr ? "Proje gönder" : "Send your project"} →</Link><Link href="#methods" className="inline-flex min-h-12 items-center justify-center border border-ink/25 px-4 py-3 text-sm font-semibold transition hover:bg-white">{tr ? "İmalat yöntemleri" : "Explore methods"}</Link></div>
       </div>
-      <Link href={showcaseHref(hero, lang)} className="group block min-w-0">
-        <figure><div className="relative aspect-[16/10] overflow-hidden bg-ink lg:aspect-[6/5]"><Image src={hero.image} alt={hero[lang].alt} fill priority sizes="(min-width: 1024px) 54vw, 100vw" className="object-cover" style={{objectPosition: "50% 65%"}} /></div><figcaption className="flex items-center justify-between gap-3 border-b border-ink/15 py-3 text-xs leading-5 text-ink/70"><span>{hero[lang].title} · {tr ? "Tamamlanmış uygulama" : "Completed installation"}</span><span aria-hidden="true">↗</span></figcaption></figure>
+      <Link href={projectHref(hero)} className="group block min-w-0">
+        <figure><div className="relative aspect-square overflow-hidden bg-smoke/30"><Image src={hero.image} alt={hero.alt} fill priority sizes="(min-width: 1024px) 54vw, 100vw" className="object-contain" /></div><figcaption className="flex items-center justify-between gap-3 border-b border-ink/15 py-3 text-xs leading-5 text-ink/70"><span>{hero.title}</span><span aria-hidden="true">↗</span></figcaption></figure>
       </Link>
     </section>
     <section id="methods" className="page-shell border-y border-ink/15">
       <div className="flex flex-wrap items-end justify-between gap-4"><div><p className="eyebrow">{tr ? "8 imalat yöntemi" : "8 manufacturing methods"}</p><h2 className="mt-3 font-display text-3xl md:text-5xl">{tr ? "Projenize uygun malzeme." : "The material for your idea."}</h2></div><Link href={comparePath(lang)} className="text-link">{tr ? "Maliyet ve performansı karşılaştır" : "Compare cost & performance"} →</Link></div>
       <MethodGrid lang={lang} compact /><p className="mt-6 max-w-3xl text-sm leading-6 text-ink/65">{tr ? "Maliyet seviyeleri genel yönlendirmedir. Ölçü, adet, son yüzey ve montaj kapsamına göre teklif hazırlıyoruz." : "Cost levels are a guide. Your dimensions, quantity, finish and installation scope determine the quotation."}</p>
     </section>
-    <SelectedWork lang={lang} />
+    <SelectedWork lang={lang} all />
     <ProjectDelivery lang={lang} compact />
     <section className="page-shell flex flex-wrap items-center justify-between gap-7"><div><p className="eyebrow">{tr ? "Projenizi konuşalım" : "Start with your idea"}</p><h2 className="mt-3 font-display text-3xl md:text-4xl">{tr ? "Bir çizim, fotoğraf veya fikirle başlayın." : "A drawing, a photo or an idea."}</h2><p className="mt-4 max-w-2xl leading-7 text-ink/70">{tr ? "Malzemeyi henüz seçmediyseniz kullanım yerini ve yaklaşık ölçüyü paylaşın; birlikte netleştirelim." : "Share the setting and approximate dimensions. We can help you choose the material and production route."}</p></div><Link href="/contact#brief" className="button-primary">{tr ? "Projem için teklif iste" : "Request a project quote"} →</Link></section>
   </main>;

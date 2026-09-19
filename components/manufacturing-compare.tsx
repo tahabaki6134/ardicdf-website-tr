@@ -28,6 +28,7 @@ export function ManufacturingCompare({ lang, initialLeft, initialRight }: { lang
         </select>
       </label>)}
     </div>
+    <Link href={`/contact?method=${left}&alternative=${right}#brief`} className="button-primary mt-5">{tr ? "Bu iki yöntem için teklif iste" : "Request a quote for both methods"}</Link>
     <p className="mt-5 text-sm leading-6 text-ink/70">{tr ? "Karşılaştırma genel yönlendirmedir; sabit fiyat veya yapısal performans taahhüdü değildir. Aynı ölçü, adet, son yüzey ve kullanım şartlarını birlikte değerlendirin." : "This comparison is general guidance, not a fixed price or a structural performance commitment. Compare equivalent dimensions, quantity, finish and use."}</p>
     <p role="status" aria-live="polite" className="sr-only">{first.copy[lang].title} / {second.copy[lang].title}</p>
     <div className="mt-7">

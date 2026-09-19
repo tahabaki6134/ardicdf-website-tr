@@ -3,6 +3,8 @@ export type Project = {
   title: string;
   category: string;
   image: string;
+  gallery?: { src: string; width: number; height: number; alt: string; caption: string }[];
+  note?: string;
   alt: string;
   description: string;
   details: string[];
@@ -14,6 +16,57 @@ export type Project = {
 // These entries use existing portfolio photographs. Do not add dimensions,
 // client names, materials or delivery claims without a verified project record.
 export const projects: Project[] = [
+  {
+    "id": "farmasi-boss-trip",
+    "title": "FARMASI · Boss Trip etkinlik koleksiyonu",
+    "category": "Marka ve etkinlik objeleri",
+    "image": "/works/farmasi-boss-trip/personalised-sailboats.jpeg",
+    "alt": "FARMASI Boss Trip yazılı, kişiye özel isimler taşıyan ahşap görünümlü yelkenli masa objeleri",
+    "description": "Kişiye özel yelkenli masa objeleri, dekoratif simitler ve markalı sunum kutusu. Denizcilik teması; isim, grafik ve ambalaj detaylarıyla aynı koleksiyonda buluşuyor.",
+    "details": [
+      "Tek bir obje yerine birbiriyle uyumlu parçalar: kişiselleştirilmiş masa düzeni, dekoratif objeler ve kutulu sunum.",
+      "Benzer bir talepte adetleri, isim listesini, marka dosyalarını, ambalajı ve teslim yerini birlikte değerlendiriyoruz. Üretim yöntemi, ölçüler ve son yüzey proje için ayrıca belirlenir."
+    ],
+    "briefChecklist": [
+      "Ürün referansları, adetler ve kişiselleştirilecek isim listesi",
+      "Onaylı marka dosyaları ve ambalaj beklentisi",
+      "Teslim yeri, tarih ve kullanım amacı"
+    ],
+    "industries": [
+      "retail-brand-activations",
+      "events-exhibitions"
+    ],
+    "services": [
+      {
+        "label": "Projelendirme ve bütünleşik üretim",
+        "href": "/fabrication"
+      }
+    ],
+    "gallery": [
+      {
+        "src": "/works/farmasi-boss-trip/personalised-sailboats.jpeg",
+        "width": 1254,
+        "height": 1254,
+        "alt": "FARMASI Boss Trip yazılı, kişiye özel isimler taşıyan ahşap görünümlü yelkenli masa objeleri",
+        "caption": "Yelkenli masa objeleri · Kişiye özel isimler ve marka grafikleri."
+      },
+      {
+        "src": "/works/farmasi-boss-trip/decorative-rings.jpeg",
+        "width": 864,
+        "height": 1536,
+        "alt": "Siyah şerit, dikiş ve halat detaylı beyaz dekoratif simitler",
+        "caption": "Dekoratif simitler · Siyah-beyaz yüzey, dikiş ve halat detayları."
+      },
+      {
+        "src": "/works/farmasi-boss-trip/presentation-box.jpeg",
+        "width": 1312,
+        "height": 1199,
+        "alt": "FARMASI Boss Trip markalı sunum kutusunda siyah-beyaz dekoratif simit",
+        "caption": "Kutulu sunum · Markalı kutu, yerleşim ve tamamlayıcı ambalaj detayları."
+      }
+    ],
+    "note": "Görseller projenin sunumunu gösterir. Simit biçimli objeler dekoratif amaçlıdır; can kurtarma ekipmanı olarak sunulmaz."
+  },
   {
     id: "modular-artificial-rock-concert-environment",
     title: "Modular rock concert environment",

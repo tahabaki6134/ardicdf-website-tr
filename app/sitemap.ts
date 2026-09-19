@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   return [
+    { url: `${siteUrl}/works/farmasi-boss-trip`, lastModified: "2026-09-19", changeFrequency: "monthly" as const, priority: 0.85 },
     { url: `${siteUrl}${comparePath(lang)}`, lastModified: "2026-09-13", changeFrequency: "monthly" as const, priority: 0.85 },
     ...manufacturingMethods.map(method => ({ url: `${siteUrl}${methodPath(method, lang)}`, lastModified: "2026-09-13", changeFrequency: "monthly" as const, priority: 0.9 })),
     ...staticRoutes.map((route) => ({

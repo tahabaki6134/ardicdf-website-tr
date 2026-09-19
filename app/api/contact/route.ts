@@ -148,7 +148,7 @@ export async function POST(request: Request) {
     "Selected portfolio examples",
     selected.length
       ? selected
-          .map((id) => getProject(id)!.title + " — https://www.ardicdf.com/works/" + id)
+          .map((id) => getProject(id)!.title + (id === "farmasi-boss-trip" ? " — https://ardicdf.com.tr/works/" : " — https://www.ardicdf.com/works/") + id)
           .join("\n")
       : "None selected"
   ]);
