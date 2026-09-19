@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getMethod } from "@/lib/manufacturing";
+import { parseSelectedProjects } from "@/lib/projects";
 import { languageRoute } from "@/lib/language-route";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -72,7 +73,7 @@ export function Header() {
           {links()}
         </nav>
         <div className="flex items-center gap-2 md:gap-3">
-          <a href={languageRoute(pathname, "tr")} onClick={event => { const source = new URL(window.location.href); const target = new URL(languageRoute(pathname, "tr")); for (const key of ["method", "alternative", "left", "right"]) { const value = source.searchParams.get(key); if (value && getMethod(value)) target.searchParams.set(key, value); } event.currentTarget.href = target.href; }} hrefLang="en" aria-label="English" className="inline-flex min-h-11 min-w-11 items-center justify-center text-xs font-semibold text-bronze">EN</a>
+          <a href={languageRoute(pathname, "tr")} onClick={event => { const source = new URL(window.location.href); const target = new URL(languageRoute(pathname, "tr")); for (const key of ["method", "alternative", "left", "right"]) { const value = source.searchParams.get(key); if (value && getMethod(value)) target.searchParams.set(key, value); } const selected = parseSelectedProjects(source.searchParams.get("selected")); if (selected.length) target.searchParams.set("selected", selected.join(",")); if (["#brief", "#methods", "#project-delivery"].includes(source.hash)) target.hash = source.hash; event.currentTarget.href = target.href; }} hrefLang="en" aria-label="English" className="inline-flex min-h-11 min-w-11 items-center justify-center text-xs font-semibold text-bronze">EN</a>
           <Link href="/contact" className="button-primary hidden lg:inline-flex">
             Teklif iste
           </Link>

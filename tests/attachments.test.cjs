@@ -28,7 +28,7 @@ test("enquiry attachments reach only the team notification", async t => {
   process.env.TURNSTILE_SECRET_KEY = "mock-key";
   process.env.CONTACT_NOTIFICATION_EMAIL = "team@example.com";
   t.after(() => { global.fetch = beforeFetch; process.env = beforeEnv; });
-  const valid = { fullName: "Example", email: "client@example.com", projectType: "Wood furniture", message: "A complete cabinet for Seoul, with https://example.com/a and https://example.com/b and https://example.com/c", turnstileToken: "mock-token", attachments: [pdf] };
+  const valid = { fullName: "Example", email: "client@example.com", projectType: "Wood furniture", message: "A complete cabinet for Seoul, with https://example.com/a and https://example.com/b and https://example.com/c", turnstileToken: "mock-token", attachments: [pdf], selectedProjects: ["farmasi-boss-trip"] };
   let emails = [];
   global.fetch = async (url, options) => {
     if (url === "https://challenges.cloudflare.com/turnstile/v0/siteverify") return Response.json({ success: true });
@@ -42,6 +42,8 @@ test("enquiry attachments reach only the team notification", async t => {
   assert.equal((await response.json()).ok, true);
   assert.equal(emails.length, 2);
   assert.equal(emails[0].to, "team@example.com");
+  assert.match(emails[0].text, /FARMASI · Boss Trip etkinlik koleksiyonu/);
+  assert.match(emails[0].text, /https:\/\/ardicdf\.com\.tr\/works\/farmasi-boss-trip/);
   assert.deepEqual(emails[0].attachments, [pdf]);
   assert.equal(emails[1].to, "client@example.com");
   assert.equal(emails[1].attachments, undefined);
@@ -49,7 +51,20 @@ test("enquiry attachments reach only the team notification", async t => {
   const rejected = await POST(request({ ...valid, attachments: [{ filename: "image.png", content: pdf.content }] }));
   assert.equal(rejected.status, 400);
   assert.equal(emails.length, 0);
+  const invalidSelection = await POST(request({ ...valid, selectedProjects: ["unknown-project"] }));
+  assert.equal(invalidSelection.status, 400);
+  assert.equal(emails.length, 0);
   const tooLarge = await POST(request({ ...valid, extra: "x".repeat(3 * 1024 * 1024) }));
   assert.equal(tooLarge.status, 413);
   assert.equal(emails.length, 0);
+});
+
+test("English links open the equivalent international English pages", () => {
+  const { languageRoute } = require("../lib/language-route.ts");
+  for (const [from, to] of [
+    ["/", "/en"], ["/contact", "/en/contact"], ["/services", "/en/services"],
+    ["/karsilastir", "/en/compare"], ["/imalat/karbon-fiber", "/en/manufacturing/carbon-fiber"],
+    ["/works/farmasi-boss-trip", "/en/works/farmasi-boss-trip"],
+    ["/works/artificial-rock-organic-forms", "/en/works/artificial-rock-organic-forms"]
+  ]) assert.equal(languageRoute(from, "tr"), "https://www.ardicdf.com" + to);
 });

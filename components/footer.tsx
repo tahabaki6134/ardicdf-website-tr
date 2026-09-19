@@ -31,7 +31,7 @@ export function Footer() {
                 {item.label}
               </Link>
             ))}
-            <a href="https://www.ardicdf.com" className="text-porcelain/75 hover:text-bronze">English website</a>
+            <a href="https://www.ardicdf.com/en" className="text-porcelain/75 hover:text-bronze">English website</a>
             <Link href="/privacy" className="text-porcelain/55 transition hover:text-bronze">
               Gizlilik Politikası
             </Link>

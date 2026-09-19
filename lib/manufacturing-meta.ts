@@ -9,9 +9,9 @@ export function manufacturingMetadata(title: string, description: string, paths:
     alternates: {
       canonical: url,
       languages: {
-        en: manufacturingOrigins.en + paths.en,
+        en: manufacturingOrigins.en + "/en" + (paths.en === "/" ? "" : paths.en),
         tr: manufacturingOrigins.tr + paths.tr,
-        "x-default": manufacturingOrigins.en + paths.en
+        "x-default": manufacturingOrigins.en + "/en" + (paths.en === "/" ? "" : paths.en)
       }
     },
     openGraph: {
