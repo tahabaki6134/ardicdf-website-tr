@@ -91,6 +91,22 @@ export function EnquiryForm({ initialMethod = "", initialAlternative = "", initi
     finally { busy.current = false; setSending(false); }
   }
 
+  if (!siteKey) {
+    const params = new URLSearchParams();
+    if (primary) params.set("method", initialMethod);
+    if (alternative) params.set("alternative", initialAlternative);
+    if (selectedProjects.length) params.set("selected", selectedProjects.join(","));
+    const href = "https://www.ardicdf.com" + (tr ? "/contact" : "/en/contact") + (params.size ? "?" + params : "") + "#brief";
+    return <section id="brief" className="min-w-0 border border-ink/15 bg-white p-5 md:p-8">
+      <h2 className="font-display text-2xl md:text-3xl">{tr ? "Projenizi teklif formunda paylaşın." : "Share your project in our enquiry form."}</h2>
+      <p className="mt-4 leading-7 text-ink/70">{tr ? "ARDIÇ’in ortak Türkçe teklif formunda açıklama, ölçü ve dosyalarınızı paylaşabilirsiniz. Seçtiğiniz yöntem ve proje örnekleri forma aktarılır." : "Share your description, dimensions and files through the ARDIÇ enquiry form. Your chosen methods and project references are carried across."}</p>
+      {(primary || alternative) && <p className="mt-5 border-l-2 border-bronze pl-4 text-sm leading-7">{[primary, alternative].filter(Boolean).join(" / ")}</p>}
+      {selection && <div className="mt-5">{selection}</div>}
+      <a href={href} className="button-primary mt-6">{tr ? "Türkçe teklif formunu aç" : "Open the enquiry form"} →</a>
+      <p className="mt-4 text-sm leading-6 text-ink/65">{tr ? "Form ardicdf.com üzerinde açılır." : "The form opens on ardicdf.com."}</p>
+      <a href={`mailto:${contactEmail}`} className="mt-5 block break-words text-sm underline">{contactEmail}</a>
+    </section>;
+  }
   if (sent) return <section className="border border-ink/15 bg-white p-6 md:p-9"><h2 ref={successHeading} tabIndex={-1} className="font-display text-3xl">{tr ? "Projeniz ekibimize iletildi." : "Your project has been sent to our team."}</h2><p className="mt-4 leading-7">{tr ? "Talebinizi inceleyip verdiğiniz iletişim bilgileriyle size dönüş yapacağız." : "We will review your enquiry and respond using the contact details you provided."}</p><p className="mt-3 text-sm leading-6 text-ink/65">{confirmation ? (tr ? "E-posta adresinize bir alındı mesajı da gönderildi." : "A confirmation was also sent to your email address.") : (tr ? "Ayrı bir alındı e-postası gönderilemedi; proje talebiniz ekibimize ulaştı." : "A separate confirmation email could not be sent; your project enquiry reached our team.")}</p></section>;
   return <form id="brief" onSubmit={submit} noValidate className="min-w-0 border border-ink/15 bg-white p-5 md:p-8">
     {siteKey && <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" strategy="afterInteractive" onReady={() => setScriptReady(true)} onError={() => setVerificationError(tr ? "Doğrulama yüklenemedi. E-posta veya WhatsApp ile ulaşabilirsiniz." : "Verification could not load. You can contact us by email or WhatsApp.")} />}
