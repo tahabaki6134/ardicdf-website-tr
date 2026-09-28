@@ -96,7 +96,7 @@ export function EnquiryForm({ initialMethod = "", initialAlternative = "", initi
     if (primary) params.set("method", initialMethod);
     if (alternative) params.set("alternative", initialAlternative);
     if (selectedProjects.length) params.set("selected", selectedProjects.join(","));
-    const href = "https://www.ardicdf.com" + (tr ? "/contact" : "/en/contact") + (params.size ? "?" + params : "") + "#brief";
+    const href = "https://www.ardicdf.com" + (tr ? "/tr/contact" : "/en/contact") + (params.size ? "?" + params : "") + "#brief";
     return <section id="brief" className="min-w-0 border border-ink/15 bg-white p-5 md:p-8">
       <h2 className="font-display text-2xl md:text-3xl">{tr ? "Projenizi teklif formunda paylaşın." : "Share your project in our enquiry form."}</h2>
       <p className="mt-4 leading-7 text-ink/70">{tr ? "ARDIÇ’in ortak Türkçe teklif formunda açıklama, ölçü ve dosyalarınızı paylaşabilirsiniz. Seçtiğiniz yöntem ve proje örnekleri forma aktarılır." : "Share your description, dimensions and files through the ARDIÇ enquiry form. Your chosen methods and project references are carried across."}</p>
