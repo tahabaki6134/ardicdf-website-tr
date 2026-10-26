@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const siteUrl = "https://ardicdf.com.tr";
+export const siteUrl = "https://www.ardicdf.com.tr";
 export const siteName = "Ardıç Design & Fabrication";
 export const socialImage = "/og-image.png";
 

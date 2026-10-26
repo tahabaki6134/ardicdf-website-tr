@@ -6,14 +6,8 @@ export function manufacturingMetadata(title: string, description: string, paths:
   const url = manufacturingOrigins[lang] + paths[lang];
   return {
     title: { absolute: `${title} | ARDIÇ` }, description,
-    alternates: {
-      canonical: url,
-      languages: {
-        en: manufacturingOrigins.en + "/en" + (paths.en === "/" ? "" : paths.en),
-        tr: manufacturingOrigins.tr + paths.tr,
-        "x-default": manufacturingOrigins.en + "/en" + (paths.en === "/" ? "" : paths.en)
-      }
-    },
+    // The domestic site is independent of the international site's language editions.
+    alternates: { canonical: url },
     openGraph: {
       title: `${title} | ARDIÇ`, description, url, type: "website",
       locale: lang === "tr" ? "tr_TR" : "en_US",

@@ -3,8 +3,7 @@ import { manufacturingLanguage as lang } from "@/lib/manufacturing-site";
 import type { MetadataRoute } from "next";
 import { portfolioCategories } from "@/lib/content";
 import { servicePages } from "@/lib/service-pages";
-
-const siteUrl = "https://ardicdf.com.tr";
+import { siteUrl } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
