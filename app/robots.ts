@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { siteUrl } from "@/lib/seo";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -6,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "*", allow: "/" },
       { userAgent: "OAI-SearchBot", allow: "/" }
     ],
-    sitemap: "https://ardicdf.com.tr/sitemap.xml",
-    host: "https://ardicdf.com.tr"
+    sitemap: `${siteUrl}/sitemap.xml`,
+    host: siteUrl
   };
 }
